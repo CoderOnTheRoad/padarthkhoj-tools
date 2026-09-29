@@ -17,7 +17,6 @@ npm ci
 npm run dev
 ```
 
-For the complete user and installation guide, see [the user manual](./etc/user_manual/MANUAL.md).
 For architecture, data contracts, directory ownership, and contributor guidance, see [PROJECT_OVERVIEW.md](./PROJECT_OVERVIEW.md).
 
 ## PDOS analysis and PKDOS CLI
