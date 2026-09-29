@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIF Parser: Line-by-Line Scientific Breakdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --bg: #010204;
+            --sidebar: #0a0b10;
+            --accent: #00f2ff;
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.05);
+            --hl: rgba(0, 242, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 60px 40px;
+            background: linear-gradient(to bottom, #0a0b10, var(--bg));
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 40px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th {
+            text-align: left;
+            padding: 15px;
+            color: var(--accent);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        td {
+            vertical-align: top;
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .code-cell {
+            background: #000;
+            width: 50%;
+        }
+
+        .logic-cell {
+            width: 50%;
+            background: rgba(255,255,255,0.01);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .line-num {
+            color: #444;
+            display: inline-block;
+            width: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .math-inline {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .section-header {
+            background: var(--hl);
+            padding: 20px;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 1.2rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        pre[class*="language-"] {
+            margin: 0 !important;
+            padding: 0 !important;
+            background: transparent !important;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace !important;
+        }
+
+        .badge {
+            background: var(--accent);
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 25px; margin-bottom: 30px;">
+            <img src="ematai_lab_logo.png" style="width: 100px; height: 100px; border-radius: 20px; border: 2px solid var(--border); background: #fff; padding: 4px; box-shadow: 0 10px 40px rgba(0,242,255,0.2);">
+            <div style="text-align: left;">
+                <div style="color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 4px; font-size: 1rem; margin-bottom: 5px;">EMat-AI Lab</div>
+                <h1 style="font-size: 3.5rem; margin: 0; line-height: 1;">Padarthkhoj <span style="color: var(--accent);">Tools</span></h1>
+            </div>
+        </div>
+        <p style="color: var(--text-dim); font-size: 1.2rem; max-width: 900px; margin: 0 auto 40px auto; font-weight: 300;">
+            <b>CIF Parser Anatomy:</b> A comprehensive scientific audit of the symmetry expansion pipeline.
+            Every logical operation explained with mathematical rigor.
+        </p>
+        <div style="display: flex; gap: 40px; justify-content: center; align-items: center;">
+            <a href="https://sites.google.com/view/ematailab/home" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 800; border: 2px solid var(--accent); padding: 12px 30px; border-radius: 50px; background: rgba(0,242,255,0.1); transition: 0.3s; box-shadow: 0 5px 20px rgba(0,242,255,0.2);">Lab Portal ↗</a>
+            <div style="text-align: left; border-left: 2px solid var(--border); padding-left: 25px;">
+                <div style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px;">Lead Architect</div>
+                <a href="https://github.com/CoderOnTheRoad" target="_blank" style="color: var(--text); text-decoration: none; font-weight: 800; font-size: 1.1rem; border-bottom: 2px solid var(--accent);">Sourav Ghosh</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Source Code (JavaScript)</th>
+                    <th style="width: 50%;">Logical & Mathematical Explanation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Section: Core Data Extraction -->
+                <tr><td colspan="2" class="section-header">01. Initialization & Key-Value Extraction</td></tr>
+                <tr>
+                    <td class="code-cell">
+<pre><code class="language-javascript">1: export function parseCIF(text) {
+2:   const lines = text.split(/\r?\n/);
+3: 
+4:   function getVal(key) {
+5:     const k = key.toLowerCase();
+6:     for(let j=0; j<lines.length; j++) {
+7:       const l = lines[j].trim().toLowerCase();
+8:       if(l.startsWith(k)) {
+...
+13:       }
+14:     }
+15:     return null;
+16:   }</code></pre>
+                    </td>
+                    <td class="logic-cell">
+                        <p><span class="badge">Line 1-2</span> Entry point of the parser. We immediately split the raw text into an array of lines to facilitate sequential scanning.</p>
+                        <p><span class="badge">Line 4-16</span> The <code>getVal</code> utility is our primary dictionary lookup. CIF files often vary in spacing; this function performs a case-insensitive search to find values associated with keys like <code>_cell_length_a</code>.</p>
+                    </td>
+                </tr>
+
+                <!-- Section: Symmetry Regex -->
+                <tr><td colspan="2" class="section-header">02. The Algebraic Symmetry Engine (Burai Protocol)</td></tr>
+                <tr>
+                    <td class="code-cell">
+<pre><code class="language-javascript">17:   // ── Burai-style algebraic symmetry ──
+20:   function parseSymFormula(formula) {
+21:     let s = formula.trim();
+23:     if (s.charAt(0) !== '-' && s.charAt(0) !== '+') s = '+' + s;
+25:     const re = /[+-]([0-9]+\/[0-9]+|[0-9]+)?([xyz](\/[0-9]+)?)?/gi;
+...
+61:     }
+62:     return { xC, yC, zC, ct };
+63:   }</code></pre>
+                    </td>
+                    <td class="logic-cell">
+                        <p>This is the heart of the symmetry engine. It mirrors the <code>CIFSymmetricFormula.java</code> from the Burai codebase.</p>
+                        <p><span class="badge">Line 25</span> The **Regular Expression** is carefully tuned to match algebraic terms like <code>x</code>, <code>-y/2</code>, or <code>+1/4</code>.</p>
+                        <p><span class="badge">Line 62</span> Instead of "executing" the code, it extracts the coefficients into a linear object. Mathematically, it's building a row of the symmetry matrix:</p>
+                        <div class="math-inline">\[ f(x,y,z) = c_x x + c_y y + c_z z + c_{const} \]</div>
+                    </td>
+                </tr>
+
+                <!-- Section: Lattice Matrix -->
+                <tr><td colspan="2" class="section-header">03. Lattice Metric Construction (Trigonometry)</td></tr>
+                <tr>
+                    <td class="code-cell">
+<pre><code class="language-javascript">84:     const a = parseFloat(getVal('_cell_length_a')) || 5;
+...
+95:     const vol  = Math.sqrt(1 - cosa*cosa - cosb*cosb - cosg*cosg + 2*cosa*cosb*cosg);
+96:     const mat  = [
+97:       [a, b*cosg, c*cosb],
+98:       [0, b*sing, c*(cosa - cosb*cosg)/sing],
+99:       [0, 0,      c*vol/sing],
+100:     ];</code></pre>
+                    </td>
+                    <td class="logic-cell">
+                        <p><span class="badge">Line 84-90</span> Extracts the 6 lattice parameters ($a, b, c, \alpha, \beta, \gamma$).</p>
+                        <p><span class="badge">Line 95-100</span> Constructs the **Lattice Matrix [M]**. This is an upper-triangular matrix used to transform coordinates from the unitless "fractional" space to physical "Ångström" space.</p>
+                        <p>This accounts for the unit cell volume and inter-axial angles, essential for Hexagonal, Monoclinic, and Triclinic systems.</p>
+                    </td>
+                </tr>
+
+                <!-- Section: Main Loop -->
+                <tr><td colspan="2" class="section-header">04. Pass 1: Semantic Data Parsing</td></tr>
+                <tr>
+                    <td class="code-cell">
+<pre><code class="language-javascript">102:     // ── PASS 1: Parse all loop_ blocks ──
+105:     let inLoop = false, headers = [];
+107:     for(let j=0; j<lines.length; j++) {
+109:       if(l.toLowerCase() === 'loop_') { inLoop = true; ... }
+...
+152:       if(headers.includes('_atom_site_fract_x')) {
+182:           rawPrimAtoms.push({ sym, fx, fy, fz, occ });
+186:       }
+187:     }</code></pre>
+                    </td>
+                    <td class="logic-cell">
+                        <p>The parser scans the file line-by-line looking for <code>loop_</code> blocks.</p>
+                        <p><span class="badge">Step A</span> Identify if the loop contains symmetry operators or atomic coordinates.</p>
+                        <p><span class="badge">Step B</span> Use the headers to map column indices (e.g., where is the $x$ coordinate?).</p>
+                        <p><span class="badge">Step C</span> Push raw data into the <code>rawPrimAtoms</code> array for processing.</p>
+                    </td>
+                </tr>
+
+                <!-- Section: Deduplication -->
+                <tr><td colspan="2" class="section-header">05. Pass 2 & 3: High-Precision Deduplication</td></tr>
+                <tr>
+                    <td class="code-cell">
+<pre><code class="language-javascript">196:     const RMIN_PRIM_SQ = 1e-4 * 1e-4;
+...
+214:     const R_MIN_SQ = 1e-3 * 1e-3;
+219:         let [nfx, nfy, nfz] = applySymOp(op, base.fx, base.fy, base.fz);
+222:         nfx = wrapFrac(nfx);
+226:         const [nx, ny, nz] = fracToCart(mat, nfx, nfy, nfz);
+229:         for(const ex of expandedAtoms) {
+231:           const dx = nx-ex.x, dy = ny-ex.y, dz = nz-ex.z;
+232:           if(dx*dx + dy*dy + dz*dz < R_MIN_SQ) { dup = true; break; }
+233:         }</code></pre>
+                    </td>
+                    <td class="logic-cell">
+                        <p><span class="badge">Pass 2</span> Cleans up the "Asymmetric Unit" using a strict fractional threshold ($10^{-4}$).</p>
+                        <p><span class="badge">Pass 3 (CRITICAL)</span> This is where the Burai magic happens. For every symmetry operator:</p>
+                        <ol>
+                            <li>Apply the linear symmetry operation.</li>
+                            <li>Wrap the result back into the cell (PBC Wrapping).</li>
+                            <li>Convert the result to **Cartesian Ångströms**.</li>
+                            <li>Perform a **Euclidean distance check** ($0.001$ Å).</li>
+                        </ol>
+                        <p>By comparing in Cartesian space rather than fractional, we avoid the "Floating Point Drift" error that plagues naive CIF parsers.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer style="margin-top: 100px; padding: 60px 40px; color: var(--text-dim); text-align: center; border-top: 1px solid var(--border); width: 100%; background: linear-gradient(to top, #0a0b10, var(--bg));">
+        <div style="margin-bottom: 20px; font-weight: 600; color: var(--text);">Built by EMat-AI Lab</div>
+        <div style="font-size: 0.8rem; letter-spacing: 1px;">
+            Scientific Logic Verification Engine &copy; 2024 | Moderated by 
+            <a href="https://github.com/CoderOnTheRoad" target="_blank" style="color: var(--accent); text-decoration: none;">Sourav Ghosh</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+</html>

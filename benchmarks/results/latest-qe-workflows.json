@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "benchmarkType": "Real-CIF Quantum ESPRESSO workflow generation",
+  "source": {
+    "filename": "halfc1.cif",
+    "sha256": "0b8432ae1156f1c515488a84ecdbcec30665b7e8dc1a73ce1b24601da79c6708",
+    "atoms": 204
+  },
+  "environment": {
+    "timestampUtc": "2026-08-14T10:10:57.650Z",
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M2"
+  },
+  "summary": {
+    "workflows": 8,
+    "generatedFiles": 29,
+    "rules": 76,
+    "passed": 76,
+    "failed": 0
+  },
+  "workflows": [
+    {
+      "id": "scf",
+      "files": [
+        "halfc1_scf.in",
+        "halfc1_submit.sh"
+      ]
+    },
+    {
+      "id": "relax",
+      "files": [
+        "halfc1_relax.in",
+        "halfc1_submit.sh"
+      ]
+    },
+    {
+      "id": "dos",
+      "files": [
+        "halfc1_scf.in",
+        "halfc1_nscf.in",
+        "halfc1_dos.in",
+        "halfc1_submit.sh"
+      ]
+    },
+    {
+      "id": "bands",
+      "files": [
+        "halfc1_scf.in",
+        "halfc1_nscf.in",
+        "halfc1_bands.in",
+        "halfc1_submit.sh"
+      ]
+    },
+    {
+      "id": "charge-density",
+      "files": [
+        "halfc1_scf.in",
+        "halfc1_charge.in",
+        "halfc1_submit.sh"
+      ]
+    },
+    {
+      "id": "bader",
+      "files": [
+        "halfc1_scf.in",
+        "halfc1_allelectron.in",
+        "halfc1_valenceelectron.in",
+        "halfc1_submit.sh"
+      ]
+    },
+    {
+      "id": "vibrational-d3",
+      "files": [
+        "halfc1_scf.in",
+        "halfc1_hess.in",
+        "halfc1_ph.in",
+        "halfc1_dyn.in",
+        "halfc1_submit.sh"
+      ]
+    },
+    {
+      "id": "vibrational-no-d3",
+      "files": [
+        "halfc1_scf.in",
+        "halfc1_hess.in",
+        "halfc1_ph.in",
+        "halfc1_dyn.in",
+        "halfc1_submit.sh"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "workflow": "scf",
+      "rule": "unique filenames",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "scf",
+      "rule": "submission script exists",
+      "status": "pass",
+      "detail": "halfc1_submit.sh"
+    },
+    {
+      "workflow": "scf",
+      "rule": "strict sequential shell",
+      "status": "pass",
+      "detail": "set -euo pipefail"
+    },
+    {
+      "workflow": "scf",
+      "rule": "halfc1_scf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "relax",
+      "rule": "unique filenames",
+      "status": "pass",
+      "detail": "halfc1_relax.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "relax",
+      "rule": "submission script exists",
+      "status": "pass",
+      "detail": "halfc1_submit.sh"
+    },
+    {
+      "workflow": "relax",
+      "rule": "strict sequential shell",
+      "status": "pass",
+      "detail": "set -euo pipefail"
+    },
+    {
+      "workflow": "relax",
+      "rule": "halfc1_relax.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "dos",
+      "rule": "unique filenames",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_nscf.in, halfc1_dos.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "dos",
+      "rule": "submission script exists",
+      "status": "pass",
+      "detail": "halfc1_submit.sh"
+    },
+    {
+      "workflow": "dos",
+      "rule": "strict sequential shell",
+      "status": "pass",
+      "detail": "set -euo pipefail"
+    },
+    {
+      "workflow": "dos",
+      "rule": "halfc1_scf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "dos",
+      "rule": "halfc1_nscf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "bands",
+      "rule": "unique filenames",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_nscf.in, halfc1_bands.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "bands",
+      "rule": "submission script exists",
+      "status": "pass",
+      "detail": "halfc1_submit.sh"
+    },
+    {
+      "workflow": "bands",
+      "rule": "strict sequential shell",
+      "status": "pass",
+      "detail": "set -euo pipefail"
+    },
+    {
+      "workflow": "bands",
+      "rule": "halfc1_scf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "bands",
+      "rule": "halfc1_nscf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "charge-density",
+      "rule": "unique filenames",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_charge.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "charge-density",
+      "rule": "submission script exists",
+      "status": "pass",
+      "detail": "halfc1_submit.sh"
+    },
+    {
+      "workflow": "charge-density",
+      "rule": "strict sequential shell",
+      "status": "pass",
+      "detail": "set -euo pipefail"
+    },
+    {
+      "workflow": "charge-density",
+      "rule": "halfc1_scf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "bader",
+      "rule": "unique filenames",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_allelectron.in, halfc1_valenceelectron.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "bader",
+      "rule": "submission script exists",
+      "status": "pass",
+      "detail": "halfc1_submit.sh"
+    },
+    {
+      "workflow": "bader",
+      "rule": "strict sequential shell",
+      "status": "pass",
+      "detail": "set -euo pipefail"
+    },
+    {
+      "workflow": "bader",
+      "rule": "halfc1_scf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "vibrational-d3",
+      "rule": "unique filenames",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_hess.in, halfc1_ph.in, halfc1_dyn.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "vibrational-d3",
+      "rule": "submission script exists",
+      "status": "pass",
+      "detail": "halfc1_submit.sh"
+    },
+    {
+      "workflow": "vibrational-d3",
+      "rule": "strict sequential shell",
+      "status": "pass",
+      "detail": "set -euo pipefail"
+    },
+    {
+      "workflow": "vibrational-d3",
+      "rule": "halfc1_scf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "vibrational-no-d3",
+      "rule": "unique filenames",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_hess.in, halfc1_ph.in, halfc1_dyn.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "vibrational-no-d3",
+      "rule": "submission script exists",
+      "status": "pass",
+      "detail": "halfc1_submit.sh"
+    },
+    {
+      "workflow": "vibrational-no-d3",
+      "rule": "strict sequential shell",
+      "status": "pass",
+      "detail": "set -euo pipefail"
+    },
+    {
+      "workflow": "vibrational-no-d3",
+      "rule": "halfc1_scf.in: 204 atoms",
+      "status": "pass",
+      "detail": "parsed 204 ATOMIC_POSITIONS rows"
+    },
+    {
+      "workflow": "scf",
+      "rule": "calculation mode",
+      "status": "pass",
+      "detail": "scf"
+    },
+    {
+      "workflow": "relax",
+      "rule": "calculation mode",
+      "status": "pass",
+      "detail": "vc-relax with &IONS and &CELL"
+    },
+    {
+      "workflow": "scf",
+      "rule": "species and pseudopotentials",
+      "status": "pass",
+      "detail": "C/N/H PSL PAW files"
+    },
+    {
+      "workflow": "dos",
+      "rule": "file set",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_nscf.in, halfc1_dos.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "dos",
+      "rule": "SCF smearing default",
+      "status": "pass",
+      "detail": "smearing"
+    },
+    {
+      "workflow": "dos",
+      "rule": "NSCF tetrahedra default",
+      "status": "pass",
+      "detail": "tetrahedra without smearing/degauss"
+    },
+    {
+      "workflow": "dos",
+      "rule": "DOS postprocessor",
+      "status": "pass",
+      "detail": "dos.x input"
+    },
+    {
+      "workflow": "dos",
+      "rule": "execution order",
+      "status": "pass",
+      "detail": "pw.x → pw.x → dos.x"
+    },
+    {
+      "workflow": "bands",
+      "rule": "crystal band path",
+      "status": "pass",
+      "detail": "crystal_b path"
+    },
+    {
+      "workflow": "bands",
+      "rule": "literature warning",
+      "status": "pass",
+      "detail": "user warning present"
+    },
+    {
+      "workflow": "bands",
+      "rule": "BANDS namelist without lsym",
+      "status": "pass",
+      "detail": "&BANDS, no lsym"
+    },
+    {
+      "workflow": "bands",
+      "rule": "execution order",
+      "status": "pass",
+      "detail": "pw.x → pw.x → bands.x"
+    },
+    {
+      "workflow": "charge-density",
+      "rule": "plot settings",
+      "status": "pass",
+      "detail": "plot_num 0, cube format"
+    },
+    {
+      "workflow": "charge-density",
+      "rule": "execution order",
+      "status": "pass",
+      "detail": "pw.x → pp.x"
+    },
+    {
+      "workflow": "bader",
+      "rule": "all-electron density",
+      "status": "pass",
+      "detail": "plot_num 21"
+    },
+    {
+      "workflow": "bader",
+      "rule": "valence density",
+      "status": "pass",
+      "detail": "plot_num 0"
+    },
+    {
+      "workflow": "bader",
+      "rule": "execution order",
+      "status": "pass",
+      "detail": "pw.x → pp.x → pp.x"
+    },
+    {
+      "workflow": "vibrational-d3",
+      "rule": "five-file workflow",
+      "status": "pass",
+      "detail": "halfc1_scf.in, halfc1_hess.in, halfc1_ph.in, halfc1_dyn.in, halfc1_submit.sh"
+    },
+    {
+      "workflow": "vibrational-d3",
+      "rule": "D3 Hessian connected",
+      "status": "pass",
+      "detail": "d3hess.x active"
+    },
+    {
+      "workflow": "vibrational-d3",
+      "rule": "execution order",
+      "status": "pass",
+      "detail": "pw.x → d3hess.x → ph.x → dynmat.x"
+    },
+    {
+      "workflow": "vibrational-no-d3",
+      "rule": "Hessian skipped",
+      "status": "pass",
+      "detail": "d3hess.x skipped"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_scf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_relax.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_scf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_nscf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_dos.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_scf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_nscf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_bands.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_scf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_charge.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_scf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_allelectron.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_valenceelectron.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_scf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_hess.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_ph.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_dyn.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_scf.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_hess.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_ph.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    },
+    {
+      "workflow": "cross-workflow",
+      "rule": "halfc1_dyn.in: no undefined/NaN",
+      "status": "pass",
+      "detail": "clean generated text"
+    }
+  ]
+}

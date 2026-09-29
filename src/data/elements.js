@@ -1,0 +1,60 @@
+export const ELEMENTS = {
+  H:{r:0.31,color:'#e8e8e8'},  He:{r:0.28,color:'#d9ffff'},
+  Li:{r:1.28,color:'#cc80ff'}, Be:{r:0.96,color:'#c2ff00'},
+  B:{r:0.84,color:'#ffb5b5'},  C:{r:0.76,color:'#909090'},
+  N:{r:0.71,color:'#3050f8'},  O:{r:0.66,color:'#ff0d0d'},
+  F:{r:0.57,color:'#90e050'},  Ne:{r:0.58,color:'#b3e3f5'},
+  Na:{r:1.66,color:'#ab5cf2'}, Mg:{r:1.41,color:'#8aff00'},
+  Al:{r:1.21,color:'#bfa6a6'}, Si:{r:1.11,color:'#f0c8a0'},
+  P:{r:1.07,color:'#ff8000'},  S:{r:1.05,color:'#ffff30'},
+  Cl:{r:1.02,color:'#1ff01f'}, Ar:{r:1.06,color:'#80d1e3'},
+  K:{r:2.03,color:'#8f40d4'},  Ca:{r:1.76,color:'#3dff00'},
+  Sc:{r:1.70,color:'#e6e6e6'}, Ti:{r:1.60,color:'#bfc2c7'},
+  V:{r:1.53,color:'#a6a6ab'},  Cr:{r:1.39,color:'#8a99c7'},
+  Mn:{r:1.61,color:'#9c7ac7'}, Fe:{r:1.52,color:'#e06633'},
+  Co:{r:1.50,color:'#f090a0'}, Ni:{r:1.49,color:'#50d050'},
+  Cu:{r:1.45,color:'#c88033'}, Zn:{r:1.42,color:'#7d80b0'},
+  Ga:{r:1.22,color:'#c28f8f'}, Ge:{r:1.20,color:'#668f8f'},
+  As:{r:1.19,color:'#bd80e3'}, Se:{r:1.20,color:'#ffa100'},
+  Br:{r:1.20,color:'#a62929'}, Kr:{r:1.16,color:'#5cb8d1'},
+  Rb:{r:2.20,color:'#702eb0'}, Sr:{r:1.95,color:'#00ff00'},
+  Y:{r:1.90,color:'#94ffff'},  Zr:{r:1.75,color:'#94e0e0'},
+  Nb:{r:1.64,color:'#73c2c9'}, Mo:{r:1.54,color:'#54b5b5'},
+  Tc:{r:1.47,color:'#3b9e9e'}, Ru:{r:1.46,color:'#248f8f'},
+  Rh:{r:1.42,color:'#0a7d8c'}, Pd:{r:1.39,color:'#006985'},
+  Ag:{r:1.45,color:'#c0c0c0'}, Cd:{r:1.44,color:'#ffd98f'},
+  In:{r:1.42,color:'#a67573'}, Sn:{r:1.39,color:'#668080'},
+  Sb:{r:1.39,color:'#9e63b5'}, Te:{r:1.38,color:'#d47a00'},
+  I:{r:1.39,color:'#940094'},  Xe:{r:1.40,color:'#429eb0'},
+  Cs:{r:2.44,color:'#57178f'}, Ba:{r:2.15,color:'#00c900'},
+  La:{r:2.07,color:'#70d4ff'}, Ce:{r:2.04,color:'#ffffc7'},
+  Pr:{r:2.03,color:'#d9ffc7'}, Nd:{r:2.01,color:'#c7ffc7'},
+  Pm:{r:1.99,color:'#a3ffc7'}, Sm:{r:1.98,color:'#8fffc7'},
+  Eu:{r:1.98,color:'#61ffc7'}, Gd:{r:1.96,color:'#45ffc7'},
+  Tb:{r:1.94,color:'#30ffc7'}, Dy:{r:1.92,color:'#1fffc7'},
+  Ho:{r:1.92,color:'#00ff9c'}, Er:{r:1.89,color:'#00e675'},
+  Tm:{r:1.90,color:'#00d452'}, Yb:{r:1.87,color:'#00bf38'},
+  Lu:{r:1.87,color:'#00ab24'}, Hf:{r:1.75,color:'#4dc2ff'},
+  Ta:{r:1.70,color:'#4da6ff'}, W:{r:1.62,color:'#2194d6'},
+  Re:{r:1.51,color:'#267dab'}, Os:{r:1.44,color:'#266696'},
+  Ir:{r:1.41,color:'#175487'}, Pt:{r:1.36,color:'#d0d0e0'},
+  Au:{r:1.36,color:'#ffd123'}, Hg:{r:1.32,color:'#b8b8d0'},
+  Tl:{r:1.45,color:'#a6544d'}, Pb:{r:1.46,color:'#575961'},
+  Bi:{r:1.48,color:'#9e4fb5'}, U:{r:1.96,color:'#008fff'},
+};
+
+export const ELEM_KEYS = Object.keys(ELEMENTS);
+
+export const MASSES = {
+  H:1.008,He:4.003,Li:6.941,Be:9.012,B:10.811,C:12.011,N:14.007,O:15.999,F:18.998,Ne:20.18,
+  Na:22.99,Mg:24.305,Al:26.982,Si:28.086,P:30.974,S:32.06,Cl:35.453,Ar:39.948,K:39.098,Ca:40.078,
+  Sc:44.956,Ti:47.867,V:50.942,Cr:51.996,Mn:54.938,Fe:55.845,Co:58.933,Ni:58.693,Cu:63.546,Zn:65.38,
+  Ga:69.723,Ge:72.63,As:74.922,Se:78.96,Br:79.904,Kr:83.798,Rb:85.468,Sr:87.62,Y:88.906,Zr:91.224,
+  Nb:92.906,Mo:95.96,Tc:98,Ru:101.07,Rh:102.906,Pd:106.42,Ag:107.868,Cd:112.411,In:114.818,Sn:118.71,
+  Sb:121.76,Te:127.6,I:126.904,Xe:131.293,Cs:132.905,Ba:137.327,La:138.905,Ce:140.116,U:238.029,
+  W:183.84,Pt:195.084,Au:196.967,Pb:207.2,Bi:208.98,
+};
+
+export function getAtomicMass(sym) { 
+  return MASSES[sym] || 100.0; 
+}

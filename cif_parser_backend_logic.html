@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIF Parser Backend: Code & Logic Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --bg: #030408;
+            --panel: #0d0f17;
+            --accent: #00f2ff;
+            --text: #e2e8f0;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .code-panel {
+            background: #000;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .explanation-panel {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .math-box {
+            background: rgba(0, 242, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        h3 { color: #fff; margin-top: 0; }
+
+        pre[class*="language-"] {
+            margin: 0;
+            border-radius: 0;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div style="display: flex; align-items: center; gap: 30px; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid var(--border);">
+                <img src="ematai_lab_logo.png" style="width: 90px; height: 90px; border-radius: 20px; border: 2px solid var(--border); background: #fff; padding: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <div>
+                    <div style="color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 8px;">EMat-AI Lab</div>
+                    <h1 style="font-size: 3rem; margin: 0; line-height: 1;">Padarthkhoj <span style="color: var(--accent);">Tools</span></h1>
+                    <div style="font-size: 1.1rem; color: var(--text-dim); margin-top: 10px;">Backend Architecture & Symmetry Algorithms</div>
+                </div>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                <div class="explanation-panel" style="padding: 15px 25px; margin: 0;">
+                    <a href="https://sites.google.com/view/ematailab/home" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 800; font-size: 1rem;">Explore EMat-AI Lab ↗</a>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; color: #000; font-weight: 800;">SG</div>
+                    <div>
+                        <div style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px;">Architect</div>
+                        <a href="https://github.com/CoderOnTheRoad" target="_blank" style="color: var(--text); text-decoration: none; font-weight: 700; font-size: 1rem;">Sourav Ghosh</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section 1: Lattice Matrix -->
+        <section>
+            <h2>01. Lattice Matrix Generation</h2>
+            <div class="grid">
+                <div class="code-panel">
+<pre><code class="language-javascript">const cosg = Math.cos(gamma), sing = Math.sin(gamma);
+const cosb = Math.cos(beta);
+const cosa = Math.cos(alpha);
+const vol  = Math.sqrt(1 - cosa*cosa - cosb*cosb - cosg*cosg 
+             + 2*cosa*cosb*cosg);
+const mat  = [
+  [a, b*cosg, c*cosb],
+  [0, b*sing, c*(cosa - cosb*cosg)/sing],
+  [0, 0,      c*vol/sing],
+];</code></pre>
+                </div>
+                <div class="explanation-panel">
+                    <h3>The Physics of Real-Space</h3>
+                    <p>This code constructs the conversion matrix $\mathbf{M}$ that maps unitless fractional sites to physical coordinates in Ångströms.</p>
+                    <div class="math-box">
+                        \[ \mathbf{r}_{cart} = \mathbf{M} \cdot \mathbf{r}_{fract} \]
+                    </div>
+                    <p>The matrix is an upper-triangular representation of the lattice vectors. The <code>vol</code> variable calculates the fractional volume of the unit cell, ensuring that even non-orthogonal systems (like Hexagonal or Triclinic) are handled with exact trigonometric precision.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Symmetry Logic -->
+        <section>
+            <h2>02. Algebraic Symmetry Parsing</h2>
+            <div class="grid">
+                <div class="code-panel">
+<pre><code class="language-javascript">function parseSymFormula(formula) {
+  // Regex: [+-]([0-9]+/[0-9]+|[0-9]+)?([xyz](/[0-9]+)?)?
+  const re = /[+-]([0-9]+\/[0-9]+|[0-9]+)?([xyz](\/[0-9]+)?)?/gi;
+  let xC = 0, yC = 0, zC = 0, ct = 0;
+  // ... extraction logic ...
+  return { xC, yC, zC, ct };
+}</code></pre>
+                </div>
+                <div class="explanation-panel">
+                    <h3>Symmetry as Linear Algebra</h3>
+                    <p>Instead of risky string evaluation, the code treats symmetry operators as linear transformations. The regex parses <code>"x+1/2"</code> into numeric coefficients.</p>
+                    <div class="math-box">
+                        \[ \begin{pmatrix} \xi' \\ \eta' \\ \zeta' \end{pmatrix} = 
+                        \begin{pmatrix} S_{xx} & S_{xy} & S_{xz} \\ S_{yx} & S_{yy} & S_{yz} \\ S_{zx} & S_{zy} & S_{zz} \end{pmatrix} 
+                        \begin{pmatrix} \xi \\ \eta \\ \zeta \end{pmatrix} + \mathbf{\tau} \]
+                    </div>
+                    <p>By returning an object with <code>xC, yC, zC</code>, we convert a human-readable string into a set of 3D vectors that can be processed instantly by the CPU.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Deduplication -->
+        <section>
+            <h2>03. The Cartesian Collision Guard</h2>
+            <div class="grid">
+                <div class="code-panel">
+<pre><code class="language-javascript">// Burai Parity: check Cartesian distance < R_MIN
+let dup = false;
+for(const ex of expandedAtoms) {
+  const dx = nx-ex.x, dy = ny-ex.y, dz = nz-ex.z;
+  if(dx*dx + dy*dy + dz*dz < R_MIN_SQ) { 
+    dup = true; 
+    break; 
+  }
+}</code></pre>
+                </div>
+                <div class="explanation-panel">
+                    <h3>Mitigating Floating Point Drift</h3>
+                    <p>The most common error in CIF parsing occurs at periodic boundaries (e.g. $0.9999$ and $0.0001$). A simple equality test fails here.</p>
+                    <p>This code implements the <b>Burai software standard</b>: it converts atoms to Cartesian Ångströms before comparison and uses a squared distance threshold.</p>
+                    <div class="math-box">
+                        \[ R^2 = \Delta x^2 + \Delta y^2 + \Delta z^2 < (10^{-3})^2 \]
+                    </div>
+                    <p>This ensures that "Ghost Atoms" created by symmetry operations are perfectly merged into a single physical site.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; color: var(--text-dim); margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--border);">
+            Built by <a href="https://sites.google.com/view/ematailab/home" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">EMat-AI Lab</a> | 
+            Moderated by <a href="https://github.com/CoderOnTheRoad" target="_blank" style="color: var(--text); text-decoration: none; font-weight: 600;">Sourav Ghosh</a>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+</html>

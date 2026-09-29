@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "1.0.0",
+  "sourceCode": "Quantum ESPRESSO projwfc.x",
+  "referenceType": "user-supplied real PDOS",
+  "fermiEnergyAvailable": true,
+  "fermiEnergiesEv": {
+    "C-p": -3.162,
+    "Cu-pd": -1.6468,
+    "Ag-pd": -1.894,
+    "Fe-pd": -1.746
+  },
+  "scopeNote": "Full-grid integrals validate parsing and numerical processing. They are not labelled physical occupancies because calculation-specific Fermi energies were not supplied.",
+  "files": [
+    {"filename":"full.pdos_atm#2(C)_wfc#2(p)","group":"C-p","species":"C","atomNumber":2,"orbital":"p","sha256":"43eab70592ee3b8b934bcc5dfd0dd022fe7d12d57165a6c702a7d0e2fb91af0c"},
+    {"filename":"1D_relax.pdos_atm#1(Cu)_wfc#2(p)","group":"Cu-pd","species":"Cu","atomNumber":1,"orbital":"p","sha256":"acf9594a18bfe229ddd63bbbf2de5dbd12b75362f51a7a7793a5797a645b77b9"},
+    {"filename":"1D_relax.pdos_atm#1(Cu)_wfc#3(d)","group":"Cu-pd","species":"Cu","atomNumber":1,"orbital":"d","sha256":"78c1cd422a232cf9a8be4b5444d2018cd131079239d86addf717965ed9f41488"},
+    {"filename":"2NCB_Ag.pdos_atm#30(Ag)_wfc#2(p)","group":"Ag-pd","species":"Ag","atomNumber":30,"orbital":"p","sha256":"18daaf05bce1906b666705f9266b55265c828f51408450c627a26e6ac1e4315c"},
+    {"filename":"2NCB_Ag.pdos_atm#30(Ag)_wfc#3(d)","group":"Ag-pd","species":"Ag","atomNumber":30,"orbital":"d","sha256":"a58b743f52845bd9a01d2f66dc8637bd2c58b0d133f0b0a7164816b72098a9d8"},
+    {"filename":"2NCB_Fe.pdos_atm#29(Fe)_wfc#2(p)","group":"Fe-pd","species":"Fe","atomNumber":29,"orbital":"p","sha256":"6072cc9eb203d960b482836ee79c446366f6ce70af7d31fe75e5a2267cec7e28"},
+    {"filename":"2NCB_Fe.pdos_atm#29(Fe)_wfc#3(d)","group":"Fe-pd","species":"Fe","atomNumber":29,"orbital":"d","sha256":"c90f365dd6f246e9f83587d84fe3460c2886eae285f4c6d20f9e8f79d42b4971"}
+  ]
+}

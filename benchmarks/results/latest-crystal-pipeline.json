@@ -1,0 +1,572 @@
+{
+  "schemaVersion": 1,
+  "benchmarkType": "Crystal Structure Studio CIF editing, bonding, round trip, and QE conversion",
+  "environment": {
+    "timestampUtc": "2026-08-14T10:10:58.912Z",
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M2"
+  },
+  "summary": {
+    "structures": 4,
+    "totalAtoms": 545,
+    "largestStructureAtoms": 336,
+    "rules": 82,
+    "passed": 82,
+    "failed": 0
+  },
+  "rules": [
+    {
+      "scope": "triclinic",
+      "rule": "parser returned structure",
+      "status": "pass",
+      "detail": "2 atoms"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "expected atom count",
+      "status": "pass",
+      "detail": "2 atoms"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "finite fractional coordinates",
+      "status": "pass",
+      "detail": "all finite"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "fractional coordinates packed",
+      "status": "pass",
+      "detail": "all within [0,1)"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "finite Cartesian coordinates",
+      "status": "pass",
+      "detail": "all finite"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "valid lattice classification",
+      "status": "pass",
+      "detail": "triclinic; ibrav 14"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "expected lattice",
+      "status": "pass",
+      "detail": "triclinic"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "positive k mesh",
+      "status": "pass",
+      "detail": "3×3×2"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "bond scaling monotonic",
+      "status": "pass",
+      "detail": "0 at 80%; 0 at 115%"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "bond distances finite",
+      "status": "pass",
+      "detail": "all positive and finite"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "custom pair threshold applied",
+      "status": "pass",
+      "detail": "0 remaining bonds"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "edit atom count invariant",
+      "status": "pass",
+      "detail": "2 atoms after delete + add"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "element replacement",
+      "status": "pass",
+      "detail": "C → O"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "fractional displacement",
+      "status": "pass",
+      "detail": "Δfrac = 0.001, 0.002, 0.003"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "added atom preserved",
+      "status": "pass",
+      "detail": "last atom H"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "cell round trip",
+      "status": "pass",
+      "detail": "six cell parameters preserved"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "QE crystal conversion",
+      "status": "pass",
+      "detail": "2 atoms"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "QE Cartesian conversion",
+      "status": "pass",
+      "detail": "2 atoms"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "QE species include edits",
+      "status": "pass",
+      "detail": "H, O"
+    },
+    {
+      "scope": "triclinic",
+      "rule": "clean exports",
+      "status": "pass",
+      "detail": "no invalid numeric tokens"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "parser returned structure",
+      "status": "pass",
+      "detail": "3 atoms"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "expected atom count",
+      "status": "pass",
+      "detail": "3 atoms"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "finite fractional coordinates",
+      "status": "pass",
+      "detail": "all finite"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "fractional coordinates packed",
+      "status": "pass",
+      "detail": "all within [0,1)"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "finite Cartesian coordinates",
+      "status": "pass",
+      "detail": "all finite"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "valid lattice classification",
+      "status": "pass",
+      "detail": "cubic; ibrav 1"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "expected lattice",
+      "status": "pass",
+      "detail": "cubic"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "positive k mesh",
+      "status": "pass",
+      "detail": "3×3×3"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "symmetry expansion and deduplication",
+      "status": "pass",
+      "detail": "{\"Cl\":1,\"Na\":2}"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "bond scaling monotonic",
+      "status": "pass",
+      "detail": "1 at 80%; 1 at 115%"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "bond distances finite",
+      "status": "pass",
+      "detail": "all positive and finite"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "custom pair threshold applied",
+      "status": "pass",
+      "detail": "2 remaining bonds"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "edit atom count invariant",
+      "status": "pass",
+      "detail": "3 atoms after delete + add"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "element replacement",
+      "status": "pass",
+      "detail": "Na → O"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "fractional displacement",
+      "status": "pass",
+      "detail": "Δfrac = 0.001, 0.002, 0.003"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "added atom preserved",
+      "status": "pass",
+      "detail": "last atom H"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "cell round trip",
+      "status": "pass",
+      "detail": "six cell parameters preserved"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "QE crystal conversion",
+      "status": "pass",
+      "detail": "3 atoms"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "QE Cartesian conversion",
+      "status": "pass",
+      "detail": "3 atoms"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "QE species include edits",
+      "status": "pass",
+      "detail": "H, Na, O"
+    },
+    {
+      "scope": "nacl-symmetry",
+      "rule": "clean exports",
+      "status": "pass",
+      "detail": "no invalid numeric tokens"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "parser returned structure",
+      "status": "pass",
+      "detail": "204 atoms"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "expected atom count",
+      "status": "pass",
+      "detail": "204 atoms"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "finite fractional coordinates",
+      "status": "pass",
+      "detail": "all finite"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "fractional coordinates packed",
+      "status": "pass",
+      "detail": "all within [0,1)"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "finite Cartesian coordinates",
+      "status": "pass",
+      "detail": "all finite"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "valid lattice classification",
+      "status": "pass",
+      "detail": "cubic; ibrav 1"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "positive k mesh",
+      "status": "pass",
+      "detail": "1×1×1"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "bond scaling monotonic",
+      "status": "pass",
+      "detail": "0 at 80%; 232 at 115%"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "bond distances finite",
+      "status": "pass",
+      "detail": "all positive and finite"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "custom pair threshold applied",
+      "status": "pass",
+      "detail": "159 remaining bonds"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "edit atom count invariant",
+      "status": "pass",
+      "detail": "204 atoms after delete + add"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "element replacement",
+      "status": "pass",
+      "detail": "C → O"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "fractional displacement",
+      "status": "pass",
+      "detail": "Δfrac = 0.001, 0.002, 0.003"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "added atom preserved",
+      "status": "pass",
+      "detail": "last atom H"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "cell round trip",
+      "status": "pass",
+      "detail": "six cell parameters preserved"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "QE crystal conversion",
+      "status": "pass",
+      "detail": "204 atoms"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "QE Cartesian conversion",
+      "status": "pass",
+      "detail": "204 atoms"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "QE species include edits",
+      "status": "pass",
+      "detail": "C, H, N, O"
+    },
+    {
+      "scope": "halfc1-real",
+      "rule": "clean exports",
+      "status": "pass",
+      "detail": "no invalid numeric tokens"
+    },
+    {
+      "scope": "full-real",
+      "rule": "parser returned structure",
+      "status": "pass",
+      "detail": "336 atoms"
+    },
+    {
+      "scope": "full-real",
+      "rule": "expected atom count",
+      "status": "pass",
+      "detail": "336 atoms"
+    },
+    {
+      "scope": "full-real",
+      "rule": "finite fractional coordinates",
+      "status": "pass",
+      "detail": "all finite"
+    },
+    {
+      "scope": "full-real",
+      "rule": "fractional coordinates packed",
+      "status": "pass",
+      "detail": "all within [0,1)"
+    },
+    {
+      "scope": "full-real",
+      "rule": "finite Cartesian coordinates",
+      "status": "pass",
+      "detail": "all finite"
+    },
+    {
+      "scope": "full-real",
+      "rule": "valid lattice classification",
+      "status": "pass",
+      "detail": "cubic; ibrav 1"
+    },
+    {
+      "scope": "full-real",
+      "rule": "positive k mesh",
+      "status": "pass",
+      "detail": "1×1×1"
+    },
+    {
+      "scope": "full-real",
+      "rule": "bond scaling monotonic",
+      "status": "pass",
+      "detail": "0 at 80%; 388 at 115%"
+    },
+    {
+      "scope": "full-real",
+      "rule": "bond distances finite",
+      "status": "pass",
+      "detail": "all positive and finite"
+    },
+    {
+      "scope": "full-real",
+      "rule": "custom pair threshold applied",
+      "status": "pass",
+      "detail": "264 remaining bonds"
+    },
+    {
+      "scope": "full-real",
+      "rule": "edit atom count invariant",
+      "status": "pass",
+      "detail": "336 atoms after delete + add"
+    },
+    {
+      "scope": "full-real",
+      "rule": "element replacement",
+      "status": "pass",
+      "detail": "C → O"
+    },
+    {
+      "scope": "full-real",
+      "rule": "fractional displacement",
+      "status": "pass",
+      "detail": "Δfrac = 0.001, 0.002, 0.003"
+    },
+    {
+      "scope": "full-real",
+      "rule": "added atom preserved",
+      "status": "pass",
+      "detail": "last atom H"
+    },
+    {
+      "scope": "full-real",
+      "rule": "cell round trip",
+      "status": "pass",
+      "detail": "six cell parameters preserved"
+    },
+    {
+      "scope": "full-real",
+      "rule": "QE crystal conversion",
+      "status": "pass",
+      "detail": "336 atoms"
+    },
+    {
+      "scope": "full-real",
+      "rule": "QE Cartesian conversion",
+      "status": "pass",
+      "detail": "336 atoms"
+    },
+    {
+      "scope": "full-real",
+      "rule": "QE species include edits",
+      "status": "pass",
+      "detail": "C, H, N, O"
+    },
+    {
+      "scope": "full-real",
+      "rule": "clean exports",
+      "status": "pass",
+      "detail": "no invalid numeric tokens"
+    },
+    {
+      "scope": "periodic bonding",
+      "rule": "minimum-image bond detected",
+      "status": "pass",
+      "detail": "0.20000000000000018 Å"
+    },
+    {
+      "scope": "invalid CIF",
+      "rule": "missing atoms",
+      "status": "pass",
+      "detail": "null"
+    },
+    {
+      "scope": "invalid CIF",
+      "rule": "non-numeric coordinates",
+      "status": "pass",
+      "detail": "null"
+    }
+  ],
+  "cases": [
+    {
+      "case": "triclinic",
+      "source_sha256": "3818734743740a4073f66e89d17005ab0c94ddab92631ad508a873e441b74bfd",
+      "atoms": 2,
+      "species": 2,
+      "lattice": "triclinic",
+      "ibrav": 14,
+      "k_mesh": "3x3x2",
+      "bonds_80_percent": 0,
+      "bonds_115_percent": 0,
+      "parse_ms": 0.897708999999999,
+      "bond_ms": 0.07441699999999685,
+      "edit_export_qe_ms": 0.7600839999999991
+    },
+    {
+      "case": "nacl-symmetry",
+      "source_sha256": "568ad6199d383abceacb1b1973fd78154b99649f5049d62aa867bf9c6d55b792",
+      "atoms": 3,
+      "species": 2,
+      "lattice": "cubic",
+      "ibrav": 1,
+      "k_mesh": "3x3x3",
+      "bonds_80_percent": 1,
+      "bonds_115_percent": 1,
+      "parse_ms": 0.17433299999999718,
+      "bond_ms": 0.0733329999999981,
+      "edit_export_qe_ms": 0.22845800000000338
+    },
+    {
+      "case": "halfc1-real",
+      "source_sha256": "0b8432ae1156f1c515488a84ecdbcec30665b7e8dc1a73ce1b24601da79c6708",
+      "atoms": 204,
+      "species": 3,
+      "lattice": "cubic",
+      "ibrav": 1,
+      "k_mesh": "1x1x1",
+      "bonds_80_percent": 0,
+      "bonds_115_percent": 232,
+      "parse_ms": 4.701374999999999,
+      "bond_ms": 10.832875000000001,
+      "edit_export_qe_ms": 1.9280830000000009
+    },
+    {
+      "case": "full-real",
+      "source_sha256": "884c27dd4f97af14b2240db629cd790d7fbe72002916d287cc669d4095bcdb86",
+      "atoms": 336,
+      "species": 3,
+      "lattice": "cubic",
+      "ibrav": 1,
+      "k_mesh": "1x1x1",
+      "bonds_80_percent": 0,
+      "bonds_115_percent": 388,
+      "parse_ms": 1.288375000000002,
+      "bond_ms": 23.011875000000003,
+      "edit_export_qe_ms": 3.084666999999996
+    }
+  ]
+}

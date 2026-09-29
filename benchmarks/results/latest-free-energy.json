@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 1,
+  "benchmarkType": "Free Energy Diagram Studio parsing, connectivity, styling, and PNG export configuration",
+  "scopeNote": "Canvas exports are exercised through the production renderer in both themes; browser download triggering itself is outside this headless benchmark.",
+  "environment": {
+    "timestampUtc": "2026-08-14T10:10:58.791Z",
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M2"
+  },
+  "summary": {
+    "cases": 4,
+    "totalRows": 21,
+    "totalConnections": 17,
+    "rules": 63,
+    "passed": 63,
+    "failed": 0
+  },
+  "rules": [
+    {
+      "scope": "single-comma",
+      "rule": "row count",
+      "status": "pass",
+      "detail": "4 rows"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "branch count",
+      "status": "pass",
+      "detail": "main"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "unique reaction steps",
+      "status": "pass",
+      "detail": "1, 2, 3, 4"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "energy preservation",
+      "status": "pass",
+      "detail": "-0.76 to 0.18 eV"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "within-branch ordering",
+      "status": "pass",
+      "detail": "all grouped steps sorted"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "padded Y range",
+      "status": "pass",
+      "detail": "-0.901 to 0.32099999999999995 eV"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "finite tick interval",
+      "status": "pass",
+      "detail": "0.2 eV"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "unique automatic connections",
+      "status": "pass",
+      "detail": "3 connections"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "valid connection endpoints",
+      "status": "pass",
+      "detail": "main|1|right|main|2|left; main|2|right|main|3|left; main|3|right|main|4|left"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "connection key round trip",
+      "status": "pass",
+      "detail": "all canonical keys restored"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "continuity endpoints valid",
+      "status": "pass",
+      "detail": "0 ghost connectors"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "light render",
+      "status": "pass",
+      "detail": "313 drawing operations"
+    },
+    {
+      "scope": "single-comma",
+      "rule": "dark render",
+      "status": "pass",
+      "detail": "313 drawing operations"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "row count",
+      "status": "pass",
+      "detail": "6 rows"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "branch count",
+      "status": "pass",
+      "detail": "main, path-B"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "unique reaction steps",
+      "status": "pass",
+      "detail": "1, 2, 3, 4"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "energy preservation",
+      "status": "pass",
+      "detail": "-0.64 to 0.42 eV"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "within-branch ordering",
+      "status": "pass",
+      "detail": "all grouped steps sorted"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "padded Y range",
+      "status": "pass",
+      "detail": "-0.799 to 0.579 eV"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "finite tick interval",
+      "status": "pass",
+      "detail": "0.2 eV"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "unique automatic connections",
+      "status": "pass",
+      "detail": "5 connections"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "valid connection endpoints",
+      "status": "pass",
+      "detail": "main|1|right|main|2|left; main|1|right|path-B|2|left; main|2|right|main|3|left; path-B|2|right|path-B|3|left; main|3|right|main|4|left"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "connection key round trip",
+      "status": "pass",
+      "detail": "all canonical keys restored"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "continuity endpoints valid",
+      "status": "pass",
+      "detail": "2 ghost connectors"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "light render",
+      "status": "pass",
+      "detail": "380 drawing operations"
+    },
+    {
+      "scope": "branched-tab",
+      "rule": "dark render",
+      "status": "pass",
+      "detail": "380 drawing operations"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "row count",
+      "status": "pass",
+      "detail": "8 rows"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "branch count",
+      "status": "pass",
+      "detail": "A, B, C"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "unique reaction steps",
+      "status": "pass",
+      "detail": "1, 2, 3, 4"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "energy preservation",
+      "status": "pass",
+      "detail": "-0.7 to 0.5 eV"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "within-branch ordering",
+      "status": "pass",
+      "detail": "all grouped steps sorted"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "padded Y range",
+      "status": "pass",
+      "detail": "-0.8799999999999999 to 0.6799999999999999 eV"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "finite tick interval",
+      "status": "pass",
+      "detail": "0.2 eV"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "unique automatic connections",
+      "status": "pass",
+      "detail": "7 connections"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "valid connection endpoints",
+      "status": "pass",
+      "detail": "A|1|right|A|2|left; A|1|right|B|2|left; A|1|right|C|2|left; A|2|right|A|3|left; B|2|right|B|3|left; C|2|right|C|3|left; A|3|right|A|4|left"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "connection key round trip",
+      "status": "pass",
+      "detail": "all canonical keys restored"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "continuity endpoints valid",
+      "status": "pass",
+      "detail": "4 ghost connectors"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "light render",
+      "status": "pass",
+      "detail": "344 drawing operations"
+    },
+    {
+      "scope": "split-merge-semicolon",
+      "rule": "dark render",
+      "status": "pass",
+      "detail": "344 drawing operations"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "row count",
+      "status": "pass",
+      "detail": "3 rows"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "branch count",
+      "status": "pass",
+      "detail": "route"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "unique reaction steps",
+      "status": "pass",
+      "detail": "1, 2, 3"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "energy preservation",
+      "status": "pass",
+      "detail": "-1.2 to 0.8 eV"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "within-branch ordering",
+      "status": "pass",
+      "detail": "all grouped steps sorted"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "padded Y range",
+      "status": "pass",
+      "detail": "-1.5 to 1.1 eV"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "finite tick interval",
+      "status": "pass",
+      "detail": "0.5 eV"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "unique automatic connections",
+      "status": "pass",
+      "detail": "2 connections"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "valid connection endpoints",
+      "status": "pass",
+      "detail": "route|1|right|route|2|left; route|2|right|route|3|left"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "connection key round trip",
+      "status": "pass",
+      "detail": "all canonical keys restored"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "continuity endpoints valid",
+      "status": "pass",
+      "detail": "0 ghost connectors"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "light render",
+      "status": "pass",
+      "detail": "266 drawing operations"
+    },
+    {
+      "scope": "unordered-whitespace",
+      "rule": "dark render",
+      "status": "pass",
+      "detail": "266 drawing operations"
+    },
+    {
+      "scope": "connection utilities",
+      "rule": "legacy normalization",
+      "status": "pass",
+      "detail": "A|1|right|A|2|left"
+    },
+    {
+      "scope": "connection utilities",
+      "rule": "legacy key migration",
+      "status": "pass",
+      "detail": "A|1|right|B|2|left"
+    },
+    {
+      "scope": "axis",
+      "rule": "legacy configuration migration",
+      "status": "pass",
+      "detail": "top X and right Y preserved"
+    },
+    {
+      "scope": "axis",
+      "rule": "four-sided defaults",
+      "status": "pass",
+      "detail": "bottom, top, left, right"
+    },
+    {
+      "scope": "export",
+      "rule": "inch-to-pixel conversion",
+      "status": "pass",
+      "detail": "1800 × 1200"
+    },
+    {
+      "scope": "export",
+      "rule": "pixel mode is DPI independent",
+      "status": "pass",
+      "detail": "1920 × 1080"
+    },
+    {
+      "scope": "style template",
+      "rule": "global plot style copied",
+      "status": "pass",
+      "detail": "line, bar and point styles"
+    },
+    {
+      "scope": "style template",
+      "rule": "matching branch colors copied",
+      "status": "pass",
+      "detail": "main and path-B"
+    },
+    {
+      "scope": "style template",
+      "rule": "legend labels and position copied",
+      "status": "pass",
+      "detail": "custom labels; bottom-left"
+    },
+    {
+      "scope": "style template",
+      "rule": "target axis label preserved",
+      "status": "pass",
+      "detail": "Target ΔG; 3 decimals"
+    },
+    {
+      "scope": "style template",
+      "rule": "annotation copied independently",
+      "status": "pass",
+      "detail": "deep copy"
+    }
+  ],
+  "cases": [
+    {
+      "case": "single-comma",
+      "delimiter": "comma",
+      "rows": 4,
+      "sub_branches": 1,
+      "unique_steps": 4,
+      "connections": 3,
+      "continuity_connectors": 0,
+      "energy_min_eV": -0.76,
+      "energy_max_eV": 0.18,
+      "y_min_eV": -0.901,
+      "y_max_eV": 0.32099999999999995,
+      "parse_and_analyse_ms": 2.123417
+    },
+    {
+      "case": "branched-tab",
+      "delimiter": "tab",
+      "rows": 6,
+      "sub_branches": 2,
+      "unique_steps": 4,
+      "connections": 5,
+      "continuity_connectors": 2,
+      "energy_min_eV": -0.64,
+      "energy_max_eV": 0.42,
+      "y_min_eV": -0.799,
+      "y_max_eV": 0.579,
+      "parse_and_analyse_ms": 0.9234170000000006
+    },
+    {
+      "case": "split-merge-semicolon",
+      "delimiter": "semicolon",
+      "rows": 8,
+      "sub_branches": 3,
+      "unique_steps": 4,
+      "connections": 7,
+      "continuity_connectors": 4,
+      "energy_min_eV": -0.7,
+      "energy_max_eV": 0.5,
+      "y_min_eV": -0.8799999999999999,
+      "y_max_eV": 0.6799999999999999,
+      "parse_and_analyse_ms": 0.2711669999999984
+    },
+    {
+      "case": "unordered-whitespace",
+      "delimiter": "whitespace",
+      "rows": 3,
+      "sub_branches": 1,
+      "unique_steps": 3,
+      "connections": 2,
+      "continuity_connectors": 0,
+      "energy_min_eV": -1.2,
+      "energy_max_eV": 0.8,
+      "y_min_eV": -1.5,
+      "y_max_eV": 1.1,
+      "parse_and_analyse_ms": 0.16070900000000066
+    }
+  ]
+}

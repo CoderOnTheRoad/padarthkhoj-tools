@@ -1,0 +1,44 @@
+{
+  "name": "padarthkhoj-tools",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "test": "node --test",
+    "benchmark": "node benchmarks/scripts/run-all-benchmarks.js",
+    "benchmark:zpe": "node benchmarks/scripts/run-benchmarks.js --module zpe-ts",
+    "benchmark:zpe-excel": "node benchmarks/scripts/run-zpe-excel-benchmark.js",
+    "benchmark:orbital-real": "node benchmarks/scripts/run-orbital-real-benchmark.js",
+    "benchmark:bader-real": "node benchmarks/scripts/run-bader-real-benchmark.js",
+    "benchmark:qe-workflows": "node benchmarks/scripts/run-qe-workflow-benchmark.js",
+    "benchmark:intermediates": "node benchmarks/scripts/run-intermediate-maker-benchmark.js",
+    "benchmark:custom-pathways": "node benchmarks/scripts/run-custom-pathway-benchmark.js",
+    "benchmark:dos-pipeline": "node benchmarks/scripts/run-dos-pipeline-benchmark.js",
+    "benchmark:free-energy": "node benchmarks/scripts/run-free-energy-benchmark.js",
+    "benchmark:crystal-pipeline": "node benchmarks/scripts/run-crystal-pipeline-benchmark.js",
+    "benchmark:qe-output": "node benchmarks/scripts/run-qe-output-benchmark.js",
+    "benchmark:pilot": "node benchmarks/scripts/run-benchmarks.js",
+    "check": "npm run lint && npm test && npm run build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "jszip": "^3.10.1",
+    "tailwind-merge": "^3.5.0",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "vite": "^8.0.10"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "caseId": "bader-vasp-mismatched-atom-count-001",
+  "sourceCode": "VASP",
+  "expectedOutcome": "rejected-mismatched-pair",
+  "provenance": "User-supplied real files initially presented as one VASP set; inspection established that they are from different structures or calculation states.",
+  "files": {
+    "ACF.dat": {"sha256": "73ac7c2dc91cc3a9a8835f140bc1cb855e7e2d75b1789770cb1cbc2f91c90969", "atomRows": 156},
+    "CONTCAR": {"sha256": "a78ba5d9851e117e1ab9a88c5b921b1fed8fa802a14156ca85d07c6f538281da", "atomRows": 152}
+  },
+  "structureSpecies": {"Cu": 10, "S": 6, "O": 10, "F": 12, "N": 2, "C": 40, "H": 72},
+  "assumedReferenceElectrons": {
+    "Cu": 11,
+    "S": 6,
+    "O": 6,
+    "F": 7,
+    "N": 5,
+    "C": 4,
+    "H": 1
+  },
+  "frozenCoreElectronsForInterface": {"Cu": 18, "S": 10, "O": 2, "F": 2, "N": 2, "C": 2, "H": 0},
+  "referenceElectronNote": "These are assumed standard valence-electron counts used as provisional Bader references: Cu 11 (3d10 4s1), S 6, O 6, F 7, N 5, C 4, and H 1. They must be verified against POTCAR ZVAL values before publication. They are often called core-electron inputs in the interface, but scientifically they are the neutral-reference/valence electron counts when ACF.dat was generated from valence density.",
+  "diagnostic": "ACF.dat contains 156 atoms but CONTCAR contains 152 atoms. Coordinates also do not align, so charge-to-element mapping is unsafe.",
+  "scientificUse": "Negative robustness benchmark only; do not calculate or report element-resolved Bader charges from this pair."
+}

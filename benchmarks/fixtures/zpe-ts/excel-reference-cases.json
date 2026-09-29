@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "1.0.0",
+  "source": {
+    "workbook": "ZPE & TS Energy calculation.xlsx",
+    "referenceType": "user-calculated Excel reference",
+    "notes": "Values are preserved from the approved workbook sheets. The source workbook is not copied into the repository.",
+    "excludedSheets": ["Sheet1", "Sheet2", "CH4_ads", "CO2_adsorbed"]
+  },
+  "excelConstants": {
+    "planckJsWorking": 6.63e-34,
+    "planckJsDisplayed": 6.62607015e-34,
+    "electronVoltJ": 1.602e-19,
+    "kTj": 4.11e-21,
+    "kTev": 0.025,
+    "temperatureK": null,
+    "note": "The workbook does not state temperature in kelvin. kT in joules and kT in eV are preserved exactly as used and are not mutually equivalent under the stated eV conversion."
+  },
+  "cases": [
+    {"id":"excel-cooh","sheet":"COOH","frequenciesThz":[4.7581,7.3579,8.5698,12.4484,13.8811,18.4227,21.7035,22.2163,33.0672,38.7491,46.514,105.3892],"excelResults":{"zpeEv":0.6892329897003745,"tsEv":0.10734654355117641}},
+    {"id":"excel-co","sheet":"CO","frequenciesThz":[6.26,8.7941,16.157,17.315,17.69,54.6218],"excelResults":{"zpeEv":0.2500484634831461,"tsEv":0.06317218023006917}},
+    {"id":"excel-cho","sheet":"CHO","frequenciesThz":[5.8957,6.2231,8.1778,14.2055,21.8228,25.9382,39.7091,47.9417,81.9014],"excelResults":{"zpeEv":0.5210784765917603,"tsEv":0.08786321859490569}},
+    {"id":"excel-coh","sheet":"COH","frequenciesThz":[6.293,8.5307,15.6242,16.9981,18.1303,22.7442,35.8974,42.1085,105.8243],"excelResults":{"zpeEv":0.5631582837078651,"tsEv":0.06787918665181197}},
+    {"id":"excel-2co","sheet":"2CO","frequenciesThz":[4.6336,5.1456,6.0771,9.1659,13.4462,13.997,14.8094,15.6811,16.4333,18.0469,53.951,59.4596],"excelResults":{"zpeEv":0.47768839606741575,"tsEv":0.15495097781739695}},
+    {"id":"excel-cocoh","sheet":"COCOH","frequenciesThz":[5.3471,7.3804,7.7068,8.6444,13.3461,13.5492,14.3021,16.9383,18.2918,23.8193,30.7746,33.5356,39.5062,54.1448,108.0113],"excelResults":{"zpeEv":0.8179855617977527,"tsEv":0.13692571652081675}},
+    {"id":"excel-cco","sheet":"CCO","frequenciesThz":[4.0189,4.4924,10.6647,13.3858,14.1456,17.3298,19.4305,41.7944,62.6748],"excelResults":{"zpeEv":0.38889564513108615,"tsEv":0.11449388489572287}},
+    {"id":"excel-chco","sheet":"CHCO","frequenciesThz":[5.8427,7.6456,10.0625,12.3101,15.7514,17.8476,23.38,25.584,30.5361,35.9279,56.8962,90.2848],"excelResults":{"zpeEv":0.6871463192883895,"tsEv":0.09546887720926783}},
+    {"id":"excel-chcho","sheet":"CHCHO","frequenciesThz":[6.5786,7.5339,9.4207,11.0424,13.9013,20.6955,21.4547,24.9127,27.9475,32.2808,38.0995,41.2384,43.7705,88.7233,91.4036],"excelResults":{"zpeEv":0.9911961741573033,"tsEv":0.0992341365192489}},
+    {"id":"excel-ch2cho","sheet":"CH2CHO","frequenciesThz":[2.8051,3.2516,5.8476,8.9498,10.7203,15.3215,20.96,25.2737,25.7598,28.3732,30.4674,34.7329,38.7936,41.0014,48.9907,91.4971,92.6035,95.2734],"excelResults":{"zpeEv":1.2842471404494382,"tsEv":0.16572684703267432}},
+    {"id":"excel-o","sheet":"O","frequenciesThz":[13.7793,16.7188,33.171],"excelResults":{"zpeEv":0.13174972940074905,"tsEv":0.016990130940576054}},
+    {"id":"excel-oh","sheet":"OH","frequenciesThz":[8.2804,9.1489,10.5028,16.4748,22.4995,108.7779],"excelResults":{"zpeEv":0.36354148220973787,"tsEv":0.0615453657674209}},
+    {"id":"excel-ch3cho","sheet":"CH3CHO","frequenciesThz":[2.7206,3.0776,4.6677,5.0735,6.7151,11.2935,13.3291,16.4464,21.0345,27.3235,30.3873,32.4896,39.5704,40.8165,41.8852,42.0093,46.7231,87.8711,88.5122,90.1401,91.7631],"excelResults":{"zpeEv":1.5392389269662923,"tsEv":0.21488197107386733}},
+    {"id":"excel-ch3ch2o","sheet":"CH3CH2O","frequenciesThz":[4.2802,4.4557,6.3362,7.3154,7.9925,12.023,15.4143,23.2249,23.9806,27.6666,30.8534,32.4488,34.4054,37.8809,40.0805,40.7285,42.8809,43.3076,43.8325,89.0188,89.3127,90.5786,91.2869,91.6012],"excelResults":{"zpeEv":1.9263131844569288,"tsEv":0.16751834426301143}},
+    {"id":"excel-ch3ch2oh","sheet":"CH3CH2OH","frequenciesThz":[1.4936,7.5002,10.5517,12.2152,23.6336,25.7756,30.4406,31.939,33.9568,37.1579,37.5631,40.2926,41.6808,42.8634,43.4807,44.1587,87.2412,87.8924,89.4728,91.2933,91.3795,110.1557],"excelResults":{"zpeEv":2.1150991235955057,"tsEv":0.1179328761490061},"referenceCorrection":{"field":"tsEv","originalWorkbookValue":0.11602611416606418,"reason":"The original worksheet TS sum used Q12:Q20 and included only 9 of 22 modes. The benchmark value was recalculated from all 22 approved positive modes using the workbook constants, as confirmed by the dataset owner."}},
+    {"id":"excel-co-free","sheet":"CO_free","frequenciesThz":[12.3984,12.4521,51.1621],"excelResults":{"zpeEv":0.15729199063670413,"tsEv":0.02290395984228204}},
+    {"id":"excel-h2","sheet":"H2","frequenciesThz":[4.263,4.302,128.5879],"excelResults":{"zpeEv":0.2838089035580524,"tsEv":0.06947639483376115}},
+    {"id":"excel-o2","sheet":"O2","frequenciesThz":[1.5437,1.5693,47.6062],"excelResults":{"zpeEv":0.10495265168539328,"tsEv":0.1193313472675257}},
+    {"id":"excel-co2-free","sheet":"CO2_free","frequenciesThz":[2.2094,2.2779,19.0917,19.1181,39.1218,69.6725],"excelResults":{"zpeEv":0.3134793951310861,"tsEv":0.11118593784524021}},
+    {"id":"excel-h2o","sheet":"H2O","frequenciesThz":[6.8672,8.4361,11.1193,48.1738,109.5473,112.8775],"excelResults":{"zpeEv":0.6146225205992509,"tsEv":0.05641107959606369}},
+    {"id":"excel-h2o2","sheet":"H2O2","frequenciesThz":[1.5216,1.9174,24.8485,36.1835,43.8909,110.7545,110.905],"excelResults":{"zpeEv":0.6829094513108614,"tsEv":0.11759612011576814}},
+    {"id":"excel-c2h4","sheet":"C2H4","frequenciesThz":[3.9574,23.9393,27.8362,28.16,31.2001,35.9761,40.3654,42.3053,49.0472,91.6142,92.0748,93.7862,94.6822],"excelResults":{"zpeEv":1.3552688426966293,"tsEv":0.04436932385706168}},
+    {"id":"excel-ch4","sheet":"CH4","frequenciesThz":[0.9695,1.7799,38.0729,38.1258,38.1895,45.1138,45.2672,89.5487,92.663,92.738,92.7714],"excelResults":{"zpeEv":1.1903368323970036,"tsEv":0.1291210012214142}}
+  ]
+}

@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "benchmarkDatasetVersion": "0.1.0-zpe-pilot",
+  "selectedModule": "zpe-ts",
+  "environment": {
+    "timestampUtc": "2026-08-14T06:03:57.541Z",
+    "applicationVersion": "1.0.0",
+    "gitCommit": "unavailable",
+    "gitDirty": true,
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M2",
+    "logicalCpus": 8,
+    "totalMemoryBytes": 17179869184
+  },
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "passRate": 1
+  },
+  "cases": [
+    {
+      "id": "zpe-reference-spectrum-298k",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.302375,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Frequencies transcribed from the user-supplied zpe_ts.xlsx validation example; formulas independently evaluated from exact SI constants.",
+      "tolerances": {
+        "absoluteEv": 1e-12,
+        "absoluteEntropyJMolK": 1e-9
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 0.6824294216367939,
+          "zpeKjMol": 65.84442939734441,
+          "thermalEv": 0.047122251436836786,
+          "entropyEvK": 0.0004057968482938467,
+          "entropyJMolK": 39.15344368222425,
+          "tsEv": 0.12098833031881037,
+          "tsKjMol": 11.673599233855157,
+          "freeEnergyCorrectionEv": 0.6085633427548202,
+          "freeEnergyCorrectionKjMol": 58.717436243770564
+        },
+        "reference": {
+          "zpeEv": 0.6824294216367939,
+          "thermalEv": 0.04712225143683679,
+          "entropyJMolK": 39.153443682224236,
+          "tsEv": 0.12098833031881037,
+          "freeEnergyCorrectionEv": 0.6085633427548203
+        },
+        "absoluteError": {
+          "zpeEv": 0,
+          "thermalEv": 6.938893903907228e-18,
+          "entropyJMolK": 1.4210854715202004e-14,
+          "tsEv": 0,
+          "freeEnergyCorrectionEv": 1.1102230246251565e-16
+        },
+        "acceptedModes": 7,
+        "rejectedModes": 0
+      }
+    },
+    {
+      "id": "zpe-single-mode-300k",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.028209,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Synthetic analytical case.",
+      "tolerances": {
+        "absoluteEv": 1e-13,
+        "absoluteEntropyJMolK": 1e-10
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 0.020678338484619294,
+          "zpeKjMol": 1.9951563564467156,
+          "thermalEv": 0.010465321132646378,
+          "entropyEvK": 0.000054323457395294533,
+          "entropyJMolK": 5.241416828871474,
+          "tsEv": 0.01629703721858836,
+          "tsKjMol": 1.5724250486614422,
+          "freeEnergyCorrectionEv": 0.014846622398677314,
+          "freeEnergyCorrectionKjMol": 1.4324812930457542
+        },
+        "reference": {
+          "zpeEv": 0.020678338484619294,
+          "thermalEv": 0.010465321132646378,
+          "entropyJMolK": 5.241416828871475,
+          "tsEv": 0.016297037218588363,
+          "freeEnergyCorrectionEv": 0.01484662239867731
+        },
+        "absoluteError": {
+          "zpeEv": 0,
+          "thermalEv": 0,
+          "entropyJMolK": 8.881784197001252e-16,
+          "tsEv": 3.469446951953614e-18,
+          "freeEnergyCorrectionEv": 3.469446951953614e-18
+        },
+        "acceptedModes": 1,
+        "rejectedModes": 0
+      }
+    },
+    {
+      "id": "zpe-temperature-100k",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.043709,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Synthetic analytical temperature-dependence case.",
+      "tolerances": {
+        "absoluteEv": 1e-12,
+        "absoluteEntropyJMolK": 1e-9
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 0.22849564025504318,
+          "zpeKjMol": 22.046477738736204,
+          "thermalEv": 0.005185350655618898,
+          "entropyEvK": 0.0000846175903586588,
+          "entropyJMolK": 8.164356309229388,
+          "tsEv": 0.008461759035865879,
+          "tsKjMol": 0.8164356309229388,
+          "freeEnergyCorrectionEv": 0.2252192318747962,
+          "freeEnergyCorrectionKjMol": 21.730352387996483
+        },
+        "reference": {
+          "zpeEv": 0.22849564025504318,
+          "thermalEv": 0.005185350655618897,
+          "entropyJMolK": 8.164356309229387,
+          "tsEv": 0.008461759035865879,
+          "freeEnergyCorrectionEv": 0.2252192318747962
+        },
+        "absoluteError": {
+          "zpeEv": 0,
+          "thermalEv": 8.673617379884035e-19,
+          "entropyJMolK": 1.7763568394002505e-15,
+          "tsEv": 0,
+          "freeEnergyCorrectionEv": 0
+        },
+        "acceptedModes": 4,
+        "rejectedModes": 0
+      }
+    },
+    {
+      "id": "zpe-temperature-1000k",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.014875,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Synthetic analytical temperature-dependence case.",
+      "tolerances": {
+        "absoluteEv": 1e-12,
+        "absoluteEntropyJMolK": 1e-9
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 0.22849564025504318,
+          "zpeKjMol": 22.046477738736204,
+          "thermalEv": 0.20508724320556265,
+          "entropyEvK": 0.0005247128857291451,
+          "entropyJMolK": 50.62709704895697,
+          "tsEv": 0.524712885729145,
+          "tsKjMol": 50.62709704895697,
+          "freeEnergyCorrectionEv": -0.0911300022685392,
+          "freeEnergyCorrectionKjMol": -8.792708535278
+        },
+        "reference": {
+          "zpeEv": 0.22849564025504318,
+          "thermalEv": 0.20508724320556265,
+          "entropyJMolK": 50.62709704895697,
+          "tsEv": 0.5247128857291451,
+          "freeEnergyCorrectionEv": -0.09113000226853929
+        },
+        "absoluteError": {
+          "zpeEv": 0,
+          "thermalEv": 0,
+          "entropyJMolK": 0,
+          "tsEv": 1.1102230246251565e-16,
+          "freeEnergyCorrectionEv": 8.326672684688674e-17
+        },
+        "acceptedModes": 4,
+        "rejectedModes": 0
+      }
+    },
+    {
+      "id": "zpe-low-frequency-298k",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.011208,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Synthetic numerical boundary case; physical interpretation requires a low-frequency treatment beyond the harmonic model.",
+      "tolerances": {
+        "absoluteEv": 1e-11,
+        "absoluteEntropyJMolK": 1e-8
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 0.0003308534157539087,
+          "zpeKjMol": 0.031922501703147456,
+          "thermalEv": 0.07674758293802446,
+          "entropyEvK": 0.0015841382807419303,
+          "entropyJMolK": 152.84610814663446,
+          "tsEv": 0.4723108284032065,
+          "tsKjMol": 45.571067143919066,
+          "freeEnergyCorrectionEv": -0.3952323920494281,
+          "freeEnergyCorrectionKjMol": -38.13412861277934
+        },
+        "reference": {
+          "zpeEv": 0.0003308534157539087,
+          "thermalEv": 0.076747582938024,
+          "entropyJMolK": 152.8461081466343,
+          "tsEv": 0.47231082840320604,
+          "freeEnergyCorrectionEv": -0.3952323920494281
+        },
+        "absoluteError": {
+          "zpeEv": 0,
+          "thermalEv": 4.579669976578771e-16,
+          "entropyJMolK": 1.7053025658242404e-13,
+          "tsEv": 4.440892098500626e-16,
+          "freeEnergyCorrectionEv": 0
+        },
+        "acceptedModes": 3,
+        "rejectedModes": 0
+      }
+    },
+    {
+      "id": "zpe-high-frequency-298k",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.012541,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Synthetic numerical stability case.",
+      "tolerances": {
+        "absoluteEv": 1e-11,
+        "absoluteEntropyJMolK": 1e-10
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 13.44092001500254,
+          "zpeKjMol": 1296.8516316903651,
+          "thermalEv": 2.3008512281349015e-35,
+          "entropyEvK": 7.812976754319515e-38,
+          "entropyJMolK": 7.538376570122192e-33,
+          "tsEv": 2.3294390193003634e-35,
+          "tsKjMol": 2.2475669743819312e-33,
+          "freeEnergyCorrectionEv": 13.44092001500254,
+          "freeEnergyCorrectionKjMol": 1296.8516316903651
+        },
+        "reference": {
+          "zpeEv": 13.440920015002542,
+          "thermalEv": 2.3008512281349015e-35,
+          "entropyJMolK": 7.445862650106378e-33,
+          "tsEv": 2.3008512281349015e-35,
+          "freeEnergyCorrectionEv": 13.440920015002542
+        },
+        "absoluteError": {
+          "zpeEv": 1.7763568394002505e-15,
+          "thermalEv": 0,
+          "entropyJMolK": 9.251392001581376e-35,
+          "tsEv": 2.8587791165461897e-37,
+          "freeEnergyCorrectionEv": 1.7763568394002505e-15
+        },
+        "acceptedModes": 3,
+        "rejectedModes": 0
+      }
+    },
+    {
+      "id": "zpe-excluded-modes",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.020875,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Synthetic input-validation case.",
+      "tolerances": {
+        "absoluteEv": 1e-13,
+        "absoluteEntropyJMolK": 1e-10
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 0.020678338484619294,
+          "zpeKjMol": 1.9951563564467156,
+          "thermalEv": 0.010465321132646378,
+          "entropyEvK": 0.000054323457395294533,
+          "entropyJMolK": 5.241416828871474,
+          "tsEv": 0.01629703721858836,
+          "tsKjMol": 1.5724250486614422,
+          "freeEnergyCorrectionEv": 0.014846622398677314,
+          "freeEnergyCorrectionKjMol": 1.4324812930457542
+        },
+        "reference": {
+          "zpeEv": 0.020678338484619294,
+          "thermalEv": 0.010465321132646378,
+          "entropyJMolK": 5.241416828871475,
+          "tsEv": 0.016297037218588363,
+          "freeEnergyCorrectionEv": 0.01484662239867731
+        },
+        "absoluteError": {
+          "zpeEv": 0,
+          "thermalEv": 0,
+          "entropyJMolK": 8.881784197001252e-16,
+          "tsEv": 3.469446951953614e-18,
+          "freeEnergyCorrectionEv": 3.469446951953614e-18
+        },
+        "acceptedModes": 1,
+        "rejectedModes": 2
+      }
+    },
+    {
+      "id": "zpe-empty-spectrum",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.008625,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Synthetic empty-input boundary case.",
+      "tolerances": {
+        "absoluteEv": 0,
+        "absoluteEntropyJMolK": 0
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 0,
+          "zpeKjMol": 0,
+          "thermalEv": 0,
+          "entropyEvK": 0,
+          "entropyJMolK": 0,
+          "tsEv": 0,
+          "tsKjMol": 0,
+          "freeEnergyCorrectionEv": 0,
+          "freeEnergyCorrectionKjMol": 0
+        },
+        "reference": {
+          "zpeEv": 0,
+          "thermalEv": 0,
+          "entropyJMolK": 0,
+          "tsEv": 0,
+          "freeEnergyCorrectionEv": 0
+        },
+        "absoluteError": {
+          "zpeEv": 0,
+          "thermalEv": 0,
+          "entropyJMolK": 0,
+          "tsEv": 0,
+          "freeEnergyCorrectionEv": 0
+        },
+        "acceptedModes": 0,
+        "rejectedModes": 0
+      }
+    },
+    {
+      "id": "zpe-nonfinite-mode",
+      "module": "zpe-ts",
+      "expectation": "expected-valid",
+      "status": "pass",
+      "durationMs": 0.019,
+      "diagnostic": "Independent reference agreement within declared tolerances.",
+      "provenance": "Synthetic malformed-value case represented as a string because JSON has no NaN literal.",
+      "tolerances": {
+        "absoluteEv": 1e-13,
+        "absoluteEntropyJMolK": 1e-10
+      },
+      "metrics": {
+        "actual": {
+          "zpeEv": 0.02481400618154315,
+          "zpeKjMol": 2.3941876277360588,
+          "thermalEv": 0.008410667743714989,
+          "entropyEvK": 0.00004170031903615038,
+          "entropyJMolK": 4.023469131850956,
+          "tsEv": 0.012432950120628236,
+          "tsKjMol": 1.1995973216613627,
+          "freeEnergyCorrectionEv": 0.02079172380462991,
+          "freeEnergyCorrectionKjMol": 2.0060963767058477
+        },
+        "reference": {
+          "zpeEv": 0.02481400618154315,
+          "thermalEv": 0.00841066774371499,
+          "entropyJMolK": 4.023469131850956,
+          "tsEv": 0.012432950120628236,
+          "freeEnergyCorrectionEv": 0.02079172380462991
+        },
+        "absoluteError": {
+          "zpeEv": 0,
+          "thermalEv": 1.734723475976807e-18,
+          "entropyJMolK": 0,
+          "tsEv": 0,
+          "freeEnergyCorrectionEv": 0
+        },
+        "acceptedModes": 1,
+        "rejectedModes": 1
+      }
+    },
+    {
+      "id": "zpe-invalid-zero-temperature",
+      "module": "zpe-ts",
+      "expectation": "expected-rejection",
+      "status": "pass",
+      "durationMs": 0.016417,
+      "diagnostic": "Temperature must be greater than 0 K.",
+      "provenance": "Synthetic input-contract case.",
+      "tolerances": null,
+      "metrics": {}
+    },
+    {
+      "id": "zpe-invalid-negative-temperature",
+      "module": "zpe-ts",
+      "expectation": "expected-rejection",
+      "status": "pass",
+      "durationMs": 0.00325,
+      "diagnostic": "Temperature must be greater than 0 K.",
+      "provenance": "Synthetic input-contract case.",
+      "tolerances": null,
+      "metrics": {}
+    },
+    {
+      "id": "zpe-invalid-text-temperature",
+      "module": "zpe-ts",
+      "expectation": "expected-rejection",
+      "status": "pass",
+      "durationMs": 0.001916,
+      "diagnostic": "Temperature must be greater than 0 K.",
+      "provenance": "Synthetic malformed-input case.",
+      "tolerances": null,
+      "metrics": {}
+    }
+  ]
+}

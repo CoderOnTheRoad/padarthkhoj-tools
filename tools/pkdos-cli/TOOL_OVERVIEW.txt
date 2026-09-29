@@ -1,0 +1,31 @@
+pkdos
+=====
+
+What is it?
+pkdos is a Python command-line tool for analyzing Quantum ESPRESSO projected density of states (PDOS) data.
+
+What does it do?
+- Scans a directory for PDOS-related files
+- Builds a summary of atoms and available orbitals
+- Supports interactive summation for s, p, d, and f orbitals
+- Reads PDOS files from simple or header-based formats
+- Writes CSV outputs for selected orbital channels
+- Validates energy grids before combining files
+
+How it works
+1. The user runs the pkdos summary command to discover PDOS files in the current directory.
+2. A summary file named pkdos_summary.txt is generated with atom and orbital information.
+3. The user runs pkdos sum to start the interactive summation workflow.
+4. The tool reads the PDOS files, validates the energy grid, applies a Fermi-energy shift, and writes summed CSV outputs.
+5. The output files are named like tot_dos_s.csv, tot_dos_p.csv, tot_dos_d.csv, and tot_dos_f.csv.
+
+How to use it
+- Install the package with: python -m pip install -e .
+- Generate a summary: pkdos summary
+- Start summation: pkdos sum
+- Or run the example: make example
+
+Notes
+- The package is modular and designed for extension.
+- It supports both simple numeric PDOS files and header-based files.
+- It also handles non-spin-polarized and spin-polarized-style layouts.

@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 1,
+  "benchmarkType": "End-to-end QE and VASP projected DOS data pipeline",
+  "scope": "Raw PDOS/DOSCAR and POSCAR → selection → Fermi alignment → CSV → DOS Plotter → orbital metrics",
+  "environment": {
+    "timestampUtc": "2026-08-14T10:10:58.726Z",
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M2"
+  },
+  "summary": {
+    "datasets": 6,
+    "qeDatasets": 4,
+    "vaspDatasets": 2,
+    "spinDatasets": 5,
+    "nonSpinDatasets": 1,
+    "rules": 83,
+    "passed": 83,
+    "failed": 0,
+    "maximumOccupancyError": 0,
+    "maximumCentreErrorEv": 0
+  },
+  "rules": [
+    {
+      "scope": "C-p",
+      "rule": "full.pdos_atm#2(C)_wfc#2(p): checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "Cu-pd",
+      "rule": "1D_relax.pdos_atm#1(Cu)_wfc#2(p): checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "Cu-pd",
+      "rule": "1D_relax.pdos_atm#1(Cu)_wfc#3(d): checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "Ag-pd",
+      "rule": "2NCB_Ag.pdos_atm#30(Ag)_wfc#2(p): checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "Ag-pd",
+      "rule": "2NCB_Ag.pdos_atm#30(Ag)_wfc#3(d): checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "Fe-pd",
+      "rule": "2NCB_Fe.pdos_atm#29(Fe)_wfc#2(p): checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "Fe-pd",
+      "rule": "2NCB_Fe.pdos_atm#29(Fe)_wfc#3(d): checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "C-p",
+      "rule": "QE metadata selection",
+      "status": "pass",
+      "detail": "C; atom 2"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "compatible selected records",
+      "status": "pass",
+      "detail": "1 records, 2460 points"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "Fermi shift",
+      "status": "pass",
+      "detail": "-23.442 − -3.162 = -20.28 eV"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "CSV plotter round trip",
+      "status": "pass",
+      "detail": "2460 rows, 8 channels"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "spin mode preserved",
+      "status": "pass",
+      "detail": "spin"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "plot template applied",
+      "status": "pass",
+      "detail": "line 3; Times New Roman; bottom-left legend"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "fill-range interpolation",
+      "status": "pass",
+      "detail": "1232 fill points"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "occupancy",
+      "status": "pass",
+      "detail": "error 0.000e+0"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "orbital centre",
+      "status": "pass",
+      "detail": "error 0.000e+0 eV"
+    },
+    {
+      "scope": "QE-C-p",
+      "rule": "recognizable filename",
+      "status": "pass",
+      "detail": "full_species_C_p_pdos.csv"
+    },
+    {
+      "scope": "Cu-pd",
+      "rule": "QE metadata selection",
+      "status": "pass",
+      "detail": "Cu; atom 1"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "compatible selected records",
+      "status": "pass",
+      "detail": "2 records, 2831 points"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "Fermi shift",
+      "status": "pass",
+      "detail": "-23.532 − -1.6468 = -21.8852 eV"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "CSV plotter round trip",
+      "status": "pass",
+      "detail": "2831 rows, 18 channels"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "spin mode preserved",
+      "status": "pass",
+      "detail": "spin"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "plot template applied",
+      "status": "pass",
+      "detail": "line 3; Times New Roman; bottom-left legend"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "fill-range interpolation",
+      "status": "pass",
+      "detail": "1417 fill points"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "occupancy",
+      "status": "pass",
+      "detail": "error 0.000e+0"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "orbital centre",
+      "status": "pass",
+      "detail": "error 0.000e+0 eV"
+    },
+    {
+      "scope": "QE-Cu-pd",
+      "rule": "recognizable filename",
+      "status": "pass",
+      "detail": "1D_relax_species_Cu_d_p_pdos.csv"
+    },
+    {
+      "scope": "Ag-pd",
+      "rule": "QE metadata selection",
+      "status": "pass",
+      "detail": "Ag; atom 30"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "compatible selected records",
+      "status": "pass",
+      "detail": "2 records, 3008 points"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "Fermi shift",
+      "status": "pass",
+      "detail": "-22.293 − -1.894 = -20.399 eV"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "CSV plotter round trip",
+      "status": "pass",
+      "detail": "3008 rows, 18 channels"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "spin mode preserved",
+      "status": "pass",
+      "detail": "spin"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "plot template applied",
+      "status": "pass",
+      "detail": "line 3; Times New Roman; bottom-left legend"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "fill-range interpolation",
+      "status": "pass",
+      "detail": "1506 fill points"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "occupancy",
+      "status": "pass",
+      "detail": "error 0.000e+0"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "orbital centre",
+      "status": "pass",
+      "detail": "error 0.000e+0 eV"
+    },
+    {
+      "scope": "QE-Ag-pd",
+      "rule": "recognizable filename",
+      "status": "pass",
+      "detail": "2NCB_Ag_species_Ag_d_p_pdos.csv"
+    },
+    {
+      "scope": "Fe-pd",
+      "rule": "QE metadata selection",
+      "status": "pass",
+      "detail": "Fe; atom 29"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "compatible selected records",
+      "status": "pass",
+      "detail": "2 records, 2986 points"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "Fermi shift",
+      "status": "pass",
+      "detail": "-22.178 − -1.746 = -20.432000000000002 eV"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "CSV plotter round trip",
+      "status": "pass",
+      "detail": "2986 rows, 18 channels"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "spin mode preserved",
+      "status": "pass",
+      "detail": "spin"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "plot template applied",
+      "status": "pass",
+      "detail": "line 3; Times New Roman; bottom-left legend"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "fill-range interpolation",
+      "status": "pass",
+      "detail": "1494 fill points"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "occupancy",
+      "status": "pass",
+      "detail": "error 0.000e+0"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "orbital centre",
+      "status": "pass",
+      "detail": "error 0.000e+0 eV"
+    },
+    {
+      "scope": "QE-Fe-pd",
+      "rule": "recognizable filename",
+      "status": "pass",
+      "detail": "2NCB_Fe_species_Fe_d_p_pdos.csv"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "DOSCAR checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "CONTCAR checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "atom count",
+      "status": "pass",
+      "detail": "152 ions represented by 456 orbital records"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "energy-grid count",
+      "status": "pass",
+      "detail": "2001 points"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "spin mode detected",
+      "status": "pass",
+      "detail": "spin"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "Fermi energy detected",
+      "status": "pass",
+      "detail": "-3.3484874 eV"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "structure species mapping",
+      "status": "pass",
+      "detail": "{\"Cu\":10,\"S\":6,\"O\":10,\"F\":12,\"N\":2,\"C\":40,\"H\":72}"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "representative species selection",
+      "status": "pass",
+      "detail": "10 Cu ions represented by 30 orbital records"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "compatible selected records",
+      "status": "pass",
+      "detail": "30 records, 2001 points"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "Fermi shift",
+      "status": "pass",
+      "detail": "-33.789 − -3.3484874 = -30.4405126 eV"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "CSV plotter round trip",
+      "status": "pass",
+      "detail": "2001 rows, 18 channels"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "spin mode preserved",
+      "status": "pass",
+      "detail": "spin"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "plot template applied",
+      "status": "pass",
+      "detail": "line 3; Times New Roman; bottom-left legend"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "fill-range interpolation",
+      "status": "pass",
+      "detail": "1003 fill points"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "occupancy",
+      "status": "pass",
+      "detail": "error 0.000e+0"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "orbital centre",
+      "status": "pass",
+      "detail": "error 0.000e+0 eV"
+    },
+    {
+      "scope": "VASP-real-spin-001",
+      "rule": "recognizable filename",
+      "status": "pass",
+      "detail": "DOSCAR_species_Cu_d_p_s_pdos.csv"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "DOSCAR checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "POSCAR checksum",
+      "status": "pass",
+      "detail": "fixture unchanged"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "atom count",
+      "status": "pass",
+      "detail": "18 ions represented by 54 orbital records"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "energy-grid count",
+      "status": "pass",
+      "detail": "2000 points"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "spin mode detected",
+      "status": "pass",
+      "detail": "non-spin"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "Fermi energy detected",
+      "status": "pass",
+      "detail": "12.3955736 eV"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "structure species mapping",
+      "status": "pass",
+      "detail": "{\"Mo\":12,\"C\":6}"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "representative species selection",
+      "status": "pass",
+      "detail": "12 Mo ions represented by 36 orbital records"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "compatible selected records",
+      "status": "pass",
+      "detail": "36 records, 2000 points"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "Fermi shift",
+      "status": "pass",
+      "detail": "-52.345 − 12.3955736 = -64.7405736 eV"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "CSV plotter round trip",
+      "status": "pass",
+      "detail": "2000 rows, 9 channels"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "spin mode preserved",
+      "status": "pass",
+      "detail": "non-spin"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "plot template applied",
+      "status": "pass",
+      "detail": "line 3; Times New Roman; bottom-left legend"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "fill-range interpolation",
+      "status": "pass",
+      "detail": "1002 fill points"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "occupancy",
+      "status": "pass",
+      "detail": "error 0.000e+0"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "orbital centre",
+      "status": "pass",
+      "detail": "error 0.000e+0 eV"
+    },
+    {
+      "scope": "VASP-real-nonspin-001",
+      "rule": "recognizable filename",
+      "status": "pass",
+      "detail": "DOSCAR_species_Mo_d_p_s_pdos.csv"
+    },
+    {
+      "scope": "negative controls",
+      "rule": "mixed spin modes rejected",
+      "status": "pass",
+      "detail": "Spin-polarized and non-spin-polarized files cannot be summed together"
+    },
+    {
+      "scope": "negative controls",
+      "rule": "descending plot grid rejected",
+      "status": "pass",
+      "detail": "descending.csv energy values must be strictly increasing"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset": "QE-C-p",
+      "source": "Quantum ESPRESSO",
+      "spin_mode": "spin",
+      "records": 1,
+      "points": 2460,
+      "fermi_energy_eV": -3.162,
+      "energy_min_shifted_eV": -20.28,
+      "energy_max_shifted_eV": 4.31,
+      "metric_channel": "pz_up",
+      "occupancy": 0.6794099554218257,
+      "reference_occupancy": 0.6794099554218257,
+      "occupancy_error": 0,
+      "centre_eV": -4.7731646572120425,
+      "reference_centre_eV": -4.7731646572120425,
+      "centre_error_eV": 0,
+      "csv_filename": "full_species_C_p_pdos.csv",
+      "elapsed_ms": 13.160249999999998
+    },
+    {
+      "dataset": "QE-Cu-pd",
+      "source": "Quantum ESPRESSO",
+      "spin_mode": "spin",
+      "records": 2,
+      "points": 2831,
+      "fermi_energy_eV": -1.6468,
+      "energy_min_shifted_eV": -21.8852,
+      "energy_max_shifted_eV": 6.4148,
+      "metric_channel": "pz_up",
+      "occupancy": 0.5151691845778937,
+      "reference_occupancy": 0.5151691845778937,
+      "occupancy_error": 0,
+      "centre_eV": -0.4425170318191936,
+      "reference_centre_eV": -0.4425170318191936,
+      "centre_error_eV": 0,
+      "csv_filename": "1D_relax_species_Cu_d_p_pdos.csv",
+      "elapsed_ms": 20.79504200000001
+    },
+    {
+      "dataset": "QE-Ag-pd",
+      "source": "Quantum ESPRESSO",
+      "spin_mode": "spin",
+      "records": 2,
+      "points": 3008,
+      "fermi_energy_eV": -1.894,
+      "energy_min_shifted_eV": -20.399,
+      "energy_max_shifted_eV": 9.671,
+      "metric_channel": "pz_up",
+      "occupancy": 0.9779754051273198,
+      "reference_occupancy": 0.9779754051273198,
+      "occupancy_error": 0,
+      "centre_eV": 4.432333425317789,
+      "reference_centre_eV": 4.432333425317789,
+      "centre_error_eV": 0,
+      "csv_filename": "2NCB_Ag_species_Ag_d_p_pdos.csv",
+      "elapsed_ms": 19.847291999999996
+    },
+    {
+      "dataset": "QE-Fe-pd",
+      "source": "Quantum ESPRESSO",
+      "spin_mode": "spin",
+      "records": 2,
+      "points": 2986,
+      "fermi_energy_eV": -1.746,
+      "energy_min_shifted_eV": -20.432000000000002,
+      "energy_max_shifted_eV": 9.418,
+      "metric_channel": "pz_up",
+      "occupancy": 0.8952810530000003,
+      "reference_occupancy": 0.8952810530000003,
+      "occupancy_error": 0,
+      "centre_eV": 3.8407806671342537,
+      "reference_centre_eV": 3.8407806671342537,
+      "centre_error_eV": 0,
+      "csv_filename": "2NCB_Fe_species_Fe_d_p_pdos.csv",
+      "elapsed_ms": 20.044167
+    },
+    {
+      "dataset": "VASP-real-spin-001",
+      "source": "VASP",
+      "spin_mode": "spin",
+      "records": 30,
+      "points": 2001,
+      "fermi_energy_eV": -3.3484874,
+      "energy_min_shifted_eV": -30.4405126,
+      "energy_max_shifted_eV": 8.0184874,
+      "metric_channel": "s_up",
+      "occupancy": 3.8656693355725755,
+      "reference_occupancy": 3.8656693355725755,
+      "occupancy_error": 0,
+      "centre_eV": -0.5674262083705763,
+      "reference_centre_eV": -0.5674262083705763,
+      "centre_error_eV": 0,
+      "csv_filename": "DOSCAR_species_Cu_d_p_s_pdos.csv",
+      "elapsed_ms": 19.882041999999956
+    },
+    {
+      "dataset": "VASP-real-nonspin-001",
+      "source": "VASP",
+      "spin_mode": "non-spin",
+      "records": 36,
+      "points": 2000,
+      "fermi_energy_eV": 12.3955736,
+      "energy_min_shifted_eV": -64.7405736,
+      "energy_max_shifted_eV": 7.383426399999999,
+      "metric_channel": "s",
+      "occupancy": 28.311692022570075,
+      "reference_occupancy": 28.311692022570075,
+      "occupancy_error": 0,
+      "centre_eV": -52.67077965485113,
+      "reference_centre_eV": -52.67077965485113,
+      "centre_error_eV": 0,
+      "csv_filename": "DOSCAR_species_Mo_d_p_s_pdos.csv",
+      "elapsed_ms": 8.985875000000078
+    }
+  ]
+}

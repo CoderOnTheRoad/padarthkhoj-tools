@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 1,
+  "benchmarkType": "ZPE/TS dual-reference comparison",
+  "datasetVersion": "1.0.0",
+  "comparisonTemperatureK": 298.15,
+  "interpretation": {
+    "passCriterion": "Stored Excel ZPE and TS reproduced from the workbook constants within 1e-12 eV.",
+    "websiteComparison": "Website values use exact SI constants at 298.15 K. Their difference from Excel is reported descriptively and is not a failure because the workbook uses rounded and internally nonequivalent kT values."
+  },
+  "source": {
+    "workbook": "ZPE & TS Energy calculation.xlsx",
+    "referenceType": "user-calculated Excel reference",
+    "notes": "Values are preserved from the approved workbook sheets. The source workbook is not copied into the repository.",
+    "excludedSheets": [
+      "Sheet1",
+      "Sheet2",
+      "CH4_ads",
+      "CO2_adsorbed"
+    ]
+  },
+  "excelConstants": {
+    "planckJsWorking": 6.63e-34,
+    "planckJsDisplayed": 6.62607015e-34,
+    "electronVoltJ": 1.602e-19,
+    "kTj": 4.11e-21,
+    "kTev": 0.025,
+    "temperatureK": null,
+    "note": "The workbook does not state temperature in kelvin. kT in joules and kT in eV are preserved exactly as used and are not mutually equivalent under the stated eV conversion."
+  },
+  "environment": {
+    "timestampUtc": "2026-08-14T10:10:57.401Z",
+    "applicationVersion": "1.0.0",
+    "gitCommit": "unavailable",
+    "gitDirty": true,
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M2",
+    "logicalCpus": 8,
+    "totalMemoryBytes": 17179869184
+  },
+  "summary": {
+    "total": 23,
+    "passed": 23,
+    "failed": 0,
+    "passRate": 1,
+    "meanWebsiteMinusExcelEv": {
+      "zpe": -0.0005332795112821139,
+      "ts": 0.003057315932108738
+    },
+    "meanWebsiteMinusExcelPercent": {
+      "zpe": -0.07029184808413269,
+      "ts": 3.020984589194401
+    },
+    "maximumAbsoluteWebsiteMinusExcelEv": {
+      "zpe": 0.0014867422627866667,
+      "ts": 0.00639791502309911
+    }
+  },
+  "cases": [
+    {
+      "id": "excel-cooh",
+      "sheet": "COOH",
+      "frequencyCount": 12,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.6892329897003745,
+        "tsEv": 0.10734654355117641
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.6892329897003746,
+        "tsEv": 0.10734654355117644
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 1.1102230246251565e-16,
+        "tsEv": 2.7755575615628914e-17
+      },
+      "website298_15K": {
+        "zpeEv": 0.6887485150943087,
+        "tsEv": 0.11063040168473569
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00048447460606582116,
+        "tsEv": 0.0032838581335592754
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808411934,
+        "ts": 3.0591186496784855
+      },
+      "durationMs": 0.248375
+    },
+    {
+      "id": "excel-co",
+      "sheet": "CO",
+      "frequencyCount": 6,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.2500484634831461,
+        "tsEv": 0.06317218023006917
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.2500484634831461,
+        "tsEv": 0.06317218023006917
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.24987269979705778,
+        "tsEv": 0.06511206836073426
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00017576368608829274,
+        "tsEv": 0.0019398881306650906
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808413737,
+        "ts": 3.07079496639207
+      },
+      "durationMs": 0.020417
+    },
+    {
+      "id": "excel-cho",
+      "sheet": "CHO",
+      "frequencyCount": 9,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.5210784765917603,
+        "tsEv": 0.08786321859490569
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.5210784765917602,
+        "tsEv": 0.08786321859490569
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 1.1102230246251565e-16,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.5207122009005953,
+        "tsEv": 0.0905256713191079
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0003662756911649856,
+        "tsEv": 0.002662452724202208
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808413125,
+        "ts": 3.030224440647314
+      },
+      "durationMs": 0.017875
+    },
+    {
+      "id": "excel-coh",
+      "sheet": "COH",
+      "frequencyCount": 9,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.5631582837078651,
+        "tsEv": 0.06787918665181197
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.5631582837078651,
+        "tsEv": 0.06787918665181196
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 1.3877787807814457e-17
+      },
+      "website298_15K": {
+        "zpeEv": 0.5627624293426081,
+        "tsEv": 0.06997870305317114
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0003958543652570201,
+        "tsEv": 0.002099516401359164
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808411112,
+        "ts": 3.0930193847617637
+      },
+      "durationMs": 0.01475
+    },
+    {
+      "id": "excel-2co",
+      "sheet": "2CO",
+      "frequencyCount": 12,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.47768839606741575,
+        "tsEv": 0.15495097781739695
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.4776883960674157,
+        "tsEv": 0.15495097781739697
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 5.551115123125783e-17,
+        "tsEv": 2.7755575615628914e-17
+      },
+      "website298_15K": {
+        "zpeEv": 0.47735262006573653,
+        "tsEv": 0.1596501434589397
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00033577600167922217,
+        "tsEv": 0.004699165641542741
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808412939,
+        "ts": 3.0326789206070743
+      },
+      "durationMs": 0.017125
+    },
+    {
+      "id": "excel-cocoh",
+      "sheet": "COCOH",
+      "frequencyCount": 15,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.8179855617977527,
+        "tsEv": 0.13692571652081675
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.8179855617977528,
+        "tsEv": 0.13692571652081675
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 1.1102230246251565e-16,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.8174105846293038,
+        "tsEv": 0.14112641227824266
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.000574977168448898,
+        "tsEv": 0.004200695757425904
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.0702918480841183,
+        "ts": 3.067864725606365
+      },
+      "durationMs": 0.017666
+    },
+    {
+      "id": "excel-cco",
+      "sheet": "CCO",
+      "frequencyCount": 9,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.38889564513108615,
+        "tsEv": 0.11449388489572287
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.3888956451310862,
+        "tsEv": 0.1144938848957229
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 5.551115123125783e-17,
+        "tsEv": 2.7755575615628914e-17
+      },
+      "website298_15K": {
+        "zpeEv": 0.3886222831950048,
+        "tsEv": 0.11794890814609076
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00027336193608135106,
+        "tsEv": 0.0034550232503678807
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808413275,
+        "ts": 3.0176487185447485
+      },
+      "durationMs": 0.014083
+    },
+    {
+      "id": "excel-chco",
+      "sheet": "CHCO",
+      "frequencyCount": 12,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.6871463192883895,
+        "tsEv": 0.09546887720926783
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.6871463192883895,
+        "tsEv": 0.09546887720926785
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 1.3877787807814457e-17
+      },
+      "website298_15K": {
+        "zpeEv": 0.6866633114415196,
+        "tsEv": 0.09841140282026102
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0004830078468699428,
+        "tsEv": 0.002942525610993188
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808413831,
+        "ts": 3.0821831124536745
+      },
+      "durationMs": 0.015875
+    },
+    {
+      "id": "excel-chcho",
+      "sheet": "CHCHO",
+      "frequencyCount": 15,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.9911961741573033,
+        "tsEv": 0.0992341365192489
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.9911961741573034,
+        "tsEv": 0.0992341365192489
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 1.1102230246251565e-16,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.9904994440483489,
+        "tsEv": 0.10230140330891807
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0006967301089544353,
+        "tsEv": 0.0030672667896691763
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808413758,
+        "ts": 3.0909391639380113
+      },
+      "durationMs": 0.027917
+    },
+    {
+      "id": "excel-ch2cho",
+      "sheet": "CH2CHO",
+      "frequencyCount": 18,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 1.2842471404494382,
+        "tsEv": 0.16572684703267432
+      },
+      "excelRecalculated": {
+        "zpeEv": 1.2842471404494382,
+        "tsEv": 0.16572684703267432
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 1.2833444194004484,
+        "tsEv": 0.1706936366023667
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0009027210489898074,
+        "tsEv": 0.004966789569692376
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808415373,
+        "ts": 2.9969734286401617
+      },
+      "durationMs": 0.041875
+    },
+    {
+      "id": "excel-o",
+      "sheet": "O",
+      "frequencyCount": 3,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.13174972940074905,
+        "tsEv": 0.016990130940576054
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.13174972940074905,
+        "tsEv": 0.016990130940576054
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.13165712008110741,
+        "tsEv": 0.01753680122584417
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00009260931964163999,
+        "tsEv": 0.0005466702852681173
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808413995,
+        "ts": 3.217575468842045
+      },
+      "durationMs": 0.011833
+    },
+    {
+      "id": "excel-oh",
+      "sheet": "OH",
+      "frequencyCount": 6,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.36354148220973787,
+        "tsEv": 0.0615453657674209
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.3635414822097378,
+        "tsEv": 0.0615453657674209
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 5.551115123125783e-17,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.36328594218334015,
+        "tsEv": 0.06344016578930976
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0002555400263977159,
+        "tsEv": 0.0018948000218888608
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808414443,
+        "ts": 3.0787046242430085
+      },
+      "durationMs": 0.013208
+    },
+    {
+      "id": "excel-ch3cho",
+      "sheet": "CH3CHO",
+      "frequencyCount": 21,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 1.5392389269662923,
+        "tsEv": 0.21488197107386733
+      },
+      "excelRecalculated": {
+        "zpeEv": 1.5392389269662923,
+        "tsEv": 0.2148819710738674
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 5.551115123125783e-17
+      },
+      "website298_15K": {
+        "zpeEv": 1.538156967478097,
+        "tsEv": 0.22127988609696644
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0010819594881952277,
+        "tsEv": 0.00639791502309911
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808414876,
+        "ts": 2.9774089427445625
+      },
+      "durationMs": 0.018333
+    },
+    {
+      "id": "excel-ch3ch2o",
+      "sheet": "CH3CH2O",
+      "frequencyCount": 24,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 1.9263131844569288,
+        "tsEv": 0.16751834426301143
+      },
+      "excelRecalculated": {
+        "zpeEv": 1.9263131844569288,
+        "tsEv": 0.16751834426301146
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 2.7755575615628914e-17
+      },
+      "website298_15K": {
+        "zpeEv": 1.9249591433196855,
+        "tsEv": 0.17258185766093861
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0013540411372432448,
+        "tsEv": 0.005063513397927183
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808414109,
+        "ts": 3.0226620375242224
+      },
+      "durationMs": 0.01975
+    },
+    {
+      "id": "excel-ch3ch2oh",
+      "sheet": "CH3CH2OH",
+      "frequencyCount": 22,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 2.1150991235955057,
+        "tsEv": 0.1179328761490061
+      },
+      "excelRecalculated": {
+        "zpeEv": 2.1150991235955057,
+        "tsEv": 0.1179328761490061
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 2.113612381332719,
+        "tsEv": 0.12147140899670014
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0014867422627866667,
+        "tsEv": 0.003538532847694037
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808413703,
+        "ts": 3.0004634528061227
+      },
+      "durationMs": 0.0195
+    },
+    {
+      "id": "excel-co-free",
+      "sheet": "CO_free",
+      "frequencyCount": 3,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.15729199063670413,
+        "tsEv": 0.02290395984228204
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.15729199063670413,
+        "tsEv": 0.02290395984228204
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.15718142718959727,
+        "tsEv": 0.023619400072980006
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0001105634471068595,
+        "tsEv": 0.0007154402306979654
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808413219,
+        "ts": 3.1236530085824774
+      },
+      "durationMs": 0.007083
+    },
+    {
+      "id": "excel-h2",
+      "sheet": "H2",
+      "frequencyCount": 3,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.2838089035580524,
+        "tsEv": 0.06947639483376115
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.28380890355805244,
+        "tsEv": 0.06947639483376115
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 5.551115123125783e-17,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.28360940903471415,
+        "tsEv": 0.07150731163364218
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00019949452333822837,
+        "tsEv": 0.00203091679988103
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808411842,
+        "ts": 2.92317528095763
+      },
+      "durationMs": 0.008209
+    },
+    {
+      "id": "excel-o2",
+      "sheet": "O2",
+      "frequencyCount": 3,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.10495265168539328,
+        "tsEv": 0.1193313472675257
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.10495265168539326,
+        "tsEv": 0.1193313472675257
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 1.3877787807814457e-17,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.10487887852691029,
+        "tsEv": 0.12274862508757274
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00007377315848298982,
+        "tsEv": 0.0034172778200470405
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.0702918480841558,
+        "ts": 2.8636882917159547
+      },
+      "durationMs": 0.006708
+    },
+    {
+      "id": "excel-co2-free",
+      "sheet": "CO2_free",
+      "frequencyCount": 6,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.3134793951310861,
+        "tsEv": 0.11118593784524021
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.31347939513108614,
+        "tsEv": 0.11118593784524021
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 5.551115123125783e-17,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.3132590446708855,
+        "tsEv": 0.11443250510554771
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00022035046020058013,
+        "tsEv": 0.0032465672603075035
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808412602,
+        "ts": 2.9199441253321106
+      },
+      "durationMs": 0.008875
+    },
+    {
+      "id": "excel-h2o",
+      "sheet": "H2O",
+      "frequencyCount": 6,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.6146225205992509,
+        "tsEv": 0.05641107959606369
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.614622520599251,
+        "tsEv": 0.0564110795960637
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 1.1102230246251565e-16,
+        "tsEv": 1.3877787807814457e-17
+      },
+      "website298_15K": {
+        "zpeEv": 0.6141904910707805,
+        "tsEv": 0.05811522550639743
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0004320295284704345,
+        "tsEv": 0.001704145910333743
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808412324,
+        "ts": 3.020941847836319
+      },
+      "durationMs": 0.008458
+    },
+    {
+      "id": "excel-h2o2",
+      "sheet": "H2O2",
+      "frequencyCount": 7,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 0.6829094513108614,
+        "tsEv": 0.11759612011576814
+      },
+      "excelRecalculated": {
+        "zpeEv": 0.6829094513108614,
+        "tsEv": 0.11759612011576814
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 0.6824294216367939,
+        "tsEv": 0.12098833031881037
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.00048002967406757246,
+        "tsEv": 0.0033922102030422285
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808412649,
+        "ts": 2.8846276558297577
+      },
+      "durationMs": 0.010459
+    },
+    {
+      "id": "excel-c2h4",
+      "sheet": "C2H4",
+      "frequencyCount": 13,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 1.3552688426966293,
+        "tsEv": 0.04436932385706168
+      },
+      "excelRecalculated": {
+        "zpeEv": 1.3552688426966293,
+        "tsEv": 0.0443693238570617
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 2.0816681711721685e-17
+      },
+      "website298_15K": {
+        "zpeEv": 1.3543161991805894,
+        "tsEv": 0.045717827715391665
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0009526435160398528,
+        "tsEv": 0.0013485038583299844
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808412936,
+        "ts": 3.03927069674144
+      },
+      "durationMs": 0.012625
+    },
+    {
+      "id": "excel-ch4",
+      "sheet": "CH4",
+      "frequencyCount": 11,
+      "status": "pass",
+      "excelStored": {
+        "zpeEv": 1.1903368323970036,
+        "tsEv": 0.1291210012214142
+      },
+      "excelRecalculated": {
+        "zpeEv": 1.1903368323970036,
+        "tsEv": 0.1291210012214142
+      },
+      "excelReproductionAbsoluteError": {
+        "zpeEv": 0,
+        "tsEv": 0
+      },
+      "website298_15K": {
+        "zpeEv": 1.1895001226390858,
+        "tsEv": 0.13282559199192137
+      },
+      "websiteMinusExcel": {
+        "zpeEv": -0.0008367097579178306,
+        "tsEv": 0.0037045907705071657
+      },
+      "websiteMinusExcelPercent": {
+        "zpe": -0.07029184808412023,
+        "ts": 2.869084607045917
+      },
+      "durationMs": 0.011667
+    }
+  ]
+}

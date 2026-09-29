@@ -1,0 +1,7 @@
+"catalyst","catalyst_atoms","intermediate","intermediate_atoms","binding_atom","binding_error_A","export_atoms","cif_round_trip"
+"halfc1","204","co","2","1","6.661338147750939e-16","206","true"
+"halfc1","204","ooh","3","2","6.661338147750939e-16","207","true"
+"halfc1","204","nh3","4","1","6.661338147750939e-16","208","true"
+"full","336","co","2","1","6.661338147750939e-16","338","true"
+"full","336","ooh","3","2","6.661338147750939e-16","339","true"
+"full","336","nh3","4","1","6.661338147750939e-16","340","true"

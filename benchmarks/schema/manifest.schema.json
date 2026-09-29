@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://padarthkhoj.example/schema/benchmark-manifest-v1.json",
+  "title": "Padarthkhoj benchmark manifest",
+  "type": "object",
+  "required": ["schemaVersion", "datasetVersion", "cases"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "datasetVersion": { "type": "string" },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "module", "description", "provenance", "input", "expectation"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "module": { "type": "string" },
+          "description": { "type": "string" },
+          "provenance": { "type": "string" },
+          "input": { "type": "object" },
+          "expectation": { "enum": ["expected-valid", "expected-rejection"] },
+          "tolerances": { "type": "object", "additionalProperties": { "type": "number", "minimum": 0 } },
+          "expectedRejectedModes": { "type": "integer", "minimum": 0 },
+          "expectedErrorPattern": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2.0.0",
+  "referenceType": "user-supplied production Quantum ESPRESSO outputs",
+  "files": [
+    {
+      "filename": "full_scf.out",
+      "calculationType": "scf",
+      "sha256": "52c70bb5693e37f7d0c23b3f979e82e886d085385a0bb59c05add41f090767ea",
+      "expected": {
+        "atoms": 352,
+        "structureSource": "initial",
+        "energyPoints": 1,
+        "finalEnergyRy": -4296.74159793,
+        "finalForceRyBohr": null,
+        "finalPressureKbar": null,
+        "scfIterations": 31,
+        "jobDone": true,
+        "errors": 0
+      }
+    },
+    {
+      "filename": "full_relax.out",
+      "calculationType": "relax",
+      "sha256": "af1e6bea6059460b02e732e4afdb62a9f401324df2e8f6c79608067d0d08c4f6",
+      "expected": {
+        "atoms": 336,
+        "structureSource": "final",
+        "energyPoints": 171,
+        "finalEnergyRy": -4278.31286654,
+        "finalForceRyBohr": 0.005299,
+        "finalPressureKbar": null,
+        "scfIterations": 2158,
+        "jobDone": true,
+        "errors": 0
+      }
+    },
+    {
+      "filename": "2NCB_Ag_vcrelax.out",
+      "calculationType": "vc-relax",
+      "sha256": "092f187f90f888c698f56c107254925e92c0dab5ccc26fbdebe4339dea34904f",
+      "expected": {
+        "atoms": 49,
+        "structureSource": "final",
+        "energyPoints": 15,
+        "finalEnergyRy": -690.36319702,
+        "finalForceRyBohr": 0.003586,
+        "finalPressureKbar": -2.49,
+        "scfIterations": 134,
+        "jobDone": true,
+        "errors": 0
+      }
+    }
+  ],
+  "provenanceNote": "Expected scalar values were independently transcribed from the final matching records in each supplied output. File hashes prevent silent fixture replacement."
+}

@@ -1,0 +1,37 @@
+.bca-inspector {
+  position: absolute; top: 12px; left: 12px; right: 12px;
+  width: fit-content; max-width: calc(100% - 24px);
+  padding: 10px 12px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--bg-panel); color: var(--text);
+  font-size: .8rem; line-height: 1.6; white-space: pre-line;
+  pointer-events: none;
+}
+.bca-view .bond-ui { top: 112px; }
+.bca-gradient-key { margin-top: 8px; min-width: 200px; }
+.bca-upload-card[hidden] { display: none !important; }
+.bca-legend .charge-colour-note, .bca-legend .element-key {
+  width: auto; height: auto; border-radius: 0; margin: 0;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.bca-legend #bca-element-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.bca-legend .element-key i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+.bca-gradient-key[hidden], #bca-colour-style-wrap[hidden] { display: none; }
+.bca-gradient-bar {
+  height: 12px; border-radius: 3px; margin: 6px 0;
+  background: linear-gradient(to right, #22c55e, #e2e8f0, #ef4444);
+}
+.bca-gradient-values { display: flex; justify-content: space-between; gap: 12px; }
+.bca-gradient-values span {
+  width: auto; height: auto; margin: 0; border-radius: 0;
+  font-variant-numeric: tabular-nums;
+}
+#bca-colour-style-wrap small { display: block; line-height: 1.5; color: var(--text-dim); margin-top: 6px; }
+.bca-filter { margin: 12px 0; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-deep); }
+.bca-species-filter { display: flex; flex-wrap: wrap; gap: 6px; }
+.bca-species-filter label { display: inline-flex; align-items: center; gap: 4px; padding: 5px 7px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.bca-species-filter label:has(input:checked) { border-color: var(--accent); background: var(--accent-dim); }
+.bca-species-filter span { color: var(--text-dim); font-size: .62rem; }
+#bca-atom-filter { width: 100%; margin-top: 5px; }
+.bca-filter-status { margin-top: 7px; font-size: .64rem; line-height: 1.45; }
+.bca-filter-status.valid { color: var(--success); }
+.bca-filter-status.invalid { color: #f59e0b; }

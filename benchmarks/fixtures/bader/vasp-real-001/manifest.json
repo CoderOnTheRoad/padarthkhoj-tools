@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "caseId": "bader-vasp-real-001",
+  "sourceCode": "VASP",
+  "expectedOutcome": "valid",
+  "referenceFilename": "CONTCAR",
+  "provenance": "User-supplied real ACF.dat with corrected matching CONTCAR_no3.",
+  "files": {
+    "ACF.dat": {"sha256": "73ac7c2dc91cc3a9a8835f140bc1cb855e7e2d75b1789770cb1cbc2f91c90969", "atomRows": 156},
+    "CONTCAR": {"sha256": "f5308c61d4e7619f6e4a90555aa189f5437d8136d5e6b1bfc103881c753a5f15", "atomRows": 156}
+  },
+  "composition": {"Cu": 10, "S": 6, "O": 13, "F": 12, "N": 3, "C": 40, "H": 72},
+  "assumedReferenceElectrons": {"Cu": 11, "S": 6, "O": 6, "F": 7, "N": 5, "C": 4, "H": 1},
+  "frozenCoreElectronsForInterface": {"Cu": 18, "S": 10, "O": 2, "F": 2, "N": 2, "C": 2, "H": 0},
+  "referenceElectronNote": "Provisional standard valence-electron references. Verify against POTCAR ZVAL before publication.",
+  "coordinateAgreementAngstrom": {"maximumAbsoluteDisplacement": 0.00001917057460379814, "meanAbsoluteDisplacement": 0.000010807722046583797, "acceptanceTolerance": 0.001},
+  "chargeConvention": "q = atomic number - frozen core electrons - ACF electrons; equivalently q = reference valence electrons - ACF electrons. This VASP ACF is valence-only: its 555.0001-electron total agrees with the 555-electron assumed valence total.",
+  "acfNumberOfElectrons": 555.0001
+}

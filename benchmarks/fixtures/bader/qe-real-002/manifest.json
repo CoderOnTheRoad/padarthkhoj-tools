@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "caseId": "bader-qe-real-002",
+  "sourceCode": "Quantum ESPRESSO",
+  "expectedOutcome": "valid",
+  "referenceFilename": "halfc1_scf.in",
+  "provenance": "User-supplied real QE halfc1 ACF.dat, matching SCF input, and matching CIF.",
+  "files": {
+    "ACF.dat": {"sha256": "6831016917423be350246170fe7a760bbda4fec928670aab9a6877aef33b9ceb", "atomRows": 204},
+    "halfc1_scf.in": {"sha256": "07f46b6165f2214466d37d965453610ddc32a34565271351cc656ee393b26f16", "atomRows": 204},
+    "halfc1.cif": {"sha256": "0b8432ae1156f1c515488a84ecdbcec30665b7e8dc1a73ce1b24601da79c6708", "atomRows": 204}
+  },
+  "composition": {"C": 116, "N": 8, "H": 80},
+  "pseudopotentials": {"C": "C.pbe-n-kjpaw_psl.1.0.0.UPF", "N": "N.pbe-n-kjpaw_psl.1.0.0.UPF", "H": "H.pbe-kjpaw_psl.1.0.0.UPF"},
+  "referenceValenceElectrons": {"C": 4, "N": 5, "H": 1},
+  "frozenCoreElectronsForInterface": {"C": 2, "N": 2, "H": 0},
+  "chargeConvention": "q = atomic number - frozen core electrons - ACF electrons; equivalently q = reference valence electrons - ACF electrons.",
+  "densityTypeEvidence": "The expected valence total is 584 electrons and ACF reports 584.0022 electrons, demonstrating valence-only density.",
+  "scfCifCoordinateAgreementAngstrom": {"maximum": 1.1916163935586911e-14, "mean": 4.954664299494163e-15},
+  "acfNumberOfElectrons": 584.0022
+}

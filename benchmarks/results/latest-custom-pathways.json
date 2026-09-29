@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "benchmarkType": "Custom Pathway Designer portability and catalyst reuse",
+  "sources": {
+    "molecules": [
+      {
+        "filename": "CO.cif",
+        "atoms": 2,
+        "bindingAtom": 1
+      },
+      {
+        "filename": "OOH.cif",
+        "atoms": 3,
+        "bindingAtom": 2
+      },
+      {
+        "filename": "NH3.cif",
+        "atoms": 4,
+        "bindingAtom": 1
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "halfc1",
+        "expectedAtoms": 204,
+        "sha256": "0b8432ae1156f1c515488a84ecdbcec30665b7e8dc1a73ce1b24601da79c6708",
+        "activeAtom": {
+          "index": 169,
+          "element": "H"
+        }
+      },
+      {
+        "id": "full",
+        "expectedAtoms": 336,
+        "sha256": "884c27dd4f97af14b2240db629cd790d7fbe72002916d287cc669d4095bcdb86",
+        "activeAtom": {
+          "index": 313,
+          "element": "H"
+        }
+      }
+    ]
+  },
+  "environment": {
+    "timestampUtc": "2026-08-14T10:10:57.844Z",
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M2"
+  },
+  "summary": {
+    "uploadedMolecules": 3,
+    "catalysts": 2,
+    "generatedStructures": 6,
+    "invalidCasesRejected": 6,
+    "rules": 42,
+    "passed": 42,
+    "failed": 0,
+    "maximumBindingErrorA": 6.661338147750939e-16
+  },
+  "rules": [
+    {
+      "scope": "multi-upload",
+      "rule": "all three CIFs parsed",
+      "status": "pass",
+      "detail": "CO.cif:2, OOH.cif:3, NH3.cif:4"
+    },
+    {
+      "scope": "binding selection",
+      "rule": "non-first binding atom preserved",
+      "status": "pass",
+      "detail": "OOH binding atom 2"
+    },
+    {
+      "scope": "binding selection",
+      "rule": "all binding atoms shifted to origin",
+      "status": "pass",
+      "detail": "all origins zero"
+    },
+    {
+      "scope": "ordering",
+      "rule": "upload order preserved",
+      "status": "pass",
+      "detail": "co → ooh → nh3"
+    },
+    {
+      "scope": "JSON",
+      "rule": "format marker",
+      "status": "pass",
+      "detail": "padarthkhoj-custom-pathway"
+    },
+    {
+      "scope": "JSON",
+      "rule": "ordered round trip",
+      "status": "pass",
+      "detail": "co,ooh,nh3"
+    },
+    {
+      "scope": "JSON",
+      "rule": "deterministic round trip",
+      "status": "pass",
+      "detail": "2120 bytes"
+    },
+    {
+      "scope": "JSON",
+      "rule": "warning included",
+      "status": "pass",
+      "detail": "scientific warning present"
+    },
+    {
+      "scope": "halfc1",
+      "rule": "real catalyst atom count",
+      "status": "pass",
+      "detail": "204 atoms"
+    },
+    {
+      "scope": "halfc1/co",
+      "rule": "binding distance",
+      "status": "pass",
+      "detail": "error 6.661e-16 Å"
+    },
+    {
+      "scope": "halfc1/co",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "206 atoms"
+    },
+    {
+      "scope": "halfc1/co",
+      "rule": "catalyst atom order",
+      "status": "pass",
+      "detail": "element order preserved"
+    },
+    {
+      "scope": "halfc1/ooh",
+      "rule": "binding distance",
+      "status": "pass",
+      "detail": "error 6.661e-16 Å"
+    },
+    {
+      "scope": "halfc1/ooh",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "207 atoms"
+    },
+    {
+      "scope": "halfc1/ooh",
+      "rule": "catalyst atom order",
+      "status": "pass",
+      "detail": "element order preserved"
+    },
+    {
+      "scope": "halfc1/nh3",
+      "rule": "binding distance",
+      "status": "pass",
+      "detail": "error 6.661e-16 Å"
+    },
+    {
+      "scope": "halfc1/nh3",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "208 atoms"
+    },
+    {
+      "scope": "halfc1/nh3",
+      "rule": "catalyst atom order",
+      "status": "pass",
+      "detail": "element order preserved"
+    },
+    {
+      "scope": "halfc1",
+      "rule": "unique exported filenames",
+      "status": "pass",
+      "detail": "01_halfc1_co.cif, 02_halfc1_ooh.cif, 03_halfc1_nh3.cif"
+    },
+    {
+      "scope": "halfc1",
+      "rule": "complete ZIP manifest",
+      "status": "pass",
+      "detail": "01_halfc1_co.cif, 02_halfc1_ooh.cif, 03_halfc1_nh3.cif, custom_pathway.json, placement.json"
+    },
+    {
+      "scope": "halfc1",
+      "rule": "ZIP JSON fidelity",
+      "status": "pass",
+      "detail": "30923 ZIP bytes"
+    },
+    {
+      "scope": "halfc1",
+      "rule": "generation completed",
+      "status": "pass",
+      "detail": "7.162 ms"
+    },
+    {
+      "scope": "full",
+      "rule": "real catalyst atom count",
+      "status": "pass",
+      "detail": "336 atoms"
+    },
+    {
+      "scope": "full/co",
+      "rule": "binding distance",
+      "status": "pass",
+      "detail": "error 6.661e-16 Å"
+    },
+    {
+      "scope": "full/co",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "338 atoms"
+    },
+    {
+      "scope": "full/co",
+      "rule": "catalyst atom order",
+      "status": "pass",
+      "detail": "element order preserved"
+    },
+    {
+      "scope": "full/ooh",
+      "rule": "binding distance",
+      "status": "pass",
+      "detail": "error 6.661e-16 Å"
+    },
+    {
+      "scope": "full/ooh",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "339 atoms"
+    },
+    {
+      "scope": "full/ooh",
+      "rule": "catalyst atom order",
+      "status": "pass",
+      "detail": "element order preserved"
+    },
+    {
+      "scope": "full/nh3",
+      "rule": "binding distance",
+      "status": "pass",
+      "detail": "error 6.661e-16 Å"
+    },
+    {
+      "scope": "full/nh3",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "340 atoms"
+    },
+    {
+      "scope": "full/nh3",
+      "rule": "catalyst atom order",
+      "status": "pass",
+      "detail": "element order preserved"
+    },
+    {
+      "scope": "full",
+      "rule": "unique exported filenames",
+      "status": "pass",
+      "detail": "01_full_co.cif, 02_full_ooh.cif, 03_full_nh3.cif"
+    },
+    {
+      "scope": "full",
+      "rule": "complete ZIP manifest",
+      "status": "pass",
+      "detail": "01_full_co.cif, 02_full_ooh.cif, 03_full_nh3.cif, custom_pathway.json, placement.json"
+    },
+    {
+      "scope": "full",
+      "rule": "ZIP JSON fidelity",
+      "status": "pass",
+      "detail": "48250 ZIP bytes"
+    },
+    {
+      "scope": "full",
+      "rule": "generation completed",
+      "status": "pass",
+      "detail": "4.167 ms"
+    },
+    {
+      "scope": "negative controls",
+      "rule": "malformed JSON",
+      "status": "pass",
+      "detail": "The selected file is not valid JSON."
+    },
+    {
+      "scope": "negative controls",
+      "rule": "wrong format",
+      "status": "pass",
+      "detail": "This is not a Padarthkhoj custom-pathway file."
+    },
+    {
+      "scope": "negative controls",
+      "rule": "empty pathway",
+      "status": "pass",
+      "detail": "The pathway contains no intermediates."
+    },
+    {
+      "scope": "negative controls",
+      "rule": "duplicate names",
+      "status": "pass",
+      "detail": "Duplicate intermediate name: co*."
+    },
+    {
+      "scope": "negative controls",
+      "rule": "invalid binding atom",
+      "status": "pass",
+      "detail": "Select the atom that will bind to the catalyst."
+    },
+    {
+      "scope": "negative controls",
+      "rule": "missing intermediate name",
+      "status": "pass",
+      "detail": "Enter a name for this intermediate."
+    }
+  ],
+  "placements": [
+    {
+      "catalyst": "halfc1",
+      "catalyst_atoms": 204,
+      "intermediate": "co",
+      "intermediate_atoms": 2,
+      "binding_atom": 1,
+      "binding_error_A": 6.661338147750939e-16,
+      "export_atoms": 206,
+      "cif_round_trip": true
+    },
+    {
+      "catalyst": "halfc1",
+      "catalyst_atoms": 204,
+      "intermediate": "ooh",
+      "intermediate_atoms": 3,
+      "binding_atom": 2,
+      "binding_error_A": 6.661338147750939e-16,
+      "export_atoms": 207,
+      "cif_round_trip": true
+    },
+    {
+      "catalyst": "halfc1",
+      "catalyst_atoms": 204,
+      "intermediate": "nh3",
+      "intermediate_atoms": 4,
+      "binding_atom": 1,
+      "binding_error_A": 6.661338147750939e-16,
+      "export_atoms": 208,
+      "cif_round_trip": true
+    },
+    {
+      "catalyst": "full",
+      "catalyst_atoms": 336,
+      "intermediate": "co",
+      "intermediate_atoms": 2,
+      "binding_atom": 1,
+      "binding_error_A": 6.661338147750939e-16,
+      "export_atoms": 338,
+      "cif_round_trip": true
+    },
+    {
+      "catalyst": "full",
+      "catalyst_atoms": 336,
+      "intermediate": "ooh",
+      "intermediate_atoms": 3,
+      "binding_atom": 2,
+      "binding_error_A": 6.661338147750939e-16,
+      "export_atoms": 339,
+      "cif_round_trip": true
+    },
+    {
+      "catalyst": "full",
+      "catalyst_atoms": 336,
+      "intermediate": "nh3",
+      "intermediate_atoms": 4,
+      "binding_atom": 1,
+      "binding_error_A": 6.661338147750939e-16,
+      "export_atoms": 340,
+      "cif_round_trip": true
+    }
+  ]
+}

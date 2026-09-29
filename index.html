@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padarthkhoj Tools — EMat-AI Lab</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/visMultiCifGenerator.css">
+  <link rel="stylesheet" href="/src/styles/intermediateMaker.css">
+  <link rel="stylesheet" href="/src/styles/baderChargeAnalysis.css">
+  <link rel="stylesheet" href="/src/styles/baderSpecies.css">
+  <link rel="stylesheet" href="/src/styles/bondControls.css">
+  <link rel="stylesheet" href="/src/styles/freeEnergyPlotter.css">
+  <link rel="stylesheet" href="/src/styles/pdosAnalysis.css">
+  <link rel="stylesheet" href="/src/styles/scientificDosPlotter.css">
+  <link rel="stylesheet" href="/src/styles/orbitalMetrics.css">
+  <link rel="stylesheet" href="/src/styles/zpeTs.css">
+  <link rel="stylesheet" href="/src/styles/developerProfile.css">
+  <link rel="stylesheet" href="/src/styles/themePolish.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════ APP SHELL ═══════════════ -->
+  <div id="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <a class="lab-logo-link" href="https://sites.google.com/view/ematailab/home" aria-label="Visit EMat-AI Lab">
+          <img class="lab-logo-image" src="ematai_lab_logo.png" alt="EMat-AI Lab">
+        </a>
+        <div style="display: flex; flex-direction: column; justify-content: center; min-width: 0;">
+          <div
+            style="font-size: 0.95rem; line-height: 1.2; font-weight: 800; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            Padarthkhoj <span style="color: var(--accent);">Tools</span></div>
+          <div
+            style="color: var(--accent); font-weight: 700; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">
+            EMat-AI Lab</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-label">Materials Analysis &amp; Design</div>
+        <a class="nav-item" data-page="vis-multi-cif-generator" href="#">
+          <span class="nav-icon">◈</span>
+          <span>Crystal Variant Generator</span>
+          <span class="nav-badge badge-vis">CIF</span>
+        </a>
+        <a class="nav-item" data-page="intermediate-maker" href="#">
+          <span class="nav-icon">◉</span>
+          <span>Preset Reaction Pathways</span>
+          <span class="nav-badge badge-int">PATH</span>
+        </a>
+        <a class="nav-item" data-page="custom-pathway-builder" href="#">
+          <span class="nav-icon">⌬</span>
+          <span>Custom Pathway Designer</span>
+          <span class="nav-badge badge-int">CUST</span>
+        </a>
+        <a class="nav-item" data-page="bader-charge-analysis" href="#">
+          <span class="nav-icon">⊕</span>
+          <span>Bader Charge Studio</span>
+          <span class="nav-badge badge-out">ACF</span>
+        </a>
+        <a class="nav-item" data-page="pdos-analysis" href="#">
+          <span class="nav-icon">∿</span>
+          <span>QE &amp; VASP PDOS Analyzer</span>
+          <span class="nav-badge badge-plt">PDOS</span>
+        </a>
+        <a class="nav-item" data-page="scientific-dos-plotter" href="#">
+          <span class="nav-icon">⌁</span>
+          <span>DOS Plotter</span>
+          <span class="nav-badge badge-plt">FIG</span>
+        </a>
+        <a class="nav-item" data-page="orbital-metrics-calculator" href="#">
+          <span class="nav-icon">∫</span>
+          <span>Orbital Metrics Calculator</span>
+          <span class="nav-badge badge-plt">MET</span>
+        </a>
+        <a class="nav-item" data-page="zpe-ts-calculator" href="#">
+          <span class="nav-icon">½</span>
+          <span>ZPE &amp; TS Calculator</span>
+          <span class="nav-badge badge-plt">VIB</span>
+        </a>
+        <a class="nav-item" data-page="free-energy-plotter" href="#">
+          <span class="nav-icon">⚡</span>
+          <span>Free Energy Diagram Studio</span>
+          <span class="nav-badge badge-plt">ΔG</span>
+        </a>
+
+        <div class="nav-group-label">Quantum ESPRESSO Workbench</div>
+        <a class="nav-item active" data-page="cif-editor" href="#">
+          <span class="nav-icon">◈</span>
+          <span>Structure-to-QE Studio</span>
+          <span class="nav-badge badge-cif">CIF→QE</span>
+        </a>
+        <a class="nav-item" data-page="input-editor" href="#">
+          <span class="nav-icon">⌨</span>
+          <span>QE Input Studio</span>
+          <span class="nav-badge badge-in">.in</span>
+        </a>
+        <a class="nav-item" data-page="output-processor" href="#">
+          <span class="nav-icon">⚙</span>
+          <span>QE Output Studio</span>
+          <span class="nav-badge badge-out">OUT</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer" style="padding: 16px; border-top: 1px solid var(--border); display: block;">
+        <div style="margin-bottom: 12px;">
+          <div
+            style="font-size: 0.6rem; color: var(--text-dim); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+            Laboratory</div>
+          <a href="https://sites.google.com/view/ematailab/home" target="_blank"
+            style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.8rem;">EMat-AI Lab ↗</a>
+        </div>
+
+        <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border);">
+          <div
+            style="font-size: 0.6rem; color: var(--text-dim); margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+            Moderator</div>
+          <a href="https://github.com/CoderOnTheRoad" target="_blank"
+            style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.8rem;">Sourav Ghosh</a>
+        </div>
+
+        <div class="sidebar-status" style="margin-bottom: 12px; font-size: 0.8rem;">
+          <span class="status-dot ok"></span>
+          <span id="sidebar-status-text" style="font-weight: 600;">System Ready</span>
+        </div>
+
+        <div class="sidebar-appearance-row">
+          <div class="sidebar-version">v1.0.0 · Padarthkhoj Tools</div>
+          <div class="appearance-controls">
+            <button id="comfort-toggle" class="theme-toggle" title="Appearance &amp; Comfort" aria-label="Open appearance and comfort settings"><span>⚙</span><small>Comfort</small></button>
+            <button id="text-size-toggle" class="theme-toggle text-size-toggle" title="Text size: Standard" aria-label="Change interface text size"><span class="text-size-icon">A</span><small>Text</small></button>
+            <button id="style-toggle" class="theme-toggle style-toggle" title="Switch to Scientific Notebook style" aria-label="Switch between Classic and Scientific Notebook styles" aria-pressed="false"><span class="style-icon">📖</span><small>Style</small></button>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle light and dark theme"><span class="moon-icon">🌙</span><small>Theme</small></button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="main-area">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <span class="topbar-page-title" id="topbar-page-title">Structure-to-QE Studio</span>
+          <span class="topbar-sep"></span>
+          <span class="topbar-breadcrumb" id="topbar-breadcrumb">No file loaded</span>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-btn developer-top-button" id="developer-top-button" type="button" aria-label="Open developer profile"><span class="dev-gem">◆</span><span class="developer-button-label">Developer</span></button>
+          <span class="topbar-mode" id="topbar-mode" style="display:none"></span>
+          <button class="topbar-btn" id="topbar-action-btn" style="display:none"></button>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT (routed here) -->
+      <main class="page-content" id="page-content"></main>
+
+    </div>
+  </div>
+
+  <div class="comfort-backdrop" id="comfort-backdrop" hidden>
+    <section class="comfort-panel" role="dialog" aria-modal="true" aria-labelledby="comfort-title">
+      <header><div><h2 id="comfort-title">Appearance &amp; Comfort</h2><p>Adjust the workspace without changing scientific results.</p></div><button id="comfort-close" aria-label="Close appearance settings">×</button></header>
+      <div class="comfort-body">
+        <label>Interface density<select data-comfort="density"><option value="comfortable">Comfortable</option><option value="standard">Standard</option><option value="compact">Compact</option><option value="dense">Dense</option></select></label>
+        <label>Upload-box text<select data-comfort="uploadtext"><option value="small">Small</option><option value="standard">Standard</option><option value="large">Large</option><option value="adaptive">Adaptive</option></select></label>
+        <label>Sidebar<select data-comfort="sidebar"><option value="full">Full</option><option value="compact">Compact</option><option value="hidden">Hidden</option></select></label>
+        <label>Accent colour<select data-comfort="accent"><option value="mineral">Mineral blue</option><option value="teal">Laboratory teal</option><option value="copper">Copper</option><option value="indigo">Indigo</option><option value="burgundy">Burgundy</option><option value="graphite">Graphite</option></select></label>
+        <label>Contrast<select data-comfort="contrast"><option value="soft">Soft</option><option value="standard">Standard</option><option value="high">High</option></select></label>
+        <label>Motion<select data-comfort="motion"><option value="full">Full</option><option value="reduced">Reduced</option><option value="none">None</option></select></label>
+        <label>Guidance<select data-comfort="guidance"><option value="beginner">Beginner</option><option value="standard">Standard</option><option value="expert">Expert</option></select></label>
+        <label>Monospace usage<select data-comfort="mono"><option value="code">Code only</option><option value="data">Data and code</option><option value="technical">Technical interface</option></select></label>
+        <label>Numeric display<select data-comfort="numbers"><option value="standard">Standard</option><option value="tabular">Tabular</option><option value="emphasized">Emphasized</option></select></label>
+        <label class="comfort-check"><input type="checkbox" data-comfort="sticky"> Keep important action bars visible</label>
+        <fieldset class="typography-settings">
+          <legend>Detailed typography</legend>
+          <label class="comfort-check"><input type="checkbox" id="typography-enabled"> Enable detailed typography <small>Uncheck to restore the original sizes.</small></label>
+          <label>Typography preset<select id="typography-preset"><option value="current">Current compact scale</option><option value="standard">Standard · recommended</option><option value="comfortable">Comfortable</option><option value="presentation">Presentation</option><option value="accessibility">Accessibility</option><option value="custom">Custom</option></select></label>
+          <div class="typography-grid">
+            <label>Page titles<input type="number" min="14" max="28" step="1" data-type-size="page"></label>
+            <label>Panel headings<input type="number" min="12" max="24" step="1" data-type-size="panel"></label>
+            <label>Section headings<input type="number" min="10" max="20" step="1" data-type-size="section"></label>
+            <label>Labels<input type="number" min="10" max="18" step="1" data-type-size="label"></label>
+            <label>Inputs &amp; dropdowns<input type="number" min="10" max="20" step="1" data-type-size="input"></label>
+            <label>Buttons<input type="number" min="10" max="20" step="1" data-type-size="button"></label>
+            <label>Helper text<input type="number" min="9" max="18" step="1" data-type-size="helper"></label>
+            <label>Tables<input type="number" min="10" max="20" step="1" data-type-size="table"></label>
+            <label>Filenames<input type="number" min="10" max="20" step="1" data-type-size="filename"></label>
+            <label>Badges &amp; status<input type="number" min="9" max="16" step="1" data-type-size="badge"></label>
+            <label>Editor text<input type="number" min="10" max="24" step="1" data-type-size="editor"></label>
+            <label>Toolbars<input type="number" min="9" max="18" step="1" data-type-size="toolbar"></label>
+          </div>
+          <button type="button" id="typography-reset">Reset typography</button>
+        </fieldset>
+      </div>
+      <footer><button id="comfort-focus">Enter focus mode</button><button id="comfort-reset">Reset defaults</button><button class="primary" id="comfort-done">Done</button></footer>
+    </section>
+  </div>
+  <button id="comfort-float" class="comfort-float" title="Appearance &amp; Comfort" aria-label="Open appearance and comfort settings">⚙</button>
+
+  <!-- ═══ MODALS ═══ -->
+
+  <!-- Protocol Confirm -->
+  <div class="modal-overlay" id="proto-modal">
+    <div class="modal-box fade-in">
+      <div class="modal-icon">⚛</div>
+      <div class="modal-title">Generate Input for <span class="modal-proto-name" id="modal-proto-name">?</span>?</div>
+      <div class="modal-body">
+        Have you finished editing the structure? The QE input template for
+        <b class="modal-proto-name" id="modal-proto-name2"></b> will be generated and opened in QE Input Studio.
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn cancel" id="btn-proto-cancel">Back to structure</button>
+        <button class="modal-btn confirm" id="btn-proto-confirm">Generate →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Element -->
+  <div class="modal-overlay" id="change-elem-modal">
+    <div class="modal-box fade-in">
+      <div class="modal-icon">⚗</div>
+      <div class="modal-title">Change Element</div>
+      <div class="modal-body" style="margin-bottom:14px">Select a new element for the selected atom:</div>
+      <div class="elem-grid" id="elem-grid"></div>
+      <div class="modal-actions">
+        <button class="modal-btn cancel" id="btn-elem-cancel">Cancel</button>
+        <button class="modal-btn confirm" id="btn-elem-apply">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

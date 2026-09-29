@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "caseId": "bader-qe-real-001",
+  "sourceCode": "Quantum ESPRESSO",
+  "expectedOutcome": "valid",
+  "referenceFilename": "full_scf.in",
+  "provenance": "User-supplied real QE ACF.dat, matching full_scf.in, and matching relaxed CIF.",
+  "files": {
+    "ACF.dat": {"sha256": "849d07606bb5a498efea48890fc754decce06186d7661884941977daf8a39586", "atomRows": 336},
+    "full_scf.in": {"sha256": "d449a2f713eecd63cdd24a2e5ea199015022cce5604e5c0c9f1f7b47433c8768", "atomRows": 336},
+    "full.cif": {"sha256": "884c27dd4f97af14b2240db629cd790d7fbe72002916d287cc669d4095bcdb86", "atomRows": 336}
+  },
+  "composition": {"C": 200, "N": 16, "H": 120},
+  "pseudopotentials": {"C": "C.pbe-n-kjpaw_psl.1.0.0.UPF", "N": "N.pbe-n-kjpaw_psl.1.0.0.UPF", "H": "H.pbe-kjpaw_psl.1.0.0.UPF"},
+  "referenceValenceElectrons": {"C": 4, "N": 5, "H": 1},
+  "frozenCoreElectronsForInterface": {"C": 0, "N": 0, "H": 0},
+  "chargeConvention": "q = atomic number - core subtraction - ACF electrons. This ACF was obtained from reconstructed all-electron density, so the core subtraction is zero for every element.",
+  "densityTypeEvidence": "The nuclear-charge total is 1432 electrons and ACF reports 1430.1339 electrons. This is consistent with reconstructed all-electron density and inconsistent with the 1000-electron valence-only total.",
+  "mappingValidation": "ACF, SCF, and CIF each contain 336 atoms. SCF ATOMIC_POSITIONS order is the authoritative atom-to-element map. SCF and CIF structures agree; ACF positions use a different periodic/origin representation and are not compared by direct Cartesian subtraction.",
+  "acfNumberOfElectrons": 1430.1339
+}

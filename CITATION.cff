@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use Padarthkhoj Tools in your research, please cite the software and the exact release or commit used."
+title: "Padarthkhoj Tools"
+type: software
+authors:
+  - family-names: "Ghosh"
+    given-names: "Sourav"
+    orcid: "https://orcid.org/0009-0007-4964-6573"
+repository-code: "https://github.com/CoderOnTheRoad/padarthkhoj-tools"
+url: "https://github.com/CoderOnTheRoad/padarthkhoj-tools"
+version: "1.0.0"
+date-released: "2026-09-29"
+license: "GPL-3.0-only"
+keywords:
+  - computational materials science
+  - density functional theory
+  - Quantum ESPRESSO
+  - VASP
+  - Bader charge
+  - projected density of states
+  - reaction intermediates
+  - scientific workflows

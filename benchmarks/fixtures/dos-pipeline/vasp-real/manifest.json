@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2.0.0",
+  "referenceType": "user-supplied real VASP DOSCAR and structure pairs",
+  "datasets": [
+    {
+      "id": "VASP-real-spin-001",
+      "directory": "spin-001",
+      "doscar": "DOSCAR",
+      "structure": "CONTCAR",
+      "spinMode": "spin",
+      "atomCount": 152,
+      "nedos": 2001,
+      "fermiEnergyEv": -3.3484874,
+      "composition": {"Cu": 10, "S": 6, "O": 10, "F": 12, "N": 2, "C": 40, "H": 72},
+      "doscarSha256": "4a7e3db1da3c292b8e21c419c03459d1b963137ada933cbef3667887f8a39262",
+      "structureSha256": "a78ba5d9851e117e1ab9a88c5b921b1fed8fa802a14156ca85d07c6f538281da"
+    },
+    {
+      "id": "VASP-real-nonspin-001",
+      "directory": "nonspin-001",
+      "doscar": "DOSCAR",
+      "structure": "POSCAR",
+      "spinMode": "non-spin",
+      "atomCount": 18,
+      "nedos": 2000,
+      "fermiEnergyEv": 12.3955736,
+      "composition": {"Mo": 12, "C": 6},
+      "doscarSha256": "5de5b2a8a66427ebc57e338e28e5a89331935401ef17698f4d2aef4bc7690959",
+      "structureSha256": "574ad9ea2d6e14d0f5ec55eb6adedefc75498276c7701029e55ae831c643c60f"
+    }
+  ]
+}

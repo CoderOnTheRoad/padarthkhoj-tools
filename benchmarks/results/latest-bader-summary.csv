@@ -1,0 +1,4 @@
+"case_id","source_code","status","density_convention","atom_count","total_reference_electrons","acf_total_electrons","total_bader_charge","expected_total_charge","conservation_residual","maximum_per_atom_error"
+"bader-vasp-real-001","VASP","pass","valence-only ACF","156","555","555.0001","-0.00007199999999452089","-0.00009999999997489795","0.000027999999980377055","0"
+"bader-qe-real-001","Quantum ESPRESSO","pass","valence-only ACF","336","1432","1430.1339","1.8661000000000008","1.8660999999999603","4.04121180963557e-14","0"
+"bader-qe-real-002","Quantum ESPRESSO","pass","valence-only ACF","204","584","584.0022","-0.0020999999999982144","-0.002200000000016189","0.0001000000000179746","0"

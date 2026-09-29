@@ -1,0 +1,29 @@
+     calculation = 'vc-relax'
+     lattice parameter (alat)  =       10.0000  a.u.
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.000000   0.000000   0.000000 )
+               a(2) = (   0.000000   1.000000   0.000000 )
+               a(3) = (   0.000000   0.000000   1.000000 )
+
+     site n.     atom                  positions (alat units)
+         1           Si  tau(   1) = (   0.000000   0.000000   0.000000 )
+         2           Si  tau(   2) = (   0.250000   0.250000   0.250000 )
+
+CELL_PARAMETERS (angstrom)
+5.400000 0.000000 0.000000
+0.000000 5.400000 0.000000
+0.000000 0.000000 5.400000
+ATOMIC_POSITIONS (crystal)
+Si 0.000000 0.000000 0.000000
+Si 0.250000 0.250000 0.250000
+
+Begin final coordinates
+CELL_PARAMETERS (angstrom)
+5.430000 0.000000 0.000000
+0.000000 5.430000 0.000000
+0.000000 0.000000 5.430000
+ATOMIC_POSITIONS (crystal)
+Si 0.000000 0.000000 0.000000
+Si 0.251000 0.251000 0.251000
+End final coordinates

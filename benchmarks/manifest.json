@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "0.1.0-zpe-pilot",
+  "cases": [
+    {
+      "id": "zpe-reference-spectrum-298k",
+      "module": "zpe-ts",
+      "description": "Seven-mode molecular spectrum at standard laboratory temperature.",
+      "provenance": "Frequencies transcribed from the user-supplied zpe_ts.xlsx validation example; formulas independently evaluated from exact SI constants.",
+      "input": { "frequenciesThz": [1.5216, 1.9174, 24.8485, 36.1835, 43.8909, 110.7545, 110.905], "temperatureK": 298.15 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 1e-12, "absoluteEntropyJMolK": 1e-9 },
+      "expectedRejectedModes": 0
+    },
+    {
+      "id": "zpe-single-mode-300k",
+      "module": "zpe-ts",
+      "description": "Single 10 THz mode for transparent hand verification.",
+      "provenance": "Synthetic analytical case.",
+      "input": { "frequenciesThz": [10], "temperatureK": 300 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 1e-13, "absoluteEntropyJMolK": 1e-10 },
+      "expectedRejectedModes": 0
+    },
+    {
+      "id": "zpe-temperature-100k",
+      "module": "zpe-ts",
+      "description": "Mixed spectrum at low temperature.",
+      "provenance": "Synthetic analytical temperature-dependence case.",
+      "input": { "frequenciesThz": [2.5, 8, 25, 75], "temperatureK": 100 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 1e-12, "absoluteEntropyJMolK": 1e-9 },
+      "expectedRejectedModes": 0
+    },
+    {
+      "id": "zpe-temperature-1000k",
+      "module": "zpe-ts",
+      "description": "Same mixed spectrum at elevated temperature.",
+      "provenance": "Synthetic analytical temperature-dependence case.",
+      "input": { "frequenciesThz": [2.5, 8, 25, 75], "temperatureK": 1000 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 1e-12, "absoluteEntropyJMolK": 1e-9 },
+      "expectedRejectedModes": 0
+    },
+    {
+      "id": "zpe-low-frequency-298k",
+      "module": "zpe-ts",
+      "description": "Small positive modes exercise the large vibrational entropy regime.",
+      "provenance": "Synthetic numerical boundary case; physical interpretation requires a low-frequency treatment beyond the harmonic model.",
+      "input": { "frequenciesThz": [0.01, 0.05, 0.1], "temperatureK": 298.15 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 1e-11, "absoluteEntropyJMolK": 1e-8 },
+      "expectedRejectedModes": 0
+    },
+    {
+      "id": "zpe-high-frequency-298k",
+      "module": "zpe-ts",
+      "description": "High frequencies exercise exponential underflow protection.",
+      "provenance": "Synthetic numerical stability case.",
+      "input": { "frequenciesThz": [500, 1000, 5000], "temperatureK": 298.15 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 1e-11, "absoluteEntropyJMolK": 1e-10 },
+      "expectedRejectedModes": 0
+    },
+    {
+      "id": "zpe-excluded-modes",
+      "module": "zpe-ts",
+      "description": "Negative and zero modes must be explicitly excluded while a positive mode is evaluated.",
+      "provenance": "Synthetic input-validation case.",
+      "input": { "frequenciesThz": [-2, 0, 10], "temperatureK": 300 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 1e-13, "absoluteEntropyJMolK": 1e-10 },
+      "expectedRejectedModes": 2
+    },
+    {
+      "id": "zpe-empty-spectrum",
+      "module": "zpe-ts",
+      "description": "An empty spectrum produces auditable zero totals without fabricated modes.",
+      "provenance": "Synthetic empty-input boundary case.",
+      "input": { "frequenciesThz": [], "temperatureK": 298.15 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 0, "absoluteEntropyJMolK": 0 },
+      "expectedRejectedModes": 0
+    },
+    {
+      "id": "zpe-nonfinite-mode",
+      "module": "zpe-ts",
+      "description": "A non-finite frequency is reported and excluded.",
+      "provenance": "Synthetic malformed-value case represented as a string because JSON has no NaN literal.",
+      "input": { "frequenciesThz": ["not-a-frequency", 12], "temperatureK": 298.15 },
+      "expectation": "expected-valid",
+      "tolerances": { "absoluteEv": 1e-13, "absoluteEntropyJMolK": 1e-10 },
+      "expectedRejectedModes": 1
+    },
+    {
+      "id": "zpe-invalid-zero-temperature",
+      "module": "zpe-ts",
+      "description": "Zero kelvin is outside the calculator input contract and must be rejected.",
+      "provenance": "Synthetic input-contract case.",
+      "input": { "frequenciesThz": [10], "temperatureK": 0 },
+      "expectation": "expected-rejection",
+      "expectedErrorPattern": "Temperature must be greater than 0 K"
+    },
+    {
+      "id": "zpe-invalid-negative-temperature",
+      "module": "zpe-ts",
+      "description": "Negative absolute temperature must be rejected.",
+      "provenance": "Synthetic input-contract case.",
+      "input": { "frequenciesThz": [10], "temperatureK": -10 },
+      "expectation": "expected-rejection",
+      "expectedErrorPattern": "Temperature must be greater than 0 K"
+    },
+    {
+      "id": "zpe-invalid-text-temperature",
+      "module": "zpe-ts",
+      "description": "A non-numeric temperature must be rejected.",
+      "provenance": "Synthetic malformed-input case.",
+      "input": { "frequenciesThz": [10], "temperatureK": "room" },
+      "expectation": "expected-rejection",
+      "expectedErrorPattern": "Temperature must be greater than 0 K"
+    }
+  ]
+}

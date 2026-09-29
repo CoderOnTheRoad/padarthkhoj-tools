@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 2,
+  "benchmarkType": "QE Output Studio using real production SCF, relax, and vc-relax outputs plus controlled failure cases",
+  "environment": {
+    "timestampUtc": "2026-08-14T10:10:59.143Z",
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "25.5.0",
+    "cpu": "Apple M2"
+  },
+  "summary": {
+    "cases": 5,
+    "realCases": 3,
+    "controlledCases": 2,
+    "validStructures": 4,
+    "totalEnergyPoints": 188,
+    "rules": 86,
+    "passed": 86,
+    "failed": 0
+  },
+  "rules": [
+    {
+      "scope": "real-scf",
+      "rule": "SHA-256 fixture integrity",
+      "status": "pass",
+      "detail": "52c70bb5693e37f7d0c23b3f979e82e886d085385a0bb59c05add41f090767ea"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "calculation type",
+      "status": "pass",
+      "detail": "scf"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "relaxation status",
+      "status": "pass",
+      "detail": "false"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "selected structure source",
+      "status": "pass",
+      "detail": "initial"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "atom count",
+      "status": "pass",
+      "detail": "352 atoms"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "ionic-step history",
+      "status": "pass",
+      "detail": "0 coordinate snapshots"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "energy history",
+      "status": "pass",
+      "detail": "1 points"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "final energy",
+      "status": "pass",
+      "detail": "-4296.74159793 Ry"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "final force",
+      "status": "pass",
+      "detail": "none Ry/Bohr"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "final pressure",
+      "status": "pass",
+      "detail": "none kbar"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "SCF iteration history",
+      "status": "pass",
+      "detail": "31 iterations"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "convergence detection",
+      "status": "pass",
+      "detail": "true"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "JOB DONE detection",
+      "status": "pass",
+      "detail": "true"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "error count",
+      "status": "pass",
+      "detail": "none"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "352 atoms"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "ATOMIC_POSITIONS export",
+      "status": "pass",
+      "detail": "352 atoms"
+    },
+    {
+      "scope": "real-scf",
+      "rule": "finite structure export",
+      "status": "pass",
+      "detail": "clean numeric output"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "SHA-256 fixture integrity",
+      "status": "pass",
+      "detail": "af1e6bea6059460b02e732e4afdb62a9f401324df2e8f6c79608067d0d08c4f6"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "calculation type",
+      "status": "pass",
+      "detail": "relax"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "relaxation status",
+      "status": "pass",
+      "detail": "true"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "selected structure source",
+      "status": "pass",
+      "detail": "final"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "atom count",
+      "status": "pass",
+      "detail": "336 atoms"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "ionic-step history",
+      "status": "pass",
+      "detail": "171 coordinate snapshots"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "energy history",
+      "status": "pass",
+      "detail": "171 points"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "final energy",
+      "status": "pass",
+      "detail": "-4278.31286654 Ry"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "final force",
+      "status": "pass",
+      "detail": "0.005299 Ry/Bohr"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "final pressure",
+      "status": "pass",
+      "detail": "none kbar"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "SCF iteration history",
+      "status": "pass",
+      "detail": "2158 iterations"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "convergence detection",
+      "status": "pass",
+      "detail": "true"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "JOB DONE detection",
+      "status": "pass",
+      "detail": "true"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "error count",
+      "status": "pass",
+      "detail": "none"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "336 atoms"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "ATOMIC_POSITIONS export",
+      "status": "pass",
+      "detail": "336 atoms"
+    },
+    {
+      "scope": "real-relax",
+      "rule": "finite structure export",
+      "status": "pass",
+      "detail": "clean numeric output"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "SHA-256 fixture integrity",
+      "status": "pass",
+      "detail": "092f187f90f888c698f56c107254925e92c0dab5ccc26fbdebe4339dea34904f"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "calculation type",
+      "status": "pass",
+      "detail": "vc-relax"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "relaxation status",
+      "status": "pass",
+      "detail": "true"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "selected structure source",
+      "status": "pass",
+      "detail": "final"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "atom count",
+      "status": "pass",
+      "detail": "49 atoms"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "ionic-step history",
+      "status": "pass",
+      "detail": "14 coordinate snapshots"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "energy history",
+      "status": "pass",
+      "detail": "15 points"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "final energy",
+      "status": "pass",
+      "detail": "-690.36319702 Ry"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "final force",
+      "status": "pass",
+      "detail": "0.003586 Ry/Bohr"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "final pressure",
+      "status": "pass",
+      "detail": "-2.49 kbar"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "SCF iteration history",
+      "status": "pass",
+      "detail": "134 iterations"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "convergence detection",
+      "status": "pass",
+      "detail": "true"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "JOB DONE detection",
+      "status": "pass",
+      "detail": "true"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "error count",
+      "status": "pass",
+      "detail": "none"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "49 atoms"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "ATOMIC_POSITIONS export",
+      "status": "pass",
+      "detail": "49 atoms"
+    },
+    {
+      "scope": "real-vc-relax",
+      "rule": "finite structure export",
+      "status": "pass",
+      "detail": "clean numeric output"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "calculation type",
+      "status": "pass",
+      "detail": "vc-relax"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "relaxation status",
+      "status": "pass",
+      "detail": "false"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "selected structure source",
+      "status": "pass",
+      "detail": "latest"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "atom count",
+      "status": "pass",
+      "detail": "2 atoms"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "ionic-step history",
+      "status": "pass",
+      "detail": "1 coordinate snapshots"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "energy history",
+      "status": "pass",
+      "detail": "1 points"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "final energy",
+      "status": "pass",
+      "detail": "-13 Ry"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "final force",
+      "status": "pass",
+      "detail": "0.2 Ry/Bohr"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "final pressure",
+      "status": "pass",
+      "detail": "none kbar"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "SCF iteration history",
+      "status": "pass",
+      "detail": "0 iterations"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "convergence detection",
+      "status": "pass",
+      "detail": "false"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "JOB DONE detection",
+      "status": "pass",
+      "detail": "false"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "error count",
+      "status": "pass",
+      "detail": "convergence NOT achieved after 100 iterations | Error in routine electrons (1): charge is wrong"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "CIF round trip",
+      "status": "pass",
+      "detail": "2 atoms"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "ATOMIC_POSITIONS export",
+      "status": "pass",
+      "detail": "2 atoms"
+    },
+    {
+      "scope": "controlled-interrupted-latest",
+      "rule": "finite structure export",
+      "status": "pass",
+      "detail": "clean numeric output"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "calculation type",
+      "status": "pass",
+      "detail": "unknown"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "relaxation status",
+      "status": "pass",
+      "detail": "false"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "selected structure source",
+      "status": "pass",
+      "detail": "none"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "atom count",
+      "status": "pass",
+      "detail": "0 atoms"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "ionic-step history",
+      "status": "pass",
+      "detail": "0 coordinate snapshots"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "energy history",
+      "status": "pass",
+      "detail": "0 points"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "final energy",
+      "status": "pass",
+      "detail": "none Ry"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "final force",
+      "status": "pass",
+      "detail": "none Ry/Bohr"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "final pressure",
+      "status": "pass",
+      "detail": "none kbar"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "SCF iteration history",
+      "status": "pass",
+      "detail": "0 iterations"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "convergence detection",
+      "status": "pass",
+      "detail": "false"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "JOB DONE detection",
+      "status": "pass",
+      "detail": "false"
+    },
+    {
+      "scope": "controlled-malformed",
+      "rule": "error count",
+      "status": "pass",
+      "detail": "none"
+    },
+    {
+      "scope": "unit conversion",
+      "rule": "bohr cell converted to angstrom",
+      "status": "pass",
+      "detail": "5.344689830120299 Å"
+    },
+    {
+      "scope": "unit conversion",
+      "rule": "bohr atoms converted to angstrom",
+      "status": "pass",
+      "detail": "1.3758607483478 Å"
+    },
+    {
+      "scope": "interrupted-run fixer",
+      "rule": "cell updated",
+      "status": "pass",
+      "detail": "CELL_PARAMETERS card"
+    },
+    {
+      "scope": "interrupted-run fixer",
+      "rule": "atoms updated",
+      "status": "pass",
+      "detail": "final atomic positions"
+    },
+    {
+      "scope": "interrupted-run fixer",
+      "rule": "unrelated settings preserved",
+      "status": "pass",
+      "detail": "ecutwfc and k points"
+    },
+    {
+      "scope": "interrupted-run fixer",
+      "rule": "output-only reconstruction",
+      "status": "pass",
+      "detail": "complete reconstructed input"
+    }
+  ],
+  "cases": [
+    {
+      "case": "real-scf",
+      "reference_type": "real",
+      "filename": "full_scf.out",
+      "bytes": 106756,
+      "calc_type": "scf",
+      "is_relaxed": false,
+      "structure_source": "initial",
+      "atoms": 352,
+      "ionic_steps": 0,
+      "scf_iterations": 31,
+      "energy_points": 1,
+      "final_energy_Ry": -4296.74159793,
+      "final_force_Ry_Bohr": null,
+      "final_pressure_kbar": null,
+      "job_done": true,
+      "error_count": 0,
+      "parse_ms": 3.674834000000004,
+      "export_ms": 8.432832999999995
+    },
+    {
+      "case": "real-relax",
+      "reference_type": "real",
+      "filename": "full_relax.out",
+      "bytes": 14800697,
+      "calc_type": "relax",
+      "is_relaxed": true,
+      "structure_source": "final",
+      "atoms": 336,
+      "ionic_steps": 171,
+      "scf_iterations": 2158,
+      "energy_points": 171,
+      "final_energy_Ry": -4278.31286654,
+      "final_force_Ry_Bohr": 0.005299,
+      "final_pressure_kbar": null,
+      "job_done": true,
+      "error_count": 0,
+      "parse_ms": 120.313208,
+      "export_ms": 4.355124999999987
+    },
+    {
+      "case": "real-vc-relax",
+      "reference_type": "real",
+      "filename": "2NCB_Ag_vcrelax.out",
+      "bytes": 1191605,
+      "calc_type": "vc-relax",
+      "is_relaxed": true,
+      "structure_source": "final",
+      "atoms": 49,
+      "ionic_steps": 14,
+      "scf_iterations": 134,
+      "energy_points": 15,
+      "final_energy_Ry": -690.36319702,
+      "final_force_Ry_Bohr": 0.003586,
+      "final_pressure_kbar": -2.49,
+      "job_done": true,
+      "error_count": 0,
+      "parse_ms": 15.603000000000009,
+      "export_ms": 0.3307920000000024
+    },
+    {
+      "case": "controlled-interrupted-latest",
+      "reference_type": "synthetic-negative-control",
+      "filename": "controlled-interrupted.out",
+      "bytes": 489,
+      "calc_type": "vc-relax",
+      "is_relaxed": false,
+      "structure_source": "latest",
+      "atoms": 2,
+      "ionic_steps": 1,
+      "scf_iterations": 0,
+      "energy_points": 1,
+      "final_energy_Ry": -13,
+      "final_force_Ry_Bohr": 0.2,
+      "final_pressure_kbar": null,
+      "job_done": false,
+      "error_count": 2,
+      "parse_ms": 0.1625829999999837,
+      "export_ms": 0.1062080000000094
+    },
+    {
+      "case": "controlled-malformed",
+      "reference_type": "synthetic-negative-control",
+      "filename": "malformed.txt",
+      "bytes": 43,
+      "calc_type": "unknown",
+      "is_relaxed": false,
+      "structure_source": "",
+      "atoms": 0,
+      "ionic_steps": 0,
+      "scf_iterations": 0,
+      "energy_points": 0,
+      "final_energy_Ry": null,
+      "final_force_Ry_Bohr": null,
+      "final_pressure_kbar": null,
+      "job_done": false,
+      "error_count": 0,
+      "parse_ms": 0.03095900000002416,
+      "export_ms": 0
+    }
+  ]
+}
