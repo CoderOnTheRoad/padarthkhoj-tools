@@ -11,7 +11,7 @@ export class DeveloperProfilePage {
         <section class="developer-primary-column" aria-label="Sourav Ghosh profile">
         <section class="developer-hero" aria-labelledby="developer-name">
           <figure class="developer-portrait">
-            <img src="/developer/sourav-ghosh-animated.gif" alt="Animated portrait of Sourav Ghosh">
+            <img src="./developer/sourav-ghosh-animated.gif" alt="Animated portrait of Sourav Ghosh">
           </figure>
           <div class="developer-intro">
             <div class="developer-kicker">Developer · Computational materials tools</div>
@@ -22,10 +22,10 @@ export class DeveloperProfilePage {
               <span>Padarthkhoj Tools</span><span>Machine Learning</span><span>Python</span><span>AI-driven materials discovery</span>
             </div>
             <nav class="developer-social-rounds" aria-label="Sourav Ghosh scholarly and developer profiles">
-              <a class="scholar-mark" href="https://scholar.google.com/citations?user=LH2xL7kAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile" data-label="Scholar"><img src="/developer/social-icons/google-scholar.svg" alt=""></a>
-              <a class="researchgate-mark" href="https://www.researchgate.net/profile/Sourav-Ghosh-72?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile" data-label="ResearchGate"><img src="/developer/social-icons/researchgate.svg" alt=""></a>
-              <a class="orcid-mark" href="https://orcid.org/0009-0007-4964-6573" target="_blank" rel="noopener noreferrer" aria-label="ORCID 0009-0007-4964-6573" data-label="ORCID"><img src="/developer/social-icons/orcid.svg" alt=""></a>
-              <a class="github-mark" href="https://github.com/CoderOnTheRoad" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile CoderOnTheRoad" data-label="GitHub"><img src="/developer/social-icons/github.svg" alt=""></a>
+              <a class="scholar-mark" href="https://scholar.google.com/citations?user=LH2xL7kAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar profile" data-label="Scholar"><img src="./developer/social-icons/google-scholar.svg" alt=""></a>
+              <a class="researchgate-mark" href="https://www.researchgate.net/profile/Sourav-Ghosh-72?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile" data-label="ResearchGate"><img src="./developer/social-icons/researchgate.svg" alt=""></a>
+              <a class="orcid-mark" href="https://orcid.org/0009-0007-4964-6573" target="_blank" rel="noopener noreferrer" aria-label="ORCID 0009-0007-4964-6573" data-label="ORCID"><img src="./developer/social-icons/orcid.svg" alt=""></a>
+              <a class="github-mark" href="https://github.com/CoderOnTheRoad" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile CoderOnTheRoad" data-label="GitHub"><img src="./developer/social-icons/github.svg" alt=""></a>
             </nav>
           </div>
           <div class="developer-mark" aria-label="Developer profile"><span>◆</span><strong>DEV</strong><small>Profile</small></div>
@@ -78,7 +78,7 @@ export class DeveloperProfilePage {
         <section class="mentor-profile" aria-labelledby="mentor-name">
           <header class="mentor-header">
             <figure class="mentor-photo">
-              <img src="/developer/ranjit-thapa.jpg" alt="Official faculty portrait of Prof. Ranjit Thapa">
+              <img src="./developer/ranjit-thapa.jpg" alt="Official faculty portrait of Prof. Ranjit Thapa">
             </figure>
             <div>
               <div class="developer-kicker">Research mentor</div>

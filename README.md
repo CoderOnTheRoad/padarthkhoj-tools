@@ -74,6 +74,12 @@ npm run preview
 
 The deployable static application is written to `dist/`.
 
+## GitHub Pages
+
+Once GitHub Pages is enabled and the deployment succeeds, the tools will be available at https://coderontheroad.github.io/padarthkhoj-tools/.
+
+The `Deploy GitHub Pages` workflow checks, builds, and publishes the application on every push to `main`. In repository Settings → Pages, the deployment source must be **GitHub Actions**. The workflow can also be started manually from the Actions tab.
+
 ## License
 
 Copyright © 2026 Sourav Ghosh. Padarthkhoj Tools is distributed under the [GNU General Public License v3.0](./LICENSE). Third-party dependencies and scientific data retain their respective licences and attribution requirements.
