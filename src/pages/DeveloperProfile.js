@@ -133,7 +133,7 @@ export class DeveloperProfilePage {
               <h2 id="om-jadhav-name">Om Jadhav</h2>
               <p>Scientist D · Centre for Development of Advanced Computing (C-DAC), Pune</p>
             </div>
-            <a class="mentor-official-link" href="https://www.cdac.gov.in/index.aspx?id=C-DAC_Employee_List" target="_blank" rel="noopener noreferrer">Official C-DAC directory <span>↗</span></a>
+            <a class="mentor-official-link" href="https://www.cdac.in/" target="_blank" rel="noopener noreferrer">C-DAC homepage <span>↗</span></a>
           </header>
           <div class="mentor-content">
             <article class="mentor-summary">
@@ -157,7 +157,7 @@ export class DeveloperProfilePage {
               </article>
             </div>
           </div>
-          <footer class="mentor-source-note">Profile information summarized from C-DAC’s employee directory, Quantum and HPC programme report, and HPC publication list.</footer>
+          <footer class="mentor-source-note">Profile information summarized from C-DAC’s Quantum and HPC programme report and HPC publication list.</footer>
         </section>
         </div>
        </div>
