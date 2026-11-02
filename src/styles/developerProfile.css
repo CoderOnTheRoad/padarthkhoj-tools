@@ -64,4 +64,4 @@
 
 /* Keep research mentors together beside the developer profile. */
 .developer-mentors{min-width:0}
-.mentor-initials{display:flex;align-items:center;justify-content:center;color:var(--accent2);font:650 2.2rem/1 var(--font-mono)}
+.profile-comparison .mentor-photo-om img{object-position:50% 35%;transform:none}

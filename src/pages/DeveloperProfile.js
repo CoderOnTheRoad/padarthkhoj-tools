@@ -125,7 +125,9 @@ export class DeveloperProfilePage {
 
         <section class="mentor-profile" aria-labelledby="om-jadhav-name">
           <header class="mentor-header">
-            <div class="mentor-photo mentor-initials" aria-hidden="true">OJ</div>
+            <figure class="mentor-photo mentor-photo-om">
+              <img src="./developer/om-jadhav.png" alt="Portrait of Om Jadhav">
+            </figure>
             <div>
               <div class="developer-kicker">Research mentor</div>
               <h2 id="om-jadhav-name">Om Jadhav</h2>
