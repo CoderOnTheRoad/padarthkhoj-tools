@@ -75,6 +75,7 @@ export class DeveloperProfilePage {
         </aside>
         </section>
 
+        <div class="developer-mentors">
         <section class="mentor-profile" aria-labelledby="mentor-name">
           <header class="mentor-header">
             <figure class="mentor-photo">
@@ -121,6 +122,42 @@ export class DeveloperProfilePage {
           </div>
           <footer class="mentor-source-note">Profile information summarized from SRM University–AP and the Indian Academy of Sciences. Full publication, project, patent and scholar lists are available through the official faculty profile.</footer>
         </section>
+
+        <section class="mentor-profile" aria-labelledby="om-jadhav-name">
+          <header class="mentor-header">
+            <div class="mentor-photo mentor-initials" aria-hidden="true">OJ</div>
+            <div>
+              <div class="developer-kicker">Research mentor</div>
+              <h2 id="om-jadhav-name">Om Jadhav</h2>
+              <p>Scientist D · Centre for Development of Advanced Computing (C-DAC), Pune</p>
+            </div>
+            <a class="mentor-official-link" href="https://www.cdac.gov.in/index.aspx?id=C-DAC_Employee_List" target="_blank" rel="noopener noreferrer">Official C-DAC directory <span>↗</span></a>
+          </header>
+          <div class="mentor-content">
+            <article class="mentor-summary">
+              <h3>Profile</h3>
+              <p>Om Gangadhar Jadhav is a Scientist D at C-DAC, Pune. His work includes high-performance computing and parallel programming, with contributions to scientific application development and practical HPC training.</p>
+              <p>He led hands-on OpenMP programming sessions at C-DAC’s 2025 faculty development programme on Quantum and High-Performance Computing. C-DAC’s publication list also credits him as a co-author of a HiPC 2023 contribution on migrating a CUDA-based seismic application to a cross-platform SYCL implementation.</p>
+              <div class="mentor-interests" aria-label="Om Jadhav areas of work">
+                <span>High-performance computing</span><span>Parallel programming</span><span>OpenMP</span><span>CUDA</span><span>SYCL</span><span>Scientific computing</span>
+              </div>
+            </article>
+            <div class="mentor-facts">
+              <article>
+                <h3>Affiliation</h3>
+                <p>Centre for Development of Advanced Computing, Pune, India.</p>
+              </article>
+              <article class="mentor-links">
+                <h3>Connect and verify</h3>
+                <a href="https://in.linkedin.com/in/om-jadhav-62408668" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a>
+                <a href="https://www.cdac.gov.in/index.aspx?id=lu_QHPC-FDP" target="_blank" rel="noopener noreferrer">C-DAC Quantum and HPC programme ↗</a>
+                <a href="https://www.cdac.gov.in/index.aspx?id=hpc_a_resent_pub" target="_blank" rel="noopener noreferrer">C-DAC HPC publications ↗</a>
+              </article>
+            </div>
+          </div>
+          <footer class="mentor-source-note">Profile information summarized from C-DAC’s employee directory, Quantum and HPC programme report, and HPC publication list.</footer>
+        </section>
+        </div>
        </div>
       </div>`;
   }
