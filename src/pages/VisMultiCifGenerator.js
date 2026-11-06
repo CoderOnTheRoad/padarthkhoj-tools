@@ -13,6 +13,10 @@ import {
 // Helpers
 // ═══════════════════════════════════════════════════════════════════════════════
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+export function formatCoordinate(value, maxLength = 7) {
+  if (value === null || value === undefined) return '—';
+  return String(value).slice(0, maxLength);
+}
 function readFileText(file) {
   return new Promise((res, rej) => {
     const r = new FileReader();
@@ -295,7 +299,7 @@ export class VisMultiCifGeneratorPage {
           <span class="vg-sel-ord" style="background:${col.bg};color:${col.text};border-color:${col.border}">${ord+1}</span>
           <span class="vg-sel-elem" style="color:${col.text}">${esc(a.element)}</span>
           <span class="vg-sel-label">${esc(a.label)}</span>
-          <span class="vg-sel-coords">${esc(a.x.slice(0,7))}  ${esc(a.y.slice(0,7))}  ${esc(a.z.slice(0,7))}</span>
+          <span class="vg-sel-coords">${esc(formatCoordinate(a.x))}  ${esc(formatCoordinate(a.y))}  ${esc(formatCoordinate(a.z))}</span>
           <button class="vg-sel-rm" data-idx="${idx}" title="Deselect">✕</button>
         </div>`;
     }).join('');

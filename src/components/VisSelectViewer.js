@@ -3,6 +3,7 @@ import { ELEMENTS } from '../data/elements.js';
 import { disposeBonding, setBondStructure, setupBonding } from '../lib/bonding.js';
 import { setupUnitCellVisibility } from '../lib/unitCellVisibility.js';
 import { clearPeriodicEdgeAtoms, disposePeriodicEdgeAtoms, periodicAtomTargets, setupPeriodicEdgeAtoms, syncPeriodicEdgeAtoms } from '../lib/periodicEdgeAtoms.js';
+import { isPointerDrag } from '../lib/pointerGesture.js';
 
 // ─── Color palette for multi-selected atoms ───────────────────────────────────
 const SEL_COLORS = [
@@ -38,7 +39,13 @@ export class VisSelectViewer {
     this.interactionEnabled = true;
 
     // Orbit state
-    this.mouse       = { down: false, rdown: false, last: { x: 0, y: 0 }, moved: false };
+    this.mouse       = {
+      down: false,
+      rdown: false,
+      last: { x: 0, y: 0 },
+      pressStart: null,
+      moved: false,
+    };
     this.spherical   = { phi: 0.6, theta: 0.4, r: 30 };
     this.panOffset   = { x: 0, y: 0 };
     this.isLight     = document.documentElement.classList.contains('light-mode');
@@ -78,6 +85,7 @@ export class VisSelectViewer {
     this.canvas.addEventListener('mousedown', e => {
       if (!this.interactionEnabled) return;
       this.mouse.last  = { x: e.clientX, y: e.clientY };
+      this.mouse.pressStart = { x: e.clientX, y: e.clientY };
       this.mouse.moved = false;
       if (e.button === 0) this.mouse.down  = true;
       if (e.button === 2) this.mouse.rdown = true;
@@ -86,7 +94,12 @@ export class VisSelectViewer {
       if (!this.interactionEnabled) return;
       const dx = e.clientX - this.mouse.last.x;
       const dy = e.clientY - this.mouse.last.y;
-      if (Math.abs(dx) > 2 || Math.abs(dy) > 2) this.mouse.moved = true;
+      // Only an active, deliberate drag should suppress atom selection. The
+      // previous 2 px per-event check rejected many ordinary clicks.
+      if ((this.mouse.down || this.mouse.rdown) && isPointerDrag(
+        this.mouse.pressStart,
+        { x: e.clientX, y: e.clientY },
+      )) this.mouse.moved = true;
       if (this.mouse.down) {
         this.spherical.theta -= dx * 0.01;
         this.spherical.phi   = Math.max(0.05, Math.min(Math.PI - 0.05, this.spherical.phi - dy * 0.01));
