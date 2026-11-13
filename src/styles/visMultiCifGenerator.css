@@ -440,3 +440,11 @@
   .vg-h-splitter  { display: none; }
   .vg-right-col   { flex: 1 !important; width:auto !important; overflow-y: unset; }
 }
+.vg-example {
+  padding: 12px;
+  color: var(--text-mid);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.vg-example ol { margin: 8px 0; padding-left: 1.4em; }
+.vg-example p { margin: 0; }

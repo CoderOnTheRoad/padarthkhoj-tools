@@ -43,6 +43,7 @@ function getBadgeStyle(order) {
 }
 
 const COMBO_WARN = 500;
+const EXAMPLE_CIF = 'Co_2NCB_8a2_P_unrelaxed.cif';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // VisMultiCifGeneratorPage
@@ -124,6 +125,18 @@ export class VisMultiCifGeneratorPage {
         <!-- ══ RIGHT COLUMN ══ -->
         <div class="vg-right-col" id="vg-right-col">
 
+          <div class="vg-panel vg-example">
+            <button type="button" class="vg-tb-btn" id="vg-load-example">Try an example</button>
+            <div id="vg-example-steps" hidden>
+              <ol>
+                <li>Select the cobalt atom (<strong>Co1</strong>) in the 3D view.</li>
+                <li>Add <strong>Fe</strong> and <strong>Ni</strong> under Substitutions.</li>
+                <li>Generate variants and download the ZIP.</li>
+              </ol>
+              <p>Expect two CIFs with 58 atoms each. One has Fe in place of Co, and the other has Ni.</p>
+            </div>
+          </div>
+
           <!-- Selection List -->
           <div class="vg-panel" id="vg-sel-panel">
             <div class="vg-panel-head">
@@ -172,6 +185,20 @@ export class VisMultiCifGeneratorPage {
     const dz    = this.container.querySelector('#vg-dz');
     const inp   = this.container.querySelector('#vg-file-input');
 
+    const exampleButton = this.container.querySelector('#vg-load-example');
+    exampleButton.addEventListener('click', async () => {
+      exampleButton.disabled = true;
+      try {
+        const response = await fetch(`./examples/${EXAMPLE_CIF}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const text = await response.text();
+        if (exampleButton.isConnected) this._loadCif(EXAMPLE_CIF, text, true);
+      } catch (error) {
+        if (exampleButton.isConnected) alert('Could not load example: ' + error.message);
+      } finally {
+        exampleButton.disabled = false;
+      }
+    });
     inp.addEventListener('change', e => { if (e.target.files[0]) this._loadFile(e.target.files[0]); });
     dz.addEventListener('dragover',  e => { e.preventDefault(); dz.classList.add('vg-drag-over'); });
     dz.addEventListener('dragleave', () => dz.classList.remove('vg-drag-over'));
@@ -206,11 +233,18 @@ export class VisMultiCifGeneratorPage {
   async _loadFile(file) {
     if (!file.name.toLowerCase().endsWith('.cif')) { alert('Please upload a .cif file'); return; }
     try {
-      const text   = await readFileText(file);
+      this._loadCif(file.name, await readFileText(file));
+    } catch (e) {
+      alert('Read error: ' + e.message);
+    }
+  }
+
+  _loadCif(filename, text, isExample = false) {
+    try {
       const parsed = parseCIF(text);
       if (!parsed.atoms.length) { alert('No atom_site loop found in this CIF file'); return; }
 
-      this._state.filename      = file.name;
+      this._state.filename      = filename;
       this._state.rawText       = text;
       this._state.parsed        = parsed;
       this._state.selectedOrder = [];
@@ -219,6 +253,7 @@ export class VisMultiCifGeneratorPage {
 
       this._initViewer(parsed);
       this._refreshRight();
+      this.container.querySelector('#vg-example-steps').hidden = !isExample;
     } catch (e) {
       alert('Parse error: ' + e.message);
     }
