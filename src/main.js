@@ -12,6 +12,7 @@ import { ScientificDosPlotterPage } from './pages/ScientificDosPlotter.js';
 import { OrbitalMetricsCalculatorPage } from './pages/OrbitalMetricsCalculator.js';
 import { ZpeTsCalculatorPage } from './pages/ZpeTsCalculator.js';
 import { DeveloperProfilePage } from './pages/DeveloperProfile.js';
+import { bindReviewerExample } from './lib/reviewerExamples.js';
 
 // ─── Global App State ─────────────────────────────────────────────────────────
 const appState = {
@@ -143,6 +144,7 @@ function navigate(pageId) {
   const page = new config.Factory(content, appState, navigate);
   currentPage = page;
   page.render();
+  bindReviewerExample(pageId, page, () => currentPage === page);
 
   // Add fade-in
   content.classList.remove('fade-in');

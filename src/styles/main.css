@@ -320,6 +320,21 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
   flex-direction: column;
 }
 
+.reviewer-example-guide {
+  flex: 0 0 auto;
+  max-height: 30vh;
+  overflow: auto;
+  padding: 8px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text-mid);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.reviewer-example-guide p { margin: 3px 0; }
+.reviewer-example-guide p:empty { margin: 0; }
+.reviewer-example-guide strong { color: var(--text); }
+
 /* ══════════════════════════════════════════════
    REUSABLE: CARD
    ══════════════════════════════════════════════ */

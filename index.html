@@ -155,11 +155,20 @@
           <span class="topbar-breadcrumb" id="topbar-breadcrumb">No file loaded</span>
         </div>
         <div class="topbar-right">
+          <button class="topbar-btn" id="reviewer-example-load" type="button" aria-controls="reviewer-example-guide" aria-expanded="false" hidden>Try an example</button>
           <button class="topbar-btn developer-top-button" id="developer-top-button" type="button" aria-label="Open developer profile"><span class="dev-gem">◆</span><span class="developer-button-label">Developer</span></button>
           <span class="topbar-mode" id="topbar-mode" style="display:none"></span>
           <button class="topbar-btn" id="topbar-action-btn" style="display:none"></button>
         </div>
       </header>
+
+      <section id="reviewer-example-guide" class="reviewer-example-guide" aria-label="Reviewer example" hidden>
+        <p id="reviewer-example-status" role="status"></p>
+        <div id="reviewer-example-details" hidden>
+          <p id="reviewer-example-steps"></p>
+          <p><strong>Expected result</strong> <span id="reviewer-example-expected"></span></p>
+        </div>
+      </section>
 
       <!-- PAGE CONTENT (routed here) -->
       <main class="page-content" id="page-content"></main>
