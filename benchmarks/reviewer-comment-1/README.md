@@ -54,6 +54,25 @@ The retained [orbital benchmark source](../scripts/run-orbital-real-benchmark.js
 
 The retained [Bader benchmark source](../scripts/run-bader-real-benchmark.js) checks q_i = Z_i − N_core,i − N_ACF,i, with a 10⁻⁸ e absolute per-atom arithmetic tolerance and a separate 2 × 10⁻⁴ e tolerance for the total-charge residual against the printed ACF footer. The latter allows printed-output rounding. The 696 atomic records are internal comparisons within the 3 accepted dataset units. This checks arithmetic and input consistency, not the accuracy of the density partitioning solver. The repository notes that the VASP neutral-reference counts require POTCAR ZVAL confirmation before a physical-charge claim. These retained source descriptions are not asserted to identify the unavailable historical source commit.
 
+## Numerical acceptance thresholds and their interpretation
+
+An absolute numerical acceptance threshold is the largest permitted difference between a returned value and its reference: a comparison passes when |Padarthkhoj − reference| ≤ threshold. The deviation is the measured difference; the threshold is the acceptance rule. These thresholds apply to complete test cases and quantities, not to individual vibrational modes. All energy-valued quantities in a case use its energy threshold; molar entropy uses a separate threshold because its units differ.
+
+| Original test cases | Energy threshold in eV | Molar entropy threshold in J mol⁻¹ K⁻¹ |
+|---|---:|---:|
+| Single 10 THz mode; excluded-mode and nonfinite-mode controls | 10⁻¹³ | 10⁻¹⁰ |
+| Seven-mode spectrum; 100 K and 1000 K spectra | 10⁻¹² | 10⁻⁹ |
+| Low-frequency spectrum | 10⁻¹¹ | 10⁻⁸ |
+| High-frequency spectrum | 10⁻¹¹ | 10⁻¹⁰ |
+| Empty spectrum | 0 | 0 |
+| Invalid-temperature rejection cases | Not applicable | Not applicable |
+
+Floating-point arithmetic can give slightly different results for mathematically equivalent evaluations of the harmonic equations. Summation over modes, result magnitude, and evaluation of exponential and logarithmic terms affect the absolute rounding difference. At low frequencies, x = hν/(k_B T) is small, so direct expressions such as 1 − exp(−x) can subtract nearly equal numbers. At high frequencies, exponential terms can become extremely small or underflow; moreover, the larger ZPE scale can increase absolute rounding differences. These numerical considerations explain why different cases can reasonably have different absolute thresholds. They do not establish that each particular threshold is necessary or optimal.
+
+The numbers in this table are the original case-specific acceptance thresholds retained in the archived report. The available records do not document a formal error bound, sensitivity analysis, or derivation for each choice. The numerical considerations above are an explanation of relevant floating-point behaviour, not a reconstructed account of how the original thresholds were selected. Energy and entropy thresholds must be read separately; for example, the high-frequency entropy threshold remains 10⁻¹⁰ J mol⁻¹ K⁻¹ even though its energy threshold is 10⁻¹¹ eV.
+
+No threshold has been changed to prepare this report. The actual deviations are reported alongside the thresholds so that agreement can be assessed directly. These are software verification limits; they are not estimates of experimental uncertainty, DFT convergence, harmonic-model accuracy, or the reliability of treating very low-frequency motion as a harmonic oscillator. The empty-spectrum case checks exact zero totals, while invalid-temperature cases check rejection and its diagnostic rather than a numerical tolerance.
+
 ## Workbook agreement is a separate comparison
 
 The [original workbook report](../results/zpe-excel-comparison-1.0.0-2026-08-14T06-03-57-605Z.json) verifies 23 stored worksheet results by recalculation using workbook constants, with an absolute tolerance of 10⁻¹² eV. Its pass/fail decision does **not** use the difference between Padarthkhoj and the workbook. Padarthkhoj values are separately reported at 298.15 K using exact SI constants. The workbook uses rounded constants and internally nonequivalent kT values and does not state a unique temperature in kelvin.
