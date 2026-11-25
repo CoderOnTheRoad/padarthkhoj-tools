@@ -87,6 +87,10 @@ The original unified summary points to mutable latest filenames. Original per-ru
 
 Plotting checks exercise render calls, configuration and style handling; this benchmark does not establish comprehensive browser interaction or visual correctness. Structure-placement checks establish requested distances and invariants, not optimized adsorption structures. Agreement with an independently evaluated model is software verification, not experimental validation of that model.
 
+## Separate supplementary verification for additional tools
+
+The original 1,433-unit reference remains unchanged. A [separate fresh supplementary verification](supplementary-verification/README.md) provides 19 scalar comparisons for additional tools, including reference values, returned values, deviations, thresholds, inputs and source hashes. These checks are dated separately and are not added to the historical total or described as original-run records. The historical recovery audit and its search scope are included with that report.
+
 ## Supporting files
 
 - [Original suite classification CSV](original-suite-classification.csv)

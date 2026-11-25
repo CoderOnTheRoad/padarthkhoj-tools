@@ -1,0 +1,1018 @@
+{
+  "schemaVersion": 1,
+  "evidenceClass": "separate supplementary verification",
+  "timestampUtc": "2026-11-25T06:28:54.695Z",
+  "historicalReference": {
+    "report": "benchmarks/results/unified-benchmark-2026-08-14T06-03-58-408Z.json",
+    "units": 1433,
+    "passed": 1433,
+    "unchanged": true,
+    "supplementaryChecksAddedToHistoricalTotal": 0
+  },
+  "scope": "Fresh scalar numerical comparisons for selected tools. Not recovery or re-execution of the original 1433-unit run; not a new complete application benchmark.",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "osRelease": "27.2.0",
+    "cpu": "Apple M2"
+  },
+  "provenance": {
+    "baseCommit": "ebc1c18a99cc52e5268b5c3182cb7094b1232a6d",
+    "trackedApplicationSourceChanges": "",
+    "files": [
+      {
+        "path": "benchmarks/fixtures/bader/qe-real-002/ACF.dat",
+        "sha256": "6831016917423be350246170fe7a760bbda4fec928670aab9a6877aef33b9ceb"
+      },
+      {
+        "path": "benchmarks/fixtures/bader/qe-real-002/halfc1.cif",
+        "sha256": "0b8432ae1156f1c515488a84ecdbcec30665b7e8dc1a73ce1b24601da79c6708"
+      },
+      {
+        "path": "benchmarks/fixtures/bader/qe-real-002/halfc1_scf.in",
+        "sha256": "07f46b6165f2214466d37d965453610ddc32a34565271351cc656ee393b26f16"
+      },
+      {
+        "path": "benchmarks/fixtures/bader/qe-real-002/manifest.json",
+        "sha256": "0701fd94e12efca1866d68c688e8967516370ff3b8f852b1019cd9e733f6ff15"
+      },
+      {
+        "path": "benchmarks/fixtures/orbital-metrics/qe-real/full.pdos_atm#2(C)_wfc#2(p)",
+        "sha256": "43eab70592ee3b8b934bcc5dfd0dd022fe7d12d57165a6c702a7d0e2fb91af0c"
+      },
+      {
+        "path": "benchmarks/fixtures/orbital-metrics/qe-real/manifest.json",
+        "sha256": "dfb33991d0848da25b09e25f124c9effec9ea522ade7f2111d979b1038d8a575"
+      },
+      {
+        "path": "benchmarks/results/unified-benchmark-2026-08-14T06-03-58-408Z.json",
+        "sha256": "5ac260f0e040a99678ec9f93bf44062d9e46941e8d993cac62f14045c0cc7bdc"
+      },
+      {
+        "path": "benchmarks/scripts/run-bader-real-benchmark.js",
+        "sha256": "9a7417cf36109fffd7805b0e4a58317bf38b913a9848fa021a8e638574e67ec8"
+      },
+      {
+        "path": "benchmarks/scripts/run-crystal-pipeline-benchmark.js",
+        "sha256": "bb4a5700556ba99fa40b20483938d51e39748975ebfe91c0c220c95208651366"
+      },
+      {
+        "path": "benchmarks/scripts/run-dos-pipeline-benchmark.js",
+        "sha256": "47f71b2fd0380ce203f4a2f037a945ab761350c36aabc7e0dc0b6e101eab2821"
+      },
+      {
+        "path": "benchmarks/scripts/run-intermediate-maker-benchmark.js",
+        "sha256": "5494fa27015884de23f027f76baa629980515d0c58db00260ce208c4f9073349"
+      },
+      {
+        "path": "benchmarks/scripts/run-orbital-real-benchmark.js",
+        "sha256": "7354353d5507167a8d8c5c8b7252eeec1d88e23d7a79b6f497d703e51bb1c312"
+      },
+      {
+        "path": "benchmarks/scripts/run-supplementary-verification.js",
+        "sha256": "43cdcc2d992469b6fe64ff963c44f6e2793f783b9be8510f7805cb74f57cb6b8"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "053475b33b2ee81f24d984847f58779490b9021ed1731ea0a4023829191e3abc"
+      },
+      {
+        "path": "package.json",
+        "sha256": "eeb0857210c9af67c8d304c1262c4e95bbdd4c821bd409b4dba34974c567dd82"
+      },
+      {
+        "path": "src/.DS_Store",
+        "sha256": "e6b249f2cfed620780a20d5157918e1b0021a47d0fed1a3a8f333ba6dffb8dcf"
+      },
+      {
+        "path": "src/components/BaderChargeViewer.js",
+        "sha256": "918a55c5aba849d6395807a5c3ed3f036dfdb211e2657408e78af17b024b4c49"
+      },
+      {
+        "path": "src/components/IntermediatePlacementViewer.js",
+        "sha256": "90a6350825238efe6a3d54e4549f5f7450fb03a12d0c9f1ff7b12922a97c180c"
+      },
+      {
+        "path": "src/components/ThreeViewer.js",
+        "sha256": "662396971bbf0d959a50ec50a3ba2433c1b3f27726a483e55087c477618b0dfa"
+      },
+      {
+        "path": "src/components/VisSelectViewer.js",
+        "sha256": "a9d2bcafefac43be6da9e40bd1657d6300f37d1d0cca0915a67e9b684df307b5"
+      },
+      {
+        "path": "src/data/co2rrIntermediates.js",
+        "sha256": "5aaa3b81df52d43ac08b64637980806513e8493681da7173b38a6afff10fd354"
+      },
+      {
+        "path": "src/data/elements.js",
+        "sha256": "c44e02c8306e13d6200e655d6e5c8f0d5841e62f2031f715f83b42ae32e682f2"
+      },
+      {
+        "path": "src/data/nrrIntermediates.js",
+        "sha256": "863bf1043aa336589809e468066fb6e51367273e025946344b582a5535e571a0"
+      },
+      {
+        "path": "src/data/pseudos.js",
+        "sha256": "f69db26f07662320b6f57b33f5069449dcde71b48643182a0d4da35af169e98d"
+      },
+      {
+        "path": "src/data/reactionPathways.js",
+        "sha256": "1ed2e6432675fcd1ab9d8bdd865fc232bd2124e7fa5edef169a5d71e48aa6d73"
+      },
+      {
+        "path": "src/lib/baderAnalysis.js",
+        "sha256": "5006c998aabeac1ab93529aafa382307dce4a5cb399b9dade5f8e339656dd1f1"
+      },
+      {
+        "path": "src/lib/baderVisualization.js",
+        "sha256": "1285fb498e417d056653ef713ff16dc1fa09a0bca9c83a398cebf78b8a55808c"
+      },
+      {
+        "path": "src/lib/bonding.js",
+        "sha256": "9816b7cb32e9a5e0a440bfa504f42aff2bc4c818cb2f0742b524eb8f48dcecfa"
+      },
+      {
+        "path": "src/lib/cifGenerator.js",
+        "sha256": "28ac566fb1e29b6f9a4d6a426971e47a915604ce0857bdcce76d3224f374a4df"
+      },
+      {
+        "path": "src/lib/cifParser.js",
+        "sha256": "9e0bdd41af5ad84d49e9b48a15b28663f57c4cc39556ff2484f85785090dc9e4"
+      },
+      {
+        "path": "src/lib/cifSymmetry.js",
+        "sha256": "d56e3b2c04f81d47f5d1466c5f6778e4e550935c74226f5635b0c00a2aa13275"
+      },
+      {
+        "path": "src/lib/cifToQE.js",
+        "sha256": "470f8afdadc84352be55b17a89c598f31517a9bd2c62d6e3230318d87759faf5"
+      },
+      {
+        "path": "src/lib/customPathway.js",
+        "sha256": "0701bc033c7c7c62810b365a005bf692f065cf98920c48aebca1660b25be51e3"
+      },
+      {
+        "path": "src/lib/freeEnergyExport.js",
+        "sha256": "090206361fb276023e8116781353a3fb18b71d992eb8c44e71d980042123ce87"
+      },
+      {
+        "path": "src/lib/freeEnergyInteraction.js",
+        "sha256": "05e501be0d447e4ea14296dae6f04df057ad7be297e87bdfdd93a787457b5e4d"
+      },
+      {
+        "path": "src/lib/freeEnergyParser.js",
+        "sha256": "209f5b002f71b0c26b5b96d45e59b7ad0151a1caf48d2db5b249423962ec09ae"
+      },
+      {
+        "path": "src/lib/freeEnergyPlot.js",
+        "sha256": "c8ddddb4a2ccdaacdf9f25a839718124b5d4abdaa304b8fe828c4f6221c03e3a"
+      },
+      {
+        "path": "src/lib/html.js",
+        "sha256": "25436d51835b451e97beea661cbfaf531912fbb3aac2018066a6f0c8e9033f25"
+      },
+      {
+        "path": "src/lib/intermediateMaker.js",
+        "sha256": "2ab7b4e6d5b6905aa242e075ec9045169e42d4e484b8388a81f08492b6638ee6"
+      },
+      {
+        "path": "src/lib/orbitalMetrics.js",
+        "sha256": "7a2bf6305ad097e49328c216479cb118f68920a596393f30b3fab897871e707f"
+      },
+      {
+        "path": "src/lib/pdosAnalysis.js",
+        "sha256": "268d8b882f2142de4039b0f44a9d8b03ed37f6a8be6f349a45f39404b66e9bb7"
+      },
+      {
+        "path": "src/lib/periodicEdgeAtoms.js",
+        "sha256": "ef388c2093762101960de385f27f85f57ec1ec1a955353b0244a4310e21617c8"
+      },
+      {
+        "path": "src/lib/pngExport.js",
+        "sha256": "06e0b018c0fd3321e4af08cc50eefa544a56316692ce961af2d009e9a21559b4"
+      },
+      {
+        "path": "src/lib/pointerGesture.js",
+        "sha256": "474b0df09cf12ee74f3c76b13e0946b34231e10b6a6ce8895c885ec863e9ed8c"
+      },
+      {
+        "path": "src/lib/qeGenerator.js",
+        "sha256": "f8399634662e455ab6298d4252e0f9039a350dc93f1a8c45deef9b69a9838894"
+      },
+      {
+        "path": "src/lib/qeInputGenerator.js",
+        "sha256": "d76b8cf3c8f1d2595f3e9d55e13012e9726b9fcbd3d08737d9cb19a4fccfc3d6"
+      },
+      {
+        "path": "src/lib/qeParser.js",
+        "sha256": "246ef918447543a457c8f180decc1557aa2d076ed91dafeb2f01354f8cf5a7d1"
+      },
+      {
+        "path": "src/lib/reviewerExamples.js",
+        "sha256": "92999e9341197ccd09de74ee75771d402d5f4c7f54d01d1d963dc2eae6da71e0"
+      },
+      {
+        "path": "src/lib/scientificDosPlot.js",
+        "sha256": "d66e61002874db31ac13317a916d5fa759fb3278ca30d56c88314dfe6ad80943"
+      },
+      {
+        "path": "src/lib/unitCellVisibility.js",
+        "sha256": "2587be85adb7969e910287dfb99e56f53d8c301207701668597c09e4c90b6fab"
+      },
+      {
+        "path": "src/lib/zpeTs.js",
+        "sha256": "2c6ad5276d44642a3335b7ae82669bc36be2be20ca05545567ab171a22b7d572"
+      },
+      {
+        "path": "src/main.js",
+        "sha256": "f0a7f6e6822f19178182518faf4b6fa21fc5cee7875da48ea56cfa36339380f6"
+      },
+      {
+        "path": "src/pages/BaderChargeAnalysis.js",
+        "sha256": "083fd04d6004606dbf483dcdaeac9c82b56212a5daa8c331c304647c4aee4923"
+      },
+      {
+        "path": "src/pages/CifEditor.js",
+        "sha256": "b8d5956890690f276873f88918c1e22e6ee0ee9a75ba453fe7e1034d53bd8c20"
+      },
+      {
+        "path": "src/pages/CustomPathwayBuilder.js",
+        "sha256": "a2b770830b4b735ce646acaf03c17d52fd06c1f2aa392d60e221521457bb3b1c"
+      },
+      {
+        "path": "src/pages/DeveloperProfile.js",
+        "sha256": "a3b31ba44fad0b265f845a05a5dc223e4bffd7a910492885c13916694fc8fa68"
+      },
+      {
+        "path": "src/pages/FreeEnergyPlotter.js",
+        "sha256": "88bc61c5edb80532c13651e6516105f925d72489163096b202511d9367b94b3e"
+      },
+      {
+        "path": "src/pages/InputEditor.js",
+        "sha256": "2d21fa7e32f2045748ae1db58b3507092d748b3f48dc2c0344ca7cdcfc6f6517"
+      },
+      {
+        "path": "src/pages/IntermediateMaker.js",
+        "sha256": "df938310050a3a20cff64c815a0556451f3817de59ca19977329c23d6acb9d97"
+      },
+      {
+        "path": "src/pages/OrbitalMetricsCalculator.js",
+        "sha256": "06a5383e4263108cada3df335f8b79b490402439a37d67394d2a1f45f0824330"
+      },
+      {
+        "path": "src/pages/OutputProcessor.js",
+        "sha256": "6443116c3432d9cca0df3d2ee37b87b031bcd721734d1ee6beaf0beab4a400d6"
+      },
+      {
+        "path": "src/pages/PdosAnalysis.js",
+        "sha256": "760ebec9aca3f2f9ddda8f44465db7f603f47bcd8e477ef19bc4cc70a4fee11e"
+      },
+      {
+        "path": "src/pages/ProtocolSelector.js",
+        "sha256": "ea6730750e2767a59b1feea4b5e600416bc72e96fee718bfd40a16eb98ddbc6c"
+      },
+      {
+        "path": "src/pages/ScientificDosPlotter.js",
+        "sha256": "80ce2a9c8a4856d816170a6525f92464f04cd417c5301ad971e1d1399c2d56d8"
+      },
+      {
+        "path": "src/pages/VisMultiCifGenerator.js",
+        "sha256": "74c659986e4025f316bafc06d675bc6faeecc1c38099d3b7244dfc757352ee1a"
+      },
+      {
+        "path": "src/pages/ZpeTsCalculator.js",
+        "sha256": "99874594c4f536bd100a8bbaef94450d4833fed5e41ae375766dc42e1880edf4"
+      },
+      {
+        "path": "src/styles/baderChargeAnalysis.css",
+        "sha256": "5bd6f0646b68e7c3889ad974f209c43a5672a631fecc201e077c8b5037e51520"
+      },
+      {
+        "path": "src/styles/baderInspection.css",
+        "sha256": "e211b4b860a88279d104cea5a1586f2c28999bc2315e0017c40b7c5621214982"
+      },
+      {
+        "path": "src/styles/baderSpecies.css",
+        "sha256": "087bd6a1da2642aaa07b76a956db3d5182db4d55a75782966059ec93cc6e82c2"
+      },
+      {
+        "path": "src/styles/bondControls.css",
+        "sha256": "10964f40da3c512aebabaa8c08cfd299616c4cf9939b6b5b8518385176fb5d9d"
+      },
+      {
+        "path": "src/styles/developerProfile.css",
+        "sha256": "56daffe2120544b6ce7af36ac2139d0df6c4b647d7fc4ef547e5cfa2350030b6"
+      },
+      {
+        "path": "src/styles/freeEnergyPlotter.css",
+        "sha256": "44ab4ef326af3d2515816740838ebc19ee9ac25e040eea8c1f61e58e3da2925b"
+      },
+      {
+        "path": "src/styles/intermediateMaker.css",
+        "sha256": "97f5597d7ecd7778c2b87f5eda2d7624d5045c240fdf5a7011c9ffeadfc3a6cd"
+      },
+      {
+        "path": "src/styles/main.css",
+        "sha256": "7f85b8a2676c72742f0aceb0c21192a0caa9fc52f7d63a9745efb68a378a75ac"
+      },
+      {
+        "path": "src/styles/orbitalMetrics.css",
+        "sha256": "13e9b1a4b27a5965f1ad0c6c6114378999ecf3b51b1109a0004e2147f0380d5b"
+      },
+      {
+        "path": "src/styles/pdosAnalysis.css",
+        "sha256": "f55ef2a548af390e302af794bbd9d4e6edb25de782c7041ddc937a0b3f039ef0"
+      },
+      {
+        "path": "src/styles/scientificDosPlotter.css",
+        "sha256": "9efd117af8139bcd1f709f79ce83c0935980b851a03aede986ac943e9c37a094"
+      },
+      {
+        "path": "src/styles/themePolish.css",
+        "sha256": "04829922577adc69a3375323d357b0845f596a23f0eadea7c92f9fa7cb7337c2"
+      },
+      {
+        "path": "src/styles/visMultiCifGenerator.css",
+        "sha256": "b45e0dedd32a9f1b7cb11bb2cd369666cc9d100e28f7a03a274f22febead08a7"
+      },
+      {
+        "path": "src/styles/zpeTs.css",
+        "sha256": "b001235076aee37cd702f661c74a5f0c690135990d495d4e92259a69807d65f1"
+      },
+      {
+        "path": "test/fixtures/triclinic.cif",
+        "sha256": "3818734743740a4073f66e89d17005ab0c94ddab92631ad508a873e441b74bfd"
+      }
+    ]
+  },
+  "thresholds": {
+    "orbitalIntegral": {
+      "value": 1e-11,
+      "unit": "integrated PDOS units",
+      "basis": "Retained orbital runner; absolute floating-point agreement on the same sampled grid."
+    },
+    "orbitalCentre": {
+      "value": 1e-11,
+      "unit": "eV",
+      "basis": "Retained orbital runner; absolute agreement of first-moment/area ratios."
+    },
+    "pipelineIntegral": {
+      "value": 1e-10,
+      "unit": "integrated PDOS units",
+      "basis": "Retained DOS pipeline runner; absolute agreement after summation and CSV transfer."
+    },
+    "pipelineCentre": {
+      "value": 1e-10,
+      "unit": "eV",
+      "basis": "Retained DOS pipeline runner; absolute agreement after summation and CSV transfer."
+    },
+    "charge": {
+      "value": 1e-8,
+      "unit": "e",
+      "basis": "Retained Bader runner; arithmetic agreement under a fixed electron-count convention."
+    },
+    "chargeFooter": {
+      "value": 0.0002,
+      "unit": "e",
+      "basis": "Retained Bader runner; printed atomic rows and footer can accumulate different rounding."
+    },
+    "placement": {
+      "value": 1e-9,
+      "unit": "angstrom",
+      "basis": "Retained Intermediate Maker runner; absolute rigid-geometry agreement."
+    },
+    "coordinate": {
+      "value": 1e-10,
+      "unit": "angstrom",
+      "basis": "New supplementary parser check; conservative absolute threshold for double-precision cell conversion on this fixture."
+    },
+    "coordinateExport": {
+      "value": 1e-10,
+      "unit": "angstrom",
+      "basis": "New supplementary check using 12 decimal places; permits 0.5e-12 angstrom output rounding plus numerical conversion rounding."
+    },
+    "periodicDistance": {
+      "value": 1e-12,
+      "unit": "angstrom",
+      "basis": "Retained crystal runner minimum-image control for the specified orthogonal cell only."
+    }
+  },
+  "summary": {
+    "scalarComparisons": 19,
+    "passed": 19,
+    "failed": 0,
+    "countingRule": "Each reported scalar comparison is one supplementary check; these are not the historical suite-defined units."
+  },
+  "limitations": [
+    "No experimental accuracy or electronic-structure convergence claim.",
+    "Trapezoidal checks compare algorithms on the same sampled grid, not quadrature error against a continuous spectrum.",
+    "Bader checks assume the explicitly stated valence-only convention; they do not validate the upstream density partitioning solver.",
+    "Rigid placement and periodic geometry checks do not establish relaxed structures or arbitrary-cell minimum-image correctness.",
+    "Fresh thresholds include inherited engineering acceptance limits and two new coordinate limits; no formal floating-point error bound is asserted."
+  ],
+  "cases": [
+    {
+      "id": "orbital-full-occupancy",
+      "tool": "Orbital Metrics",
+      "purpose": "scientific numerical",
+      "quantity": "full pz_up integral",
+      "expected": 0.6794099554218257,
+      "returned": 0.6794099554218257,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-11,
+      "unit": "integrated PDOS units",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/orbital-metrics/qe-real/full.pdos_atm#2(C)_wfc#2(p)",
+        "channel": "pz_up",
+        "rawColumnOneBased": 4,
+        "fermiEnergyEv": -3.162,
+        "range": [
+          -23.442,
+          1.148
+        ]
+      },
+      "referenceMethod": "Independent raw-column composite trapezoidal area and first moment; occupied endpoint linearly interpolated at the supplied Fermi energy.",
+      "status": "pass"
+    },
+    {
+      "id": "orbital-full-centre",
+      "tool": "Orbital Metrics",
+      "purpose": "scientific numerical",
+      "quantity": "full pz_up centre",
+      "expected": -7.935164657212043,
+      "returned": -7.935164657212043,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-11,
+      "unit": "eV",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/orbital-metrics/qe-real/full.pdos_atm#2(C)_wfc#2(p)",
+        "channel": "pz_up",
+        "rawColumnOneBased": 4,
+        "fermiEnergyEv": -3.162,
+        "range": [
+          -23.442,
+          1.148
+        ]
+      },
+      "referenceMethod": "Independent raw-column composite trapezoidal area and first moment; occupied endpoint linearly interpolated at the supplied Fermi energy.",
+      "status": "pass"
+    },
+    {
+      "id": "orbital-occupied-occupancy",
+      "tool": "Orbital Metrics",
+      "purpose": "scientific numerical",
+      "quantity": "occupied pz_up integral",
+      "expected": 0.5278730901298307,
+      "returned": 0.5278730901298307,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-11,
+      "unit": "integrated PDOS units",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/orbital-metrics/qe-real/full.pdos_atm#2(C)_wfc#2(p)",
+        "channel": "pz_up",
+        "rawColumnOneBased": 4,
+        "fermiEnergyEv": -3.162,
+        "range": [
+          -23.442,
+          -3.162
+        ]
+      },
+      "referenceMethod": "Independent raw-column composite trapezoidal area and first moment; occupied endpoint linearly interpolated at the supplied Fermi energy.",
+      "status": "pass"
+    },
+    {
+      "id": "orbital-occupied-centre",
+      "tool": "Orbital Metrics",
+      "purpose": "scientific numerical",
+      "quantity": "occupied pz_up centre",
+      "expected": -9.848413959102388,
+      "returned": -9.848413959102388,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-11,
+      "unit": "eV",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/orbital-metrics/qe-real/full.pdos_atm#2(C)_wfc#2(p)",
+        "channel": "pz_up",
+        "rawColumnOneBased": 4,
+        "fermiEnergyEv": -3.162,
+        "range": [
+          -23.442,
+          -3.162
+        ]
+      },
+      "referenceMethod": "Independent raw-column composite trapezoidal area and first moment; occupied endpoint linearly interpolated at the supplied Fermi energy.",
+      "status": "pass"
+    },
+    {
+      "id": "pipeline-occupancy",
+      "tool": "DOS PDOS pipeline",
+      "purpose": "numerical data transfer",
+      "quantity": "Fermi-shifted CSV pz_up integral",
+      "expected": 0.6794099554218257,
+      "returned": 0.6794099554218257,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-10,
+      "unit": "integrated PDOS units",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/orbital-metrics/qe-real/full.pdos_atm#2(C)_wfc#2(p)",
+        "channel": "pz_up",
+        "fermiEnergyEv": -3.162
+      },
+      "referenceMethod": "Raw pz_up column integrated independently after E becomes E minus Fermi energy; compare with parse, summation-stage export, CSV reload and metric calculation. This one-record case does not test addition across multiple records.",
+      "status": "pass"
+    },
+    {
+      "id": "pipeline-centre",
+      "tool": "DOS PDOS pipeline",
+      "purpose": "numerical data transfer",
+      "quantity": "Fermi-shifted CSV pz_up centre",
+      "expected": -4.7731646572120425,
+      "returned": -4.7731646572120425,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-10,
+      "unit": "eV",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/orbital-metrics/qe-real/full.pdos_atm#2(C)_wfc#2(p)",
+        "channel": "pz_up",
+        "fermiEnergyEv": -3.162
+      },
+      "referenceMethod": "Raw pz_up column integrated independently after E becomes E minus Fermi energy; compare with parse, summation-stage export, CSV reload and metric calculation. This one-record case does not test addition across multiple records.",
+      "status": "pass"
+    },
+    {
+      "id": "bader-first-C",
+      "tool": "Bader Analysis",
+      "purpose": "scientific arithmetic",
+      "quantity": "charge of first C atom",
+      "expected": 0.007400000000000073,
+      "returned": 0.007400000000000073,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-8,
+      "unit": "e",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/bader/qe-real-002/ACF.dat",
+        "structure": "benchmarks/fixtures/bader/qe-real-002/halfc1_scf.in",
+        "atomIndexOneBased": 1,
+        "element": "C",
+        "referenceValenceElectrons": 4,
+        "acfElectrons": 3.9926,
+        "frozenCoreElectrons": 2
+      },
+      "referenceMethod": "Independent raw ACF electron count subtracted from declared valence reference; compare with production charge arithmetic under the same valence-only convention.",
+      "status": "pass"
+    },
+    {
+      "id": "bader-first-N",
+      "tool": "Bader Analysis",
+      "purpose": "scientific arithmetic",
+      "quantity": "charge of first N atom",
+      "expected": -1.2542999999999997,
+      "returned": -1.2542999999999997,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-8,
+      "unit": "e",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/bader/qe-real-002/ACF.dat",
+        "structure": "benchmarks/fixtures/bader/qe-real-002/halfc1_scf.in",
+        "atomIndexOneBased": 12,
+        "element": "N",
+        "referenceValenceElectrons": 5,
+        "acfElectrons": 6.2543,
+        "frozenCoreElectrons": 2
+      },
+      "referenceMethod": "Independent raw ACF electron count subtracted from declared valence reference; compare with production charge arithmetic under the same valence-only convention.",
+      "status": "pass"
+    },
+    {
+      "id": "bader-first-H",
+      "tool": "Bader Analysis",
+      "purpose": "scientific arithmetic",
+      "quantity": "charge of first H atom",
+      "expected": 0.0252,
+      "returned": 0.0252,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-8,
+      "unit": "e",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/bader/qe-real-002/ACF.dat",
+        "structure": "benchmarks/fixtures/bader/qe-real-002/halfc1_scf.in",
+        "atomIndexOneBased": 26,
+        "element": "H",
+        "referenceValenceElectrons": 1,
+        "acfElectrons": 0.9748,
+        "frozenCoreElectrons": 0
+      },
+      "referenceMethod": "Independent raw ACF electron count subtracted from declared valence reference; compare with production charge arithmetic under the same valence-only convention.",
+      "status": "pass"
+    },
+    {
+      "id": "bader-charge-total",
+      "tool": "Bader Analysis",
+      "purpose": "printed data consistency",
+      "quantity": "total charge against ACF footer",
+      "expected": -0.002200000000016189,
+      "returned": -0.0020999999999982144,
+      "absoluteDeviation": 0.0001000000000179746,
+      "absoluteTolerance": 0.0002,
+      "unit": "e",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/bader/qe-real-002/ACF.dat",
+        "structure": "benchmarks/fixtures/bader/qe-real-002/halfc1_scf.in",
+        "atoms": 204,
+        "expectedValenceElectrons": 584,
+        "footerElectrons": 584.0022
+      },
+      "referenceMethod": "Total reference valence count minus independently read ACF footer, compared with sum of production atomic charges; permits printed-row/footer rounding.",
+      "status": "pass"
+    },
+    {
+      "id": "intermediate-binding",
+      "tool": "Intermediate Maker",
+      "purpose": "geometric numerical",
+      "quantity": "NO3 binding distance",
+      "expected": 1.8,
+      "returned": 1.8000000000000007,
+      "absoluteDeviation": 6.661338147750939e-16,
+      "absoluteTolerance": 1e-9,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/bader/qe-real-002/halfc1.cif",
+        "activeAtomOneBased": 169,
+        "activeCartesianAngstrom": {
+          "x": 13.155800000000001,
+          "y": 10.768449999999998,
+          "z": 28.2835
+        },
+        "pathway": "nrr-no3-nh3",
+        "template": "NO3",
+        "options": {
+          "distance": 1.8,
+          "direction": {
+            "x": 0,
+            "y": 0,
+            "z": 1
+          },
+          "twist": 31,
+          "tilt": 0
+        },
+        "templateAtoms": [
+          {
+            "element": "N",
+            "x": 0.90687,
+            "y": 0.84767,
+            "z": 0.1704
+          },
+          {
+            "element": "O",
+            "x": 1.15625,
+            "y": 1.2765,
+            "z": 1.3206
+          },
+          {
+            "element": "O",
+            "x": 1.56399,
+            "y": 1.26725,
+            "z": -0.8106
+          },
+          {
+            "element": "O",
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ],
+        "bindingAtomZeroBased": 3
+      },
+      "referenceMethod": "Euclidean distance of returned binding atom from the selected catalyst atom, compared with requested distance.",
+      "status": "pass"
+    },
+    {
+      "id": "intermediate-internal",
+      "tool": "Intermediate Maker",
+      "purpose": "geometric numerical",
+      "quantity": "NO3 atom 1 to atom 2 distance",
+      "expected": 1.2526155009818454,
+      "returned": 1.2526155009818436,
+      "absoluteDeviation": 1.7763568394002505e-15,
+      "absoluteTolerance": 1e-9,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "path": "benchmarks/fixtures/bader/qe-real-002/halfc1.cif",
+        "activeAtomOneBased": 169,
+        "activeCartesianAngstrom": {
+          "x": 13.155800000000001,
+          "y": 10.768449999999998,
+          "z": 28.2835
+        },
+        "pathway": "nrr-no3-nh3",
+        "template": "NO3",
+        "options": {
+          "distance": 1.8,
+          "direction": {
+            "x": 0,
+            "y": 0,
+            "z": 1
+          },
+          "twist": 31,
+          "tilt": 0
+        },
+        "templateAtoms": [
+          {
+            "element": "N",
+            "x": 0.90687,
+            "y": 0.84767,
+            "z": 0.1704
+          },
+          {
+            "element": "O",
+            "x": 1.15625,
+            "y": 1.2765,
+            "z": 1.3206
+          },
+          {
+            "element": "O",
+            "x": 1.56399,
+            "y": 1.26725,
+            "z": -0.8106
+          },
+          {
+            "element": "O",
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        ],
+        "bindingAtomZeroBased": 3
+      },
+      "referenceMethod": "Independent Euclidean pair distance in the original template compared with the corresponding returned pair after rigid placement.",
+      "status": "pass"
+    },
+    {
+      "id": "crystal-cartesian-x",
+      "tool": "Crystal Structure",
+      "purpose": "geometric numerical",
+      "quantity": "C1 Cartesian x",
+      "expected": 1.2592085783714,
+      "returned": 1.2592085783714,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-10,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "path": "test/fixtures/triclinic.cif",
+        "cell": {
+          "a": 4.1,
+          "b": 5.2,
+          "c": 6.3,
+          "alphaDegrees": 70,
+          "betaDegrees": 80,
+          "gammaDegrees": 75
+        },
+        "fractional": [
+          0.125,
+          0.25,
+          0.375
+        ],
+        "atom": "C1",
+        "exportDecimals": 12
+      },
+      "referenceMethod": "Independent triclinic cell-vector construction from specified lengths and angles, multiplied by specified fractional coordinates.",
+      "status": "pass"
+    },
+    {
+      "id": "crystal-qe-export-x",
+      "tool": "CIF to QE conversion",
+      "purpose": "numerical format conversion",
+      "quantity": "C1 exported Cartesian x",
+      "expected": 1.2592085783714,
+      "returned": 1.259208578371,
+      "absoluteDeviation": 3.999023334699814e-13,
+      "absoluteTolerance": 1e-10,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "path": "test/fixtures/triclinic.cif",
+        "cell": {
+          "a": 4.1,
+          "b": 5.2,
+          "c": 6.3,
+          "alphaDegrees": 70,
+          "betaDegrees": 80,
+          "gammaDegrees": 75
+        },
+        "fractional": [
+          0.125,
+          0.25,
+          0.375
+        ],
+        "atom": "C1",
+        "exportDecimals": 12
+      },
+      "referenceMethod": "Same independent triclinic reference compared with numeric coordinates read from the 12-decimal ATOMIC_POSITIONS export.",
+      "status": "pass"
+    },
+    {
+      "id": "crystal-cartesian-y",
+      "tool": "Crystal Structure",
+      "purpose": "geometric numerical",
+      "quantity": "C1 Cartesian y",
+      "expected": 1.9823056131951113,
+      "returned": 1.9823056131951113,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-10,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "path": "test/fixtures/triclinic.cif",
+        "cell": {
+          "a": 4.1,
+          "b": 5.2,
+          "c": 6.3,
+          "alphaDegrees": 70,
+          "betaDegrees": 80,
+          "gammaDegrees": 75
+        },
+        "fractional": [
+          0.125,
+          0.25,
+          0.375
+        ],
+        "atom": "C1",
+        "exportDecimals": 12
+      },
+      "referenceMethod": "Independent triclinic cell-vector construction from specified lengths and angles, multiplied by specified fractional coordinates.",
+      "status": "pass"
+    },
+    {
+      "id": "crystal-qe-export-y",
+      "tool": "CIF to QE conversion",
+      "purpose": "numerical format conversion",
+      "quantity": "C1 exported Cartesian y",
+      "expected": 1.9823056131951113,
+      "returned": 1.982305613195,
+      "absoluteDeviation": 1.1124434706744069e-13,
+      "absoluteTolerance": 1e-10,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "path": "test/fixtures/triclinic.cif",
+        "cell": {
+          "a": 4.1,
+          "b": 5.2,
+          "c": 6.3,
+          "alphaDegrees": 70,
+          "betaDegrees": 80,
+          "gammaDegrees": 75
+        },
+        "fractional": [
+          0.125,
+          0.25,
+          0.375
+        ],
+        "atom": "C1",
+        "exportDecimals": 12
+      },
+      "referenceMethod": "Same independent triclinic reference compared with numeric coordinates read from the 12-decimal ATOMIC_POSITIONS export.",
+      "status": "pass"
+    },
+    {
+      "id": "crystal-cartesian-z",
+      "tool": "Crystal Structure",
+      "purpose": "geometric numerical",
+      "quantity": "C1 Cartesian z",
+      "expected": 2.210238841225001,
+      "returned": 2.210238841225001,
+      "absoluteDeviation": 0,
+      "absoluteTolerance": 1e-10,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "path": "test/fixtures/triclinic.cif",
+        "cell": {
+          "a": 4.1,
+          "b": 5.2,
+          "c": 6.3,
+          "alphaDegrees": 70,
+          "betaDegrees": 80,
+          "gammaDegrees": 75
+        },
+        "fractional": [
+          0.125,
+          0.25,
+          0.375
+        ],
+        "atom": "C1",
+        "exportDecimals": 12
+      },
+      "referenceMethod": "Independent triclinic cell-vector construction from specified lengths and angles, multiplied by specified fractional coordinates.",
+      "status": "pass"
+    },
+    {
+      "id": "crystal-qe-export-z",
+      "tool": "CIF to QE conversion",
+      "purpose": "numerical format conversion",
+      "quantity": "C1 exported Cartesian z",
+      "expected": 2.210238841225001,
+      "returned": 2.210238841225,
+      "absoluteDeviation": 1.3322676295501878e-15,
+      "absoluteTolerance": 1e-10,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "path": "test/fixtures/triclinic.cif",
+        "cell": {
+          "a": 4.1,
+          "b": 5.2,
+          "c": 6.3,
+          "alphaDegrees": 70,
+          "betaDegrees": 80,
+          "gammaDegrees": 75
+        },
+        "fractional": [
+          0.125,
+          0.25,
+          0.375
+        ],
+        "atom": "C1",
+        "exportDecimals": 12
+      },
+      "referenceMethod": "Same independent triclinic reference compared with numeric coordinates read from the 12-decimal ATOMIC_POSITIONS export.",
+      "status": "pass"
+    },
+    {
+      "id": "crystal-minimum-image",
+      "tool": "Crystal Structure",
+      "purpose": "geometric numerical",
+      "quantity": "orthogonal periodic H H distance",
+      "expected": 0.2,
+      "returned": 0.20000000000000018,
+      "absoluteDeviation": 1.6653345369377348e-16,
+      "absoluteTolerance": 1e-12,
+      "unit": "angstrom",
+      "comparison": "<=",
+      "input": {
+        "atoms": [
+          {
+            "element": "H",
+            "cart": {
+              "x": 0.1,
+              "y": 0,
+              "z": 0
+            },
+            "frac": {
+              "x": 0.01,
+              "y": 0,
+              "z": 0
+            }
+          },
+          {
+            "element": "H",
+            "cart": {
+              "x": 9.9,
+              "y": 0,
+              "z": 0
+            },
+            "frac": {
+              "x": 0.99,
+              "y": 0,
+              "z": 0
+            }
+          }
+        ],
+        "latticeAngstrom": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            10
+          ]
+        ]
+      },
+      "referenceMethod": "Analytical minimum image distance 10 minus (9.9 minus 0.1), equal to 0.2 angstrom; orthogonal synthetic control.",
+      "status": "pass"
+    }
+  ]
+}

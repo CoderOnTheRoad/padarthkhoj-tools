@@ -1,0 +1,81 @@
+{
+  "checkedOn": "2026-11-25",
+  "scope": "Named benchmark report files under the qe-std working directory tree, current repository history and reflog, and available history of sibling copies. No claim of searching unrelated drives or external archives.",
+  "soughtOriginalCounts": {
+    "dosPipeline": 68,
+    "qeOutput": 69
+  },
+  "outcome": "Original detailed reports not recovered within the searched locations; fresh supplementary verification is reported separately.",
+  "observations": [
+    {
+      "location": "current checkout",
+      "file": "benchmarks/results/latest-dos-pipeline.json",
+      "recordedTimestampUtc": "2026-08-14T10:10:58.726Z",
+      "rules": 83,
+      "sha256": "e89251e5820dc0dcc556706e39da4a07ad393fbc420f738bb3e850c65f77357c"
+    },
+    {
+      "location": "current checkout",
+      "file": "benchmarks/results/latest-qe-output.json",
+      "recordedTimestampUtc": "2026-08-14T10:10:59.143Z",
+      "rules": 86,
+      "sha256": "b1eef84662d6bb49f965354ad202e3afe5cde0a075432565c4ce8997bb9f87ea"
+    },
+    {
+      "location": "backup checkout",
+      "file": "benchmarks/results/latest-dos-pipeline.json",
+      "recordedTimestampUtc": "2026-08-14T10:10:58.726Z",
+      "rules": 83,
+      "sha256": "e89251e5820dc0dcc556706e39da4a07ad393fbc420f738bb3e850c65f77357c"
+    },
+    {
+      "location": "backup checkout",
+      "file": "benchmarks/results/latest-qe-output.json",
+      "recordedTimestampUtc": "2026-08-14T10:10:59.143Z",
+      "rules": 86,
+      "sha256": "b1eef84662d6bb49f965354ad202e3afe5cde0a075432565c4ce8997bb9f87ea"
+    },
+    {
+      "location": "sibling copy",
+      "file": "benchmarks/results/latest-dos-pipeline.json",
+      "recordedTimestampUtc": "2026-08-14T10:10:58.726Z",
+      "rules": 83,
+      "sha256": "e89251e5820dc0dcc556706e39da4a07ad393fbc420f738bb3e850c65f77357c"
+    },
+    {
+      "location": "sibling copy",
+      "file": "benchmarks/results/latest-qe-output.json",
+      "recordedTimestampUtc": "2026-08-14T10:10:59.143Z",
+      "rules": 86,
+      "sha256": "b1eef84662d6bb49f965354ad202e3afe5cde0a075432565c4ce8997bb9f87ea"
+    },
+    {
+      "location": "alternate development checkout",
+      "file": "benchmarks/results/latest-dos-pipeline.json",
+      "recordedTimestampUtc": "2026-11-19T04:33:59.788Z",
+      "rules": 105,
+      "sha256": "e44231f4767f054712ed33cc1c953ed7172efcbc933e7d111043eebae7cfcd4f"
+    },
+    {
+      "location": "alternate development checkout",
+      "file": "benchmarks/results/latest-qe-output.json",
+      "recordedTimestampUtc": "2026-11-19T04:34:00.410Z",
+      "rules": 86,
+      "sha256": "a1794eb08637081bb8b0fe12dbd68cdb6f05fadc527decb74ad153aaaa1e1b85"
+    },
+    {
+      "location": "initial repository release bcad3c5",
+      "file": "benchmarks/results/latest-dos-pipeline.json",
+      "recordedTimestampUtc": "2026-08-14T10:10:58.726Z",
+      "rules": 83,
+      "sha256": "e89251e5820dc0dcc556706e39da4a07ad393fbc420f738bb3e850c65f77357c"
+    },
+    {
+      "location": "initial repository release bcad3c5",
+      "file": "benchmarks/results/latest-qe-output.json",
+      "recordedTimestampUtc": "2026-08-14T10:10:59.143Z",
+      "rules": 86,
+      "sha256": "b1eef84662d6bb49f965354ad202e3afe5cde0a075432565c4ce8997bb9f87ea"
+    }
+  ]
+}
