@@ -48,11 +48,11 @@
     },
     {
       "path": "benchmarks/reviewer-comment-1/original-suite-classification.csv",
-      "sha256": "92bfa7545630bfdbc1fb5bed2a9487d3c18fc306eca5c96ce38e463817bc9a8b"
+      "sha256": "91429f3d0650ee78fe71082aa0e8cfc4c8ea186c020648bf35cc30355f038ca1"
     },
     {
       "path": "benchmarks/reviewer-comment-1/original-numerical-examples.csv",
-      "sha256": "83c5415676156e48737bff6c6eb33cb7b7407110bbc0ac58779b90dafdb6d076"
+      "sha256": "7844388e80784e84f02ec9550c7ffeeade2a07cc54afe911a7a907355cd0bf90"
     }
   ]
 }
