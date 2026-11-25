@@ -73,4 +73,3 @@ Plotting checks exercise render calls, configuration and style handling; this be
 - [Original suite classification CSV](original-suite-classification.csv)
 - [Original numerical examples CSV](original-numerical-examples.csv)
 - [Source paths and SHA256 hashes](provenance.json)
-- [Proposed manuscript and supplementary edits and reviewer response](author-edits.md)
