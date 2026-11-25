@@ -1,0 +1,9 @@
+case_id,quantity,frequencies_THz,temperature_K,unit,expected_value,padarthkhoj_value,absolute_deviation,absolute_tolerance,source
+zpe-single-mode-300k,zpeEv,[10],300,eV,0.020678338484619294,0.020678338484619294,0,1e-13,../results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json
+zpe-single-mode-300k,tsEv,[10],300,eV,0.016297037218588363,0.01629703721858836,3.469446951953614e-18,1e-13,../results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json
+zpe-single-mode-300k,entropyJMolK,[10],300,J mol^-1 K^-1,5.241416828871475,5.241416828871474,8.881784197001252e-16,1e-10,../results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json
+zpe-reference-spectrum-298k,zpeEv,"[1.5216, 1.9174, 24.8485, 36.1835, 43.8909, 110.7545, 110.905]",298.15,eV,0.6824294216367939,0.6824294216367939,0,1e-12,../results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json
+zpe-reference-spectrum-298k,tsEv,"[1.5216, 1.9174, 24.8485, 36.1835, 43.8909, 110.7545, 110.905]",298.15,eV,0.12098833031881037,0.12098833031881037,0,1e-12,../results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json
+zpe-temperature-1000k,tsEv,"[2.5, 8, 25, 75]",1000,eV,0.5247128857291451,0.524712885729145,1.1102230246251565e-16,1e-12,../results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json
+zpe-low-frequency-298k,tsEv,"[0.01, 0.05, 0.1]",298.15,eV,0.47231082840320604,0.4723108284032065,4.440892098500626e-16,1e-11,../results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json
+zpe-high-frequency-298k,zpeEv,"[500, 1000, 5000]",298.15,eV,13.440920015002542,13.44092001500254,1.7763568394002505e-15,1e-11,../results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json

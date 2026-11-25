@@ -1,0 +1,58 @@
+{
+  "reference_run_utc": "2026-08-14T06:03:58.408Z",
+  "original_validation_units": 1433,
+  "application_version": "1.0.0",
+  "basis": "Archived summary and timestamped ZPE/TS and workbook reports. Current source files explain methods but are not represented as an immutable historical source snapshot.",
+  "limitations": [
+    "Original unified summary links mutable latest filenames for suite details.",
+    "Original DOS/PDOS 68-unit and QE Output 69-unit detailed reports are not retained at those paths; later reports contain 83 and 86 units respectively.",
+    "Other latest detailed suite reports have matching totals but later timestamps; matching counts alone do not establish historical identity.",
+    "Original analytical report records gitCommit as unavailable and gitDirty as true; no historical source commit is asserted."
+  ],
+  "files": [
+    {
+      "path": "benchmarks/results/unified-benchmark-2026-08-14T06-03-58-408Z.json",
+      "sha256": "5ac260f0e040a99678ec9f93bf44062d9e46941e8d993cac62f14045c0cc7bdc"
+    },
+    {
+      "path": "benchmarks/results/benchmark-0.1.0-zpe-pilot-2026-08-14T06-03-57-541Z.json",
+      "sha256": "f61235eb5f40ed6df820376073d633cb14737d8fb3e3a6f991bea261b67d3687"
+    },
+    {
+      "path": "benchmarks/results/zpe-excel-comparison-1.0.0-2026-08-14T06-03-57-605Z.json",
+      "sha256": "59ffe2190bed912b73f89b591c6a337a70f741a31dbcd71b5d12561a5905e4a3"
+    },
+    {
+      "path": "benchmarks/manifest.json",
+      "sha256": "be5d95f4ea58bb1ccabe399b8afaa288a5f227fe6aa485a8bbdcf9fc7efa7ab5"
+    },
+    {
+      "path": "benchmarks/references/zpe-ts-reference.js",
+      "sha256": "59eb743f8955c5b2548af8690fbe3c2e6d242eceb7f2a0e9737fe99fc2a7ccc5"
+    },
+    {
+      "path": "benchmarks/scripts/run-benchmarks.js",
+      "sha256": "929661a9b830041c28ea2b7d6a55cd0a0bfde84be88e98dddedcd31adde73aca"
+    },
+    {
+      "path": "benchmarks/scripts/run-zpe-excel-benchmark.js",
+      "sha256": "6553beab3c90bfeb99f769ff9562bde99db9595c116728680794c97c8274654c"
+    },
+    {
+      "path": "benchmarks/scripts/run-orbital-real-benchmark.js",
+      "sha256": "7354353d5507167a8d8c5c8b7252eeec1d88e23d7a79b6f497d703e51bb1c312"
+    },
+    {
+      "path": "benchmarks/scripts/run-bader-real-benchmark.js",
+      "sha256": "9a7417cf36109fffd7805b0e4a58317bf38b913a9848fa021a8e638574e67ec8"
+    },
+    {
+      "path": "benchmarks/reviewer-comment-1/original-suite-classification.csv",
+      "sha256": "92bfa7545630bfdbc1fb5bed2a9487d3c18fc306eca5c96ce38e463817bc9a8b"
+    },
+    {
+      "path": "benchmarks/reviewer-comment-1/original-numerical-examples.csv",
+      "sha256": "83c5415676156e48737bff6c6eb33cb7b7407110bbc0ac58779b90dafdb6d076"
+    }
+  ]
+}

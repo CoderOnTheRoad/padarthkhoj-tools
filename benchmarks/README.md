@@ -1,5 +1,9 @@
 # Padarthkhoj benchmark suite
 
+## Manuscript reference run with 1433 validation units
+
+The manuscript retains the archived 1,433-unit run. See the [purpose-labelled suite inventory, original numerical examples, reference methods and provenance](reviewer-comment-1/README.md). This documentation distinguishes numerical comparisons from mixed geometry, file, plotting and workflow checks and explains the limits of the retained historical records. Later `latest` reports are not substituted for the manuscript reference run.
+
 ## Run everything and create paper-ready tables
 
 Run `npm run benchmark` to execute every benchmark suite and regenerate the consolidated reports. The master runner stops if any suite fails and writes `benchmarks/results/latest-unified.json`, `latest-unified.csv`, and `latest-unified.md`, together with timestamped archival copies. The Markdown report is formatted for direct use while preparing the validation section of a manuscript.
