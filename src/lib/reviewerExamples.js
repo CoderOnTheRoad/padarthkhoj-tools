@@ -70,7 +70,7 @@ const examples = {
     files: [carbonCsv],
     load: (page, files) => page._loadFiles(files),
     steps: 'Keep the default full energy range and click Calculate. Find the pz_up results.',
-    expected: 'The integrated pz_up occupancy is about 0.679410, and the DOS centre is about −4.773165 eV.',
+    expected: 'The integrated pz_up spectral weight is about 0.679410, and the DOS centre is about −4.773165 eV.',
   },
   'zpe-ts-calculator': {
     files: [],
