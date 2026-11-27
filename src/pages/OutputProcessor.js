@@ -226,16 +226,12 @@ class OutToCifPanel {
     if (f.status === 'err')     { viewer.innerHTML = `<div class="qp-err-box">⚠ ${escapeHTML(f.error || 'Could not parse file')}</div>`; return; }
 
     const p = f.parsed;
-    const alertHTML = !p.isRelaxed ? `
-      <div class="qp-alert">
-        <span class="qp-alert-ico">⚠</span>
-        <div>
-          <strong class="qp-alert-title">Not fully relaxed</strong>
-          <div class="qp-alert-body">${p.nSteps > 0
-            ? `Did not converge after ${p.nSteps} step${p.nSteps !== 1 ? 's' : ''}. Showing latest available structure.`
-            : 'No relaxation steps found.'}</div>
-        </div>
-      </div>` : '';
+    const notices = [
+      `Final-coordinate block: ${p.finalCoordinatesComplete ? 'complete' : 'not validated as complete'}. JOB DONE: ${p.jobDone ? 'present' : 'absent'}.`,
+      'Geometry availability does not independently certify convergence.',
+      ...(p.warnings || []), ...(p.errors || []).map(error => error.message),
+    ];
+    const alertHTML = `<div class="qp-alert"><span class="qp-alert-ico">ⓘ</span><div><strong class="qp-alert-title">Output status and geometry</strong><div class="qp-alert-body">${notices.map(escapeHTML).join('<br>')}</div></div></div>`;
 
     let volBadge = '';
     if (p.initial && p.final) {
@@ -755,6 +751,7 @@ class FixerPanel {
     let P, oldText, newText, patchResult = null;
     try {
       P = parseQEOut(this._files.outText);
+      if (!P.finalAtoms?.length) throw new Error('No complete geometry is available for input generation.');
       if (!P.alatAng) throw new Error('Could not parse lattice parameter (alat) from the .out file.');
       if (this._mode === 'combine') {
         oldText = this._files.inText;
@@ -805,11 +802,11 @@ class FixerPanel {
           <span class="if-info-stats">${P.finalAtoms ? P.finalAtoms.length : (P.nat||0)} atoms · ${P.nSteps} ionic step${P.nSteps !== 1 ? 's' : ''}</span>
           <div class="if-info-right">
             <span class="if-chip if-cb">${escapeHTML(P.calcType)}</span>
-            <span class="if-chip ${isRelaxed ? 'if-cg' : 'if-cr'}">${isRelaxed ? '✓ converged' : '⚠ not converged'}</span>
+            <span class="if-chip ${isRelaxed ? 'if-cg' : 'if-cr'}">${isRelaxed ? '✓ complete final coordinates' : '⚠ latest complete geometry'}</span>
             <span class="if-chip ${mode === 'combine' ? 'if-cg' : 'if-cb'}">${mode === 'combine' ? 'combine' : 'reconstruct'}</span>
           </div>
         </div>
-        ${!isRelaxed ? `<div class="if-warn-bar"><span>⚠</span><span>Did not converge after ${P.nSteps} step${P.nSteps !== 1 ? 's' : ''}. Using latest available structure.</span></div>` : ''}
+        ${!isRelaxed ? `<div class="if-warn-bar"><span>⚠</span><span>Final-coordinate completeness was not established. Using a complete available geometry; inspect the source run status.</span></div>` : ''}
         <div class="if-diff-bar">${diffItems.join('<span class="if-dot-sep">·</span>')}</div>
         <div class="if-editors">
           <div class="if-pane">

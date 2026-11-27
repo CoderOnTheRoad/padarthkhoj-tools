@@ -64,7 +64,8 @@ export function parseQEOutput(text) {
     nSteps: 0, initial: null, final: null,
     energiesRy: [], forcesRyBohr: [], pressuresKbar: [], scfIterations: [],
     finalEnergyRy: null, finalForceRyBohr: null, finalPressureKbar: null,
-    convergenceAchieved: false, jobDone: false, errors: [],
+    convergenceAchieved: false, jobDone: false, errors: [], warnings: [],
+    expectedAtomCount: null, finalCoordinatesComplete: false,
   };
 
   // Numerical and run-status history. These fields are additive and are used
@@ -144,83 +145,72 @@ export function parseQEOutput(text) {
   if (initVecs && initAtoms.length > 0)
     R.initial = { vecs: initVecs, params: cellVecsToParams(...initVecs), atoms: initAtoms, coordType: 'angstrom' };
 
-  // All relaxation steps (CELL_PARAMETERS + ATOMIC_POSITIONS pairs)
-  const steps = [];
+  // Only complete coordinate snapshots can be selected for display or export.
+  const declared = text.match(/number of atoms\/cell\s*=\s*(\d+)/i) || text.match(/\bnat\s*=\s*(\d+)/i);
+  const expected = declared ? Number(declared[1]) : initAtoms.length || null;
+  R.expectedAtomCount = expected;
+  const validCell = vecs => vecs?.length === 3 && vecs.every(v => v.length === 3 && v.every(Number.isFinite))
+    && Math.abs(dot(vecs[0], cross(vecs[1], vecs[2]))) > 1e-12;
+  const validAtoms = atoms => atoms.length > 0 && (!expected || atoms.length === expected)
+    && atoms.every(atom => [atom.x, atom.y, atom.z].every(Number.isFinite));
+  if (R.initial && (!validCell(initVecs) || !validAtoms(initAtoms))) {
+    R.warnings.push('Initial coordinates are incomplete or invalid and were not selected.');
+    R.initial = null;
+  }
+  let currentCell = validCell(initVecs) ? initVecs : null;
+  let lastFinalBlock = null, openFinalBlock = null;
+  const snapshots = [];
   for (let i = 0; i < lines.length; i++) {
-    if (/^\s*CELL_PARAMETERS/i.test(lines[i])) {
-      const sc = cellParamScale(lines[i], alat), vecs = [];
-      for (let j = i+1; j < Math.min(i+6, lines.length); j++) {
+    const line = lines[i];
+    if (/Begin final coordinates/i.test(line)) {
+      openFinalBlock = { closed: false, valid: true, snapshots: [] };
+      lastFinalBlock = openFinalBlock;
+    } else if (/End final coordinates/i.test(line)) {
+      if (openFinalBlock) { openFinalBlock.closed = true; openFinalBlock = null; }
+    } else if (/^\s*CELL_PARAMETERS/i.test(line)) {
+      const vecs = [], scale = cellParamScale(line, alat);
+      for (let j = i+1; j < lines.length && vecs.length < 3; j++) {
+        if (!lines[j].trim()) continue;
         const m = lines[j].match(/^\s*([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
-        if (m) vecs.push([parseFloat(m[1]), parseFloat(m[2]), parseFloat(m[3])]);
-        if (vecs.length === 3) break;
+        if (!m) break;
+        vecs.push(m.slice(1,4).map(value => Number(value)*scale));
       }
-      if (vecs.length !== 3) continue;
-      const v = vecs.map(r => r.map(x => x * sc));
-      for (let k = i+4; k < Math.min(i+300, lines.length); k++) {
-        if (/^\s*ATOMIC_POSITIONS/i.test(lines[k])) {
-          const { scale: asc, isCrystal } = atomPosUnit(lines[k], alat);
-          const atoms = [];
-          for (let m2 = k+1; m2 < lines.length; m2++) {
-            const am = lines[m2].match(/^\s*([A-Za-z]+[0-9]*)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
-            if (am) atoms.push({ elem: am[1].replace(/[0-9]+$/, ''), x: parseFloat(am[2])*asc, y: parseFloat(am[3])*asc, z: parseFloat(am[4])*asc });
-            else if (atoms.length > 0 && /^\s*$/.test(lines[m2])) break;
-            else if (atoms.length > 0 && /^\s*[A-Z_!]/.test(lines[m2])) break;
-          }
-          if (atoms.length > 0) steps.push({ vecs: v, atoms, coordType: isCrystal ? 'crystal' : 'angstrom' });
-          break;
-        }
+      currentCell = validCell(vecs) ? vecs : null;
+      if (!currentCell) {
+        R.warnings.push('Incomplete or invalid CELL_PARAMETERS block; dependent coordinates were not selected.');
+        if (openFinalBlock) openFinalBlock.valid = false;
+      }
+    } else if (/^\s*ATOMIC_POSITIONS/i.test(line)) {
+      const {scale, isCrystal} = atomPosUnit(line, alat), atoms = [];
+      for (let j = i+1; j < lines.length; j++) {
+        if (!lines[j].trim() && !atoms.length) continue;
+        const m = lines[j].match(/^\s*([A-Za-z]+[0-9]*)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
+        if (!m) break;
+        atoms.push({elem:m[1].replace(/[0-9]+$/, ''),x:Number(m[2])*scale,y:Number(m[3])*scale,z:Number(m[4])*scale});
+      }
+      if (currentCell && validAtoms(atoms)) {
+        const snapshot = {vecs:currentCell,params:cellVecsToParams(...currentCell),atoms,coordType:isCrystal?'crystal':'angstrom'};
+        snapshots.push(snapshot);
+        if (openFinalBlock) openFinalBlock.snapshots.push(snapshot);
+      } else {
+        R.warnings.push(`Incomplete or invalid ATOMIC_POSITIONS block (${atoms.length} rows; expected ${expected ?? 'unknown'}); it was not selected.`);
+        if (openFinalBlock) openFinalBlock.valid = false;
       }
     }
   }
-  // Fixed-cell relaxations print ATOMIC_POSITIONS without a preceding
-  // CELL_PARAMETERS card. Count those ionic snapshots when no paired
-  // variable-cell steps were found.
-  const atomicPositionCards = lines.filter(line => /^\s*ATOMIC_POSITIONS/i.test(line)).length;
-  R.nSteps = steps.length || atomicPositionCards;
-
-  // Final structure — look for "Begin final coordinates" block
-  let bfc = -1, efc = -1;
-  for (let i = 0; i < lines.length; i++) {
-    if (/Begin final coordinates/i.test(lines[i])) bfc = i;
-    if (/End final coordinates/i.test(lines[i])) efc = i;
-  }
-
-  if (bfc >= 0) {
-    R.isRelaxed = true;
-    const block = lines.slice(bfc, efc > bfc ? efc : lines.length);
-    let fVecs = null, fAtoms = [], fCT = 'angstrom';
-    for (let i = 0; i < block.length; i++) {
-      if (/^\s*CELL_PARAMETERS/i.test(block[i])) {
-        const sc = cellParamScale(block[i], alat), vecs = [];
-        for (let j = i+1; j < Math.min(i+6, block.length); j++) {
-          const m = block[j].match(/^\s*([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
-          if (m) vecs.push([parseFloat(m[1]), parseFloat(m[2]), parseFloat(m[3])]);
-          if (vecs.length === 3) break;
-        }
-        if (vecs.length === 3) fVecs = vecs.map(r => r.map(x => x * sc));
-      }
-      if (/^\s*ATOMIC_POSITIONS/i.test(block[i])) {
-        const { scale: asc, isCrystal } = atomPosUnit(block[i], alat);
-        fCT = isCrystal ? 'crystal' : 'angstrom';
-        for (let j = i+1; j < block.length; j++) {
-          const m = block[j].match(/^\s*([A-Za-z]+[0-9]*)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
-          if (m) fAtoms.push({ elem: m[1].replace(/[0-9]+$/, ''), x: parseFloat(m[2])*asc, y: parseFloat(m[3])*asc, z: parseFloat(m[4])*asc });
-          else if (fAtoms.length > 0 && !/^\s*[-\d]/.test(block[j])) break;
-        }
-      }
-    }
-    if (!fVecs && steps.length > 0) fVecs = steps[steps.length-1].vecs;
-    if (!fVecs && initVecs) fVecs = initVecs;
-    if (fVecs && fAtoms.length > 0)
-      R.final = { vecs: fVecs, params: cellVecsToParams(...fVecs), atoms: fAtoms, coordType: fCT, source: 'final' };
-  } else {
-    R.isRelaxed = false;
-    if (steps.length > 0) {
-      const last = steps[steps.length-1];
-      R.final = { vecs: last.vecs, params: cellVecsToParams(...last.vecs), atoms: last.atoms, coordType: last.coordType, source: 'latest' };
-    } else if (R.initial) {
-      R.final = { ...R.initial, source: 'initial' };
-    }
+  R.nSteps = snapshots.length;
+  const finalSnapshot = lastFinalBlock?.snapshots.at(-1);
+  R.finalCoordinatesComplete = Boolean(expected && lastFinalBlock?.closed && lastFinalBlock.valid && finalSnapshot);
+  // isRelaxed is retained for compatibility and denotes a complete final-coordinate
+  // block, not independent certification of electronic or ionic convergence.
+  R.isRelaxed = R.finalCoordinatesComplete;
+  if (R.finalCoordinatesComplete) R.final = {...finalSnapshot,source:'final'};
+  else {
+    if (lastFinalBlock) R.warnings.push('Final-coordinate block is incomplete or cannot be validated; using the latest complete geometry.');
+    if (!expected) R.warnings.push('Expected atom count is unavailable; final-coordinate completeness cannot be certified.');
+    const latest = snapshots.at(-1);
+    if (latest) R.final = {...latest,source:'latest'};
+    else if (R.initial) R.final = {...R.initial,source:'initial'};
   }
 
   return R;

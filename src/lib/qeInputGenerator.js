@@ -1,24 +1,7 @@
+import { parseQEOutput } from './qeParser.js';
+
 // ─── Constants ────────────────────────────────────────────────────────────────
 const BOHR2ANG = 0.529177210903;
-
-// ─── Unit helpers ─────────────────────────────────────────────────────────────
-function cellParamScale(line, alatAng) {
-  const av = line.match(/alat\s*=\s*([\d.Ee+\-]+)/i);
-  if (av) return parseFloat(av[1]) * BOHR2ANG;
-  const u = ((line.match(/[(\{]\s*([a-zA-Z]+)\s*[)\}]/i) || [])[1] || 'angstrom').toLowerCase();
-  if (u === 'bohr') return BOHR2ANG;
-  if (u === 'alat') return alatAng || 1;
-  return 1;
-}
-function atomPosUnit(line, alatAng) {
-  const av = line.match(/alat\s*=\s*([\d.Ee+\-]+)/i);
-  if (av) return { scale: parseFloat(av[1]) * BOHR2ANG, isCrystal: false };
-  const u = ((line.match(/[(\{]\s*([a-zA-Z]+)\s*[)\}]/i) || [])[1] || 'angstrom').toLowerCase();
-  if (u === 'crystal') return { scale: 1, isCrystal: true };
-  if (u === 'bohr')    return { scale: BOHR2ANG, isCrystal: false };
-  if (u === 'alat')    return { scale: alatAng || 1, isCrystal: false };
-  return { scale: 1, isCrystal: false };
-}
 
 // ─── Geometry helpers ─────────────────────────────────────────────────────────
 function dot(a, b) { return a[0]*b[0] + a[1]*b[1] + a[2]*b[2]; }
@@ -130,93 +113,22 @@ export function parseQEOut(text) {
     }
   }
 
-  P.initVecs = null;
-  for (let i = 0; i < lines.length; i++) {
-    if (/crystal axes.*units of alat/i.test(lines[i])) {
-      const vecs = [];
-      for (let j = i+1; j < Math.min(i+6, lines.length); j++) {
-        const m = lines[j].match(/a\(\d\)\s*=\s*\(\s*([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)\s*\)/);
-        if (m) vecs.push([parseFloat(m[1])*P.alatAng, parseFloat(m[2])*P.alatAng, parseFloat(m[3])*P.alatAng]);
-        if (vecs.length === 3) break;
-      }
-      if (vecs.length === 3) { P.initVecs = vecs; break; }
-    }
-  }
+  // Share completeness checks with QE Output Studio so restart generation
+  // cannot silently select a truncated coordinate block.
+  const geometry = parseQEOutput(text);
+  P.initVecs = geometry.initial?.vecs ?? null;
+  P.initAtoms = geometry.initial?.atoms ?? [];
+  P.finalVecs = geometry.final?.vecs ?? null;
+  P.finalAtoms = geometry.final?.atoms ?? null;
+  P.finalAtomUnit = geometry.final?.coordType ?? 'angstrom';
+  P.isRelaxed = geometry.isRelaxed;
+  P.isVCRelax = geometry.isVCRelax;
+  P.nSteps = geometry.nSteps;
+  P.warnings = geometry.warnings;
+  P.jobDone = geometry.jobDone;
+  P.finalCoordinatesComplete = geometry.finalCoordinatesComplete;
+  P.structureSource = geometry.final?.source ?? null;
 
-  P.initAtoms = [];
-  for (let i = 0; i < lines.length; i++) {
-    if (/site n\..*positions.*alat units/i.test(lines[i])) {
-      for (let j = i+1; j < lines.length; j++) {
-        const m = lines[j].match(/\d+\s+([A-Za-z]+)\s+tau\s*\(\s*\d+\s*\)\s*=\s*\(\s*([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)\s*\)/);
-        if (m) P.initAtoms.push({ elem: m[1], x: parseFloat(m[2])*P.alatAng, y: parseFloat(m[3])*P.alatAng, z: parseFloat(m[4])*P.alatAng });
-        else if (P.initAtoms.length > 0 && /^\s*$/.test(lines[j])) break;
-        else if (P.initAtoms.length > 0 && !/^\s+\d+\s/.test(lines[j])) break;
-      }
-      if (P.initAtoms.length > 0) break;
-    }
-  }
-
-  P.isRelaxed = false; P.finalVecs = null; P.finalAtoms = null; P.finalAtomUnit = 'angstrom'; P.nSteps = 0;
-  for (const l of lines) { if (/bfgs converged in/i.test(l) || /number of scf cycles/i.test(l)) P.nSteps++; }
-
-  let bfc = -1, efc = -1;
-  for (let i = 0; i < lines.length; i++) {
-    if (/Begin final coordinates/i.test(lines[i])) bfc = i;
-    if (/End final coordinates/i.test(lines[i]))   efc = i;
-  }
-
-  if (bfc >= 0) {
-    P.isRelaxed = true;
-    const block = lines.slice(bfc, efc > bfc ? efc : lines.length);
-    for (let i = 0; i < block.length; i++) {
-      if (/^\s*CELL_PARAMETERS/i.test(block[i])) {
-        const sc = cellParamScale(block[i], P.alatAng); const vecs = [];
-        for (let j = i+1; j < Math.min(i+6, block.length); j++) {
-          const m = block[j].match(/^\s*([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
-          if (m) vecs.push([parseFloat(m[1])*sc, parseFloat(m[2])*sc, parseFloat(m[3])*sc]);
-          if (vecs.length === 3) break;
-        }
-        if (vecs.length === 3) P.finalVecs = vecs;
-      }
-      if (/^\s*ATOMIC_POSITIONS/i.test(block[i])) {
-        const { scale: asc, isCrystal } = atomPosUnit(block[i], P.alatAng);
-        P.finalAtomUnit = isCrystal ? 'crystal' : 'angstrom'; P.finalAtoms = [];
-        for (let j = i+1; j < block.length; j++) {
-          const am = block[j].match(/^\s*([A-Za-z]+[0-9]*)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
-          if (am) P.finalAtoms.push({ elem: am[1].replace(/\d+$/, ''), x: parseFloat(am[2])*asc, y: parseFloat(am[3])*asc, z: parseFloat(am[4])*asc });
-          else if (P.finalAtoms.length > 0 && !/^\s*[-\d]/.test(block[j])) break;
-        }
-      }
-    }
-  }
-
-  // Fallbacks
-  if (!P.finalAtoms) {
-    let lastAP = -1;
-    for (let i = 0; i < lines.length; i++) if (/^\s*ATOMIC_POSITIONS/i.test(lines[i])) lastAP = i;
-    if (lastAP >= 0) {
-      const { scale: asc, isCrystal } = atomPosUnit(lines[lastAP], P.alatAng);
-      P.finalAtomUnit = isCrystal ? 'crystal' : 'angstrom'; P.finalAtoms = [];
-      for (let j = lastAP+1; j < lines.length; j++) {
-        const am = lines[j].match(/^\s*([A-Za-z]+[0-9]*)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
-        if (am) P.finalAtoms.push({ elem: am[1].replace(/\d+$/, ''), x: parseFloat(am[2])*asc, y: parseFloat(am[3])*asc, z: parseFloat(am[4])*asc });
-        else if (P.finalAtoms.length > 0 && !/^\s*[-\d]/.test(lines[j])) break;
-      }
-    }
-  }
-  if (P.isVCRelax && !P.finalVecs) {
-    let lastCP = -1;
-    for (let i = 0; i < lines.length; i++) if (/^\s*CELL_PARAMETERS/i.test(lines[i])) lastCP = i;
-    if (lastCP >= 0) {
-      const sc = cellParamScale(lines[lastCP], P.alatAng); const vecs = [];
-      for (let j = lastCP+1; j < Math.min(lastCP+6, lines.length); j++) {
-        const m = lines[j].match(/^\s*([-\d.Ee+]+)\s+([-\d.Ee+]+)\s+([-\d.Ee+]+)/);
-        if (m) vecs.push([parseFloat(m[1])*sc, parseFloat(m[2])*sc, parseFloat(m[3])*sc]);
-        if (vecs.length === 3) break;
-      }
-      if (vecs.length === 3) P.finalVecs = vecs;
-    }
-  }
   return P;
 }
 
