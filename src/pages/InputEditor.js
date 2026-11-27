@@ -152,6 +152,13 @@ export class InputEditorPage {
 
             <div class="sidebar-section">
               <div class="section-title">CONTROL</div>
+              ${file.protocolId === 'relax' ? `<div class="field">
+                <label>Relaxation mode</label>
+                <select data-param="calculation">
+                  <option value="vc-relax" ${!p.calculation || p.calculation === 'vc-relax' ? 'selected' : ''}>Variable cell and atoms</option>
+                  <option value="relax" ${p.calculation === 'relax' ? 'selected' : ''}>Atoms only in a fixed cell</option>
+                </select>
+              </div>` : ''}
               <div class="field">
                 <label>prefix</label>
                 <input type="text" data-param="prefix" value="${p.prefix || ''}" placeholder="pwscf">
@@ -267,6 +274,17 @@ export class InputEditorPage {
 
             ${file.workflowId?.startsWith('pw-') ? `<div class="sidebar-section"><div class="section-title">K-POINT MESH</div><div class="field-row"><div class="field"><label>kx</label><input type="number" min="1" data-param="kx" value="${p.kx}"></div><div class="field"><label>ky</label><input type="number" min="1" data-param="ky" value="${p.ky}"></div><div class="field"><label>kz</label><input type="number" min="1" data-param="kz" value="${p.kz}"></div></div><div style="font-size:0.62rem; color:var(--text-dim); line-height:1.45;">Convergence-test this automatic mesh for the actual system.</div></div>` : ''}
 
+            <div class="sidebar-section">
+              <div class="section-title">ELECTRONS</div>
+              <div class="field"><label>conv_thr (Ry)</label><input type="text" data-param="conv_thr" value="${p.conv_thr || ''}" placeholder="1.0D-7"></div>
+              <div class="field"><label>mixing_beta</label><input type="number" min="0" max="1" step="any" data-param="mixing_beta" value="${p.mixing_beta || ''}" placeholder="0.5"></div>
+              <div class="field"><label>SCF convergence policy</label><select data-param="scf_must_converge">
+                <option value="" ${!p.scf_must_converge ? 'selected' : ''}>QE default (require convergence)</option>
+                <option value=".true." ${p.scf_must_converge === '.true.' ? 'selected' : ''}>Require convergence</option>
+                <option value=".false." ${p.scf_must_converge === '.false.' ? 'selected' : ''}>Allow unconverged ionic steps</option>
+              </select></div>
+              <div style="font-size:0.65rem; color:var(--text-dim);">Allowing unconverged ionic steps can affect energies and forces. Check every electronic convergence result.</div>
+            </div>
             <div class="sidebar-section">
               <div class="section-title">SYSTEM</div>
               <div class="field-row">

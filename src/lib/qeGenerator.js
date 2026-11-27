@@ -223,6 +223,23 @@ export function generateQEInput(protocol, cifData, params = {}) {
   const calcMap = { relax: 'vc-relax', scf: 'scf', 'dos-scf': 'scf', 'dos-nscf': 'nscf', 'bands-scf': 'scf', 'bands-nscf': 'bands', 'charge-scf': 'scf', 'bader-scf': 'scf', band: 'bands', charge: 'scf', phonon: 'scf' };
   const calculation = params.calculation || calcMap[protocol] || 'scf';
 
+  const numericSetting = (name, fallback, valid) => {
+    const raw = params[name];
+    if (raw === undefined || raw === null || raw === '') return fallback;
+    const text = String(raw).trim();
+    const value = Number(text.replace(/[dD]/, 'e'));
+    if (!/^[+-]?(?:\d+\.?\d*|\.\d+)(?:[eEdD][+-]?\d+)?$/.test(text) || !Number.isFinite(value) || !valid(value)) {
+      throw new Error(`Invalid ${name}`);
+    }
+    return text;
+  };
+  const convThr = numericSetting('conv_thr', '1.0D-7', value => value > 0);
+  const mixingBeta = numericSetting('mixing_beta', '0.5', value => value > 0 && value <= 1);
+  const scfPolicy = params.scf_must_converge;
+  if (scfPolicy !== undefined && scfPolicy !== '' && !['.true.', '.false.'].includes(scfPolicy)) {
+    throw new Error('Invalid scf_must_converge');
+  }
+
   // ── Merged parameter defaults ─────────────────────────────────────────────────
   const p = {
     prefix:       params.prefix        || `'${(cifData.filename || 'structure').replace('.cif','')}_${protocol}'`,
@@ -337,8 +354,9 @@ export function generateQEInput(protocol, cifData, params = {}) {
   // ── &ELECTRONS ───────────────────────────────────────────────────────────────
   out += `&ELECTRONS\n`;
   out += `  electron_maxstep = 200,\n`;
-  out += `  conv_thr      = 1.0D-7,\n`;
-  out += `  mixing_beta   = 0.5,\n`;
+  out += `  conv_thr      = ${convThr},\n`;
+  out += `  mixing_beta   = ${mixingBeta},\n`;
+  if (scfPolicy) out += `  scf_must_converge = ${scfPolicy},\n`;
   out += `  mixing_ndim   = 8,\n`;
   out += `  mixing_mode   = 'plain',\n`;
   out += `  diagonalization = 'david',\n`;
